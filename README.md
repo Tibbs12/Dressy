@@ -1,2 +1,2 @@
-# Dressy
-Android mobile application to help users organize and plan outfits virtually using images of their clothes.
+# Main Application Files
+Here are the basic files when creating a New Project within Android Studio
