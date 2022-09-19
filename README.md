@@ -1,2 +1,2 @@
 # Main Application Files
-Here are the basic files for a New Project within Android Studio
+Here are the basic 'New Project' files for Dressy
