@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Dressy</string>
+
+    <!--general use-->
+    <string name="sign_up"><b>Sign Up</b></string>
+    <string name="existing_account">Already have an account? <b>Sign In</b></string>
+
+    <!--sign up-->
+    <string name="motto"><b>Don\'t be messy. Get Dressy.</b></string>
+
+    <!--sign in-->
+    <string name="sign_in"><b>Sign In</b></string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_pwd">Forgot Password?</string>
+
 </resources>
