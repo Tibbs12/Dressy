@@ -17,35 +17,42 @@ public class Closet
     private List<String>[] items;           //List items will contain type item TODO: replace type String with type Item/Items
     private List<String>[] outfits;         //List outfits will contain type outfit TODO: replace type String with type Outfit
 
-
+    //returns String name
     public String getName() {  //gets value of String name
         return name;
     }
 
+    //Sets String name
     public void setName(String name) { //sets value of String name
         this.name = name;
     }
 
+    //returns String description
     public String getDescription() {  //gets value of String description
         return description;
     }
 
+    //sets String description
     public void setDescription(String description) { //sets value of String description
         this.description = description;
     }
 
+    //returns List of Items named items
     public List<String>[] getItems() { //gets value of String description
         return items;
     }
 
+    //sets List of Items into List<Items> items
     public void setItems(List<String>[] items) { //sets List of Items
         this.items = items;
     }
 
+    //returns List of Outfits named outfits
     public List<String>[] getOutfits() { //gets List of Outfits
         return outfits;
     }
 
+    //sets List of Outfits into List<Outfit> outfits
     public void setOutfits(List<String>[] outfits) { //sets List of Outfits
         this.outfits = outfits;
     }
