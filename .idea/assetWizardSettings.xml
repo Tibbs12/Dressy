@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/lock/baseline_lock_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/arrow_forward/baseline_arrow_forward_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,9 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="0077b6" />
-                            <entry key="outputName" value="ic_lock" />
-                            <entry key="sourceFile" value="$USER_HOME$/Desktop/Project Design/Splash Background.svg" />
+                            <entry key="color" value="808285" />
+                            <entry key="outputName" value="ic_arrow_forward" />
+                            <entry key="sourceFile" value="$USER_HOME$/Desktop/Project Design/selection_bg.svg" />
                           </map>
                         </option>
                       </PersistentState>
