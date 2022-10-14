@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Dressy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="fontFamily">@font/poppins</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/dark_blue</item>
         <item name="colorPrimaryVariant">@color/baby_blue</item>
