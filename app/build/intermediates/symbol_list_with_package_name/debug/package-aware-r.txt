@@ -1852,7 +1852,6 @@ id beginning
 id blocking
 id bottom
 id bounce
-id button
 id buttonPanel
 id cache_measures
 id calendarBack
@@ -2132,6 +2131,8 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signIn
+id signUp
 id sin
 id skipCollapsed
 id slide

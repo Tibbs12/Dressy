@@ -34,7 +34,6 @@ id accessSignUpBtn
 id addItemsBtn
 id addOutfitBtn
 id appCompatButton
-id button
 id calendarBack
 id calendarView
 id checkBox
@@ -73,6 +72,8 @@ id outfitsHeader
 id pwdHint
 id searchView
 id searchView2
+id signIn
+id signUp
 id textView
 id textView6
 layout activity_access
