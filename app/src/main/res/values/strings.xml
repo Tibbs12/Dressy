@@ -1,3 +1,45 @@
 <resources>
     <string name="app_name">Dressy</string>
+
+    <!--general-->
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="done">Done</string>
+    <string name="my_items">My Items</string>
+    <string name="closets">My Closets</string>
+    <string name="outfits">My Outfits</string>
+    <string name="calendar">My Calendar</string>
+
+    <!--access-->
+    <string name="or">OR</string>
+
+    <!--sign_up-->
+    <string name="motto">Don\'t be messy. Get Dressy.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="existing_acct">Already have an account? <b>Log In</b></string>
+
+    <!--sign_in-->
+    <string name="remember">Remember Me</string>
+    <string name="no_account">Don\'t have an account? <b>Sign Up</b></string>
+
+    <!--create an outfit-->
+    <string name="create_outfit">Create an Outfit</string>
+    <string name="outfit_placeholder">ex. Date Night</string>
+    <string name="outfit_name">Outfit Name:</string>
+    <string name="outfit_hint">[outfitName]</string>
+
+
+    <!--create a closet-->
+    <string name="create_closet">Create a Closet</string>
+    <string name="closet_placeholder">ex. Winter Clothes</string>
+    <string name="closet_name">Closet Name:</string>
+    <string name="closet_hint">[closetName]</string>
+
+    <!--content description-->
+    <string name="back_arrow">Grey arrow that navigates backwards in the app.</string>
+    <string name="add_button">Grey plus within a circle to add things.</string>
+    <string name="fwd_arrow">Grey arrow that navigates to the next screen in the app.</string>
+
+
 </resources>

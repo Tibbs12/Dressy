@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selection_bg"
+    tools:context=".selectCloset">
+
+    <!--use intent to get user input from previous screen-->
+
+    <!--placeholder for search bar must be done in java-->
+
+    <ImageButton
+        android:id="@+id/closetAddOutfits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="215dp"
+        android:layout_marginTop="29dp"
+        android:contentDescription="@string/add_button"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/outfitsHeader"
+        app:layout_constraintTop_toBottomOf="@+id/itemsGrid"
+        app:srcCompat="@drawable/ic_add"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/closetNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="9dp"
+        android:hint="@string/closet_hint"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closetNameInput" />
+
+    <TextView
+        android:id="@+id/itemsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="214dp"
+        android:layout_marginBottom="9dp"
+        android:text="@string/my_items"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/itemsGrid"
+        app:layout_constraintEnd_toStartOf="@+id/closetAddItems"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <GridLayout
+        android:id="@+id/itemsGrid"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/grid_border"
+        android:numColumns="4"
+        app:layout_constraintBottom_toTopOf="@+id/closetAddOutfits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closetAddItems" />
+
+    <GridLayout
+        android:id="@+id/outfitsGrid"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/grid_border"
+        android:numColumns="4"
+        app:layout_constraintBottom_toTopOf="@+id/closetAddOutfits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closetAddItems" />
+    <ImageButton
+        android:id="@+id/closetAddItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="214dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="1dp"
+        android:contentDescription="@string/add_button"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/itemsGrid"
+        app:layout_constraintStart_toEndOf="@+id/itemsHeader"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:srcCompat="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/outfitsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="215dp"
+        android:layout_marginBottom="269dp"
+        android:text="@string/outfits"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/closetAddOutfits"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemsGrid" />
+
+    <ImageButton
+        android:id="@+id/closetFwdBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="333dp"
+        android:layout_marginTop="189dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="31dp"
+        android:contentDescription="@string/fwd_arrow"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closetAddOutfits"
+        app:srcCompat="@drawable/ic_arrow_forward" />
+
+    <ImageButton
+        android:id="@+id/closetBackBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="344dp"
+        android:contentDescription="@string/back_arrow"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
