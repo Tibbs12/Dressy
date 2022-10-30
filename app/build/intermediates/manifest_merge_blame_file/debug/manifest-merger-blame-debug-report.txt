@@ -11,7 +11,7 @@
 9-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:6:5-85:19
+11-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:6:5-90:19
 12        android:allowBackup="true"
 12-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:7:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -124,42 +124,46 @@
 70-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 71        </activity>
 72        <activity
-72-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:65:9-71:20
+72-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:65:9-81:20
 73            android:name="com.closetkeeper.dressy.access"
 73-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:66:13-35
-74            android:exported="false" >
-74-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:67:13-37
-75            <meta-data
-75-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
-76                android:name="android.app.lib_name"
-76-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
-77                android:value="" />
-77-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
-78        </activity>
-79        <activity
-79-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:72:9-80:20
-80            android:name="com.closetkeeper.dressy.ui.MainActivity"
-80-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:73:13-67
-81            android:exported="true" >
-81-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:74:13-36
-82            <intent-filter>
-82-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:75:13-79:29
-83                <action android:name="android.intent.action.MAIN" />
-83-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:76:17-69
-83-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:76:25-66
-84
-85                <category android:name="android.intent.category.LAUNCHER" />
-85-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:78:17-77
-85-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:78:27-74
-86            </intent-filter>
+74            android:exported="true" >
+74-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:67:13-36
+75
+76            <!-- This code makes the current page the first to be loaded -->
+77
+78            <intent-filter>
+78-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:71:13-75:29
+79                <action android:name="android.intent.action.MAIN" />
+79-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:72:17-69
+79-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:72:25-66
+80
+81                <category android:name="android.intent.category.LAUNCHER" />
+81-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:74:17-77
+81-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:74:27-74
+82            </intent-filter>
+83
+84            <meta-data
+84-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+85                android:name="android.app.lib_name"
+85-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+86                android:value="" />
+86-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 87        </activity>
-88
-89        <meta-data
-89-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:82:9-84:57
-90            android:name="preloaded_fonts"
-90-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:83:13-43
-91            android:resource="@array/preloaded_fonts" />
-91-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:84:13-54
-92    </application>
-93
-94</manifest>
+88        <activity
+88-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:82:9-85:20
+89            android:name="com.closetkeeper.dressy.ui.MainActivity"
+89-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:83:13-67
+90            android:exported="true" >
+90-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:84:13-36
+91        </activity>
+92
+93        <meta-data
+93-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:87:9-89:57
+94            android:name="preloaded_fonts"
+94-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:88:13-43
+95            android:resource="@array/preloaded_fonts" />
+95-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:89:13-54
+96    </application>
+97
+98</manifest>
