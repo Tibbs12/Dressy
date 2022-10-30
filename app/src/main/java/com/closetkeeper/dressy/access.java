@@ -56,6 +56,4 @@ public class access extends AppCompatActivity {
         Intent intent = new Intent(this, com.closetkeeper.dressy.sign_in.class);
         startActivity(intent);
     }
-
-    C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\java\com\closetkeeper\dressy\access.java
 }

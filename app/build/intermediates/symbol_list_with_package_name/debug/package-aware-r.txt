@@ -1837,7 +1837,6 @@ id all
 id always
 id animateToEnd
 id animateToStart
-id appCompatButton
 id arc
 id asConfigured
 id async
@@ -2132,7 +2131,10 @@ id showCustom
 id showHome
 id showTitle
 id signIn
+id signInBack
 id signUp
+id signUpBack
+id signUpBtn
 id sin
 id skipCollapsed
 id slide
