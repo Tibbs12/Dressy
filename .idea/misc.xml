@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_access.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_calendar.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_create_closet.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_create_outfit.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_select_closet.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_select_outfit.xml" value="0.1" />
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_signin.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Matt-PC/AndroidStudioProjects/Dressy/app/src/main/res/layout/activity_signup.xml" value="0.25" />
       </map>
     </option>
   </component>
