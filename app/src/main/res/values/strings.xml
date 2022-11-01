@@ -40,6 +40,10 @@
     <string name="back_arrow">Grey arrow that navigates backwards in the app.</string>
     <string name="add_button">Grey plus within a circle to add things.</string>
     <string name="fwd_arrow">Grey arrow that navigates to the next screen in the app.</string>
+    <string name="closet_home">Image btn for closet.</string>
+    <string name="outfit_home">Image btn for an outfit.</string>
+    <string name="create_closet">Btn to create closet.</string>
+
 
 
 </resources>

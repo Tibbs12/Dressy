@@ -8,105 +8,153 @@
     tools:context=".home">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/closets"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="79dp" />
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="350dp"
         android:layout_height="100dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="116dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/closet1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_placeholder" />
+                android:contentDescription="@string/closet_home"
+                app:srcCompat="@drawable/ic_placeholder"
+                tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/closet2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_placeholder" />
+                android:contentDescription="@string/closet_home"
+                app:srcCompat="@drawable/ic_placeholder"
+                tools:ignore="ImageContrastCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/closet3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_placeholder" />
+                android:contentDescription="@string/closet_home"
+                app:srcCompat="@drawable/ic_placeholder"
+                tools:ignore="ImageContrastCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/newclosetbtn"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/create_closet"
                 app:srcCompat="@drawable/create_closet" />
         </LinearLayout>
 
     </HorizontalScrollView>
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/outfits"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        tools:ignore="TextContrastCheck" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="350dp"
         android:layout_height="100dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="298dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/outfit1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/ic_placeholder" />
+                android:contentDescription="@string/outfit_home"
+                app:srcCompat="@drawable/ic_placeholder"
+                tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/outfit2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                app:srcCompat="@drawable/ic_placeholder" />
+                android:contentDescription="@string/outfit_home"
+                app:srcCompat="@drawable/ic_placeholder"
+                tools:ignore="ImageContrastCheck" />
 
             <ImageButton
-                android:id="@+id/imageButton11"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_placeholder" />
-
-            <ImageButton
-                android:id="@+id/imageButton12"
+                android:id="@+id/outfit3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/outfit_home"
+                app:srcCompat="@drawable/ic_placeholder"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageButton
+                android:id="@+id/newoutfitbtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/outfit_home"
                 app:srcCompat="@drawable/create_outfit" />
         </LinearLayout>
     </HorizontalScrollView>
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="291dp"
+        android:layout_marginBottom="273dp"
         android:text="@string/calendar"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="436dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
