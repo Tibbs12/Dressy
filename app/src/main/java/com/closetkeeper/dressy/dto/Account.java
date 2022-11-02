@@ -1,5 +1,7 @@
 package com.closetkeeper.dressy.dto;
 
+import com.closetkeeper.dressy.dao.DatabaseMock;
+
 /**
  * Holds important data like user account number (or account ID), email, and password. When the user registers
  * for the first time, the basic class constructor will automatically create an account ID for the user. If the user already has
@@ -7,7 +9,7 @@ package com.closetkeeper.dressy.dto;
  *
  * <br>
  * <br>Created by Tim on 10/11/22.
- * <br>Last Modified on 10/30/2022.
+ * <br>Last Modified on 11/1/2022.
  */
 public class Account {
 
@@ -15,11 +17,9 @@ public class Account {
     private String email;
     private String password;
 
-
     public Account(){
 
-        //When a new account is being created for the first time, this constructor will automatically
-        //generate the correct value for "accountNum" variable.
+        //Generates the correct account number value when creating a new account
         this.generateAccountNum();
     }
 
@@ -40,7 +40,7 @@ public class Account {
 
     /**
      * Returns Account's email.
-     * @return String.
+     * @return String the account's email.
      */
     public String getEmail() {
         return email;
@@ -52,13 +52,16 @@ public class Account {
      * @param email String of this specific account's email.
      */
     public void setEmail(String email) {
-        this.email = email;
+        //Check to see if parameter is null or empty first
+        if(email != null && !email.trim().isEmpty()){
+            this.email = email;
+        }
     }
 
 
     /**
      * Returns the Account's password.
-     * @return String (non-encrypted).
+     * @return String (non-encrypted) the account's password.
      */
     public String getPassword() {
         return password;
@@ -70,7 +73,10 @@ public class Account {
      * @param password String of this specific account's password.
      */
     public void setPassword(String password) {
-        this.password = password;
+        //Check to see if parameter is null or empty first
+        if(password != null && !password.trim().isEmpty()){
+            this.password = password;
+        }
     }
 
 
@@ -79,14 +85,20 @@ public class Account {
      * one and returning it.
      */
     private void generateAccountNum(){
-        int lastAccountNum_DB = 0; //ToDo: Get lastAccountNum_DB integer from database
+        DatabaseMock myMockData = new DatabaseMock();
+        int lastAccountNum_DB = Integer.parseInt(myMockData.fetchLatestID()); //ToDo: Get lastAccountNum_DB value from live database
+
         accountNum = lastAccountNum_DB + 1;
+
+        //Convert latest account ID to String and push back to database
+        String currentID = String.format("%05d", accountNum);
+        myMockData.updateLatestID(currentID);
     }
 
 
     /**
      * Returns the Account's ID.
-     * @return int.
+     * @return int the account number (account ID).
      */
     public int getID(){
         return accountNum;

@@ -1,15 +1,17 @@
 package com.closetkeeper.dressy.dto;
 
+import android.graphics.Color;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Holds important data like name, all tags associated, and the items that make up this outfit. When the user registers
- * for the first time, the basic class constructor will automatically create an account ID for the user. If the user already has
- * an account, then the secondary constructor needs to be executed allowing this class to receive the existing user's data.
+ * Holds important data like name, all tags associated, and the items that make up this outfit. Holds functions that allow
+ * for the editing and removal of items, plus more. The secondary constructor is used to set existing data about an outfit.
  *
  * <br>
  * <br>Create by Tim on 10/30/2022.
+ * <br>Last Modified on 11/1/2022.
  */
 public class Outfit {
 
@@ -17,6 +19,8 @@ public class Outfit {
     private List<String> tags;
     private List<String> items; //ToDo: Change String data type to Item
 
+    private final String NULL_NAME = "Not Named";
+    private final String ANSI_YELLOW = Integer.toString(Color.YELLOW);
 
     public Outfit(){
         tags = new ArrayList<>();
@@ -25,7 +29,7 @@ public class Outfit {
 
 
     /**
-     * This constructor is used when an Outfit already exist for an user.
+     * This constructor is used when an Outfit already exist for a user.
      * @param name The pre-existing Outfit name from live database.
      * @param tags The pre-existing tags from live database.
      * @param items The pre-existing Items from live database.
@@ -38,13 +42,14 @@ public class Outfit {
 
 
     /**
-     * Returns Outfit name.
-     * @return String.
+     * Returns Outfit name. If String is null or empty, then the function will return the
+     * String "Not Named".
+     * @return String the outfit's name.
      */
     public String getName() {
-        if(name == null)
-        {
-            return "Not Named";
+        //Check to see if outfit name is null or empty
+        if(name == null && name.trim().isEmpty()){
+            return NULL_NAME;
         }
         else {
             return name;
@@ -57,16 +62,29 @@ public class Outfit {
      * @param name String name of the outfit.
      */
     public void setName(String name) {
-        this.name = name;
+        //Check to see if outfit name is null or empty
+        if(name == null && name.trim().isEmpty()){
+            this.name = NULL_NAME;
+        }
+        else
+        {
+            this.name = name;
+        }
     }
 
 
     /**
      * Returns all the tags associated with this Outfit.
-     * @return List<String>.
+     * @return List<String> of tags belonging to this outfit.
      */
     public List<String> getTags() {
-        return tags;
+        //Check to see if outfit tags is empty or null
+        if(tags.isEmpty() && tags == null){
+            return null;
+        }
+        else{
+            return tags;
+        }
     }
 
 
@@ -75,17 +93,27 @@ public class Outfit {
      * @param tags List<String> tags of the outfit.
      */
     public void setTags(List<String> tags) {
-        this.tags = tags;
+        //Check to see if tags parameter is empty or null
+        if(tags != null && !tags.isEmpty()){
+            this.tags = tags;
+        }
     }
 
 
     /**
      * Returns a single tag associated with this Outfit using the index number of the List.
      * @param tagIndex The index value of the specific tag you wish to return.
-     * @return String.
+     * @return String of single tag specified by parameter.
      */
     public String getSingleTag(int tagIndex){
-        return tags.get(tagIndex);
+        //Check to see if tagIndex is empty and in bounds of the List
+        if((tagIndex >= 0 && tagIndex < this.getTagsLength()) && !tags.get(tagIndex).isEmpty()){
+            return tags.get(tagIndex);
+        }
+        else
+        {
+            return null;
+        }
     }
 
 
@@ -94,7 +122,10 @@ public class Outfit {
      * @param tagName String tag name.
      */
     public void addTag(String tagName){
-        tags.add(tagName);
+        //Check to see if tagName is empty or null
+        if(tagName != null && !tagName.trim().isEmpty()){
+            tags.add(tagName);
+        }
     }
 
 
@@ -104,7 +135,11 @@ public class Outfit {
      * @param newName String new tag name.
      */
     public void editTag(int tagIndex, String newName){
-        tags.set(tagIndex, newName);
+        //Check to see if tagIndex is within the List bounds and actually has data. Then checks if newName is not null or empty
+        if((tagIndex >= 0 && tagIndex < this.getTagsLength()) && (!tags.get(tagIndex).isEmpty()) && (newName != null && !newName.trim().isEmpty()))
+        {
+            tags.set(tagIndex, newName);
+        }
     }
 
 
@@ -113,7 +148,10 @@ public class Outfit {
      * @param tagIndex The int index value of the specific tag wished to be removed.
      */
     public void removeTag(int tagIndex){
-        tags.remove(tagIndex);
+        //Check to see if tagIndex is within the List bounds and actually has data
+        if((tagIndex >= 0 && tagIndex < this.getTagsLength()) && !tags.remove(tagIndex).isEmpty()){
+            tags.remove(tagIndex);
+        }
     }
 
 
@@ -121,25 +159,40 @@ public class Outfit {
      * Clears all the tags associated with this Outfit.
      */
     public void clearTags(){
-        tags.clear();
+        //Check to see if the tags List is empty
+        if(!tags.isEmpty() && tags != null){
+            tags.clear();
+        }
     }
 
 
     /**
      * Returns the total amount of tags associated with this Outfit.
-     * @return int.
+     * @return int the length (total amount) of tags.
      */
     public int getTagsLength(){
-        return tags.size();
+        //Check to see if the tags List is empty, if so return int 0
+        if(!tags.isEmpty() && tags != null){
+            return tags.size();
+        }
+        else{
+            return 0;
+        }
     }
 
 
     /**
      * Returns List of Items the Outfit is consisted of.
-     * @return List of Items.
+     * @return List<Item> associated with this outfit.
      */
     public List<String> getItems() {
-        return items;
+        //Check to see if the items List is empty, if so return null
+        if(!items.isEmpty() && items != null){
+            return items;
+        }
+        else{
+            return null;
+        }
     }
 
 
@@ -148,17 +201,27 @@ public class Outfit {
      * @param items List of type Item.
      */
     public void setItems(List<String> items) {
-        this.items = items;
+        //Check to see if items parameter is empty
+        if(!items.isEmpty() && items != null){
+            this.items = items;
+        }
     }
 
 
     /**
      * Returns a single Item associated with this Outfit using the index number of the List.
      * @param itemIndex The index value of the specific Item you wish to return.
-     * @return Item.
+     * @return Item specified by parameter that belongs to this outfit.
      */
     public String getSingleItem(int itemIndex){  //ToDo: Change return type from String to Item
-        return items.get(itemIndex);
+        //Check to see if itemIndex is empty
+        if(!items.get(itemIndex).isEmpty()){
+            return items.get(itemIndex);
+        }
+        else
+        {
+            return null;
+        }
     }
 
 
@@ -167,7 +230,10 @@ public class Outfit {
      * @param newItem The new Item being added to the outfit.
      */
     public void addItem(String newItem){  //ToDo: Change String parameter data type to Item
-        items.add(newItem);
+        //Check to see if itemName is empty
+        if(newItem != null && !newItem.trim().isEmpty()){
+            items.add(newItem);
+        }
     }
 
 
@@ -177,7 +243,11 @@ public class Outfit {
      * @param newItem The new Item.
      */
     public void changeItem(int itemIndex, String newItem){  //ToDo: Change String parameter data type to Item
-        items.set(itemIndex, newItem);
+        //Check to see if itemIndex is within the List bounds and actually has data. Then checks if newItem is not null or empty
+        if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && (!items.get(itemIndex).isEmpty()) && (newItem != null && !newItem.trim().isEmpty()))
+        {
+            items.set(itemIndex, newItem);
+        }
     }
 
 
@@ -186,7 +256,10 @@ public class Outfit {
      * @param itemIndex The int index value of the specific Item wished to be removed.
      */
     public void removeItem(int itemIndex){
-        items.remove(itemIndex);
+        //Check to see if itemIndex is within the List bounds and actually has data
+        if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && !items.remove(itemIndex).isEmpty()){
+            items.remove(itemIndex);
+        }
     }
 
 
@@ -194,15 +267,24 @@ public class Outfit {
      * Clears all the Items associated with this Outfit.
      */
     public void clearItems(){
-        items.clear();
+        //Check to see if the items List is empty
+        if(!items.isEmpty()){
+            items.clear();
+        }
     }
 
 
     /**
      * Returns the total amount of Items associated with this Outfit.
-     * @return int.
+     * @return int the length (total amount) of Items.
      */
     public int getItemsLength(){
-        return items.size();
+        //Check to see if the items List is empty, if so return int 0
+        if(!items.isEmpty() && items != null){
+            return items.size();
+        }
+        else{
+            return 0;
+        }
     }
 }
