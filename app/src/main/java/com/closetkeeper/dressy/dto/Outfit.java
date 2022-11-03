@@ -1,7 +1,5 @@
 package com.closetkeeper.dressy.dto;
 
-import android.graphics.Color;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +8,7 @@ import java.util.List;
  * for the editing and removal of items, plus more. The secondary constructor is used to set existing data about an outfit.
  *
  * <br>
- * <br>Create by Tim on 10/30/2022.
+ * <br>Created by Tim on 10/30/2022.
  * <br>Last Modified on 11/1/2022.
  */
 public class Outfit {
@@ -20,7 +18,6 @@ public class Outfit {
     private List<String> items; //ToDo: Change String data type to Item
 
     private final String NULL_NAME = "Not Named";
-    private final String ANSI_YELLOW = Integer.toString(Color.YELLOW);
 
     public Outfit(){
         tags = new ArrayList<>();
@@ -30,9 +27,9 @@ public class Outfit {
 
     /**
      * This constructor is used when an Outfit already exist for a user.
-     * @param name The pre-existing Outfit name from live database.
-     * @param tags The pre-existing tags from live database.
-     * @param items The pre-existing Items from live database.
+     * @param name The pre-existing Outfit name from database.
+     * @param tags The pre-existing tags from database.
+     * @param items The pre-existing Items from database.
      */
     public Outfit(String name, List<String> tags, List<String> items){
         this.name = name;
@@ -44,11 +41,11 @@ public class Outfit {
     /**
      * Returns Outfit name. If String is null or empty, then the function will return the
      * String "Not Named".
-     * @return String the outfit's name.
+     * @return String of outfit's name.
      */
     public String getName() {
         //Check to see if outfit name is null or empty
-        if(name == null && name.trim().isEmpty()){
+        if(name == null || name.trim().isEmpty()){
             return NULL_NAME;
         }
         else {
@@ -63,7 +60,7 @@ public class Outfit {
      */
     public void setName(String name) {
         //Check to see if outfit name is null or empty
-        if(name == null && name.trim().isEmpty()){
+        if(name == null || name.trim().isEmpty()){
             this.name = NULL_NAME;
         }
         else
@@ -79,7 +76,7 @@ public class Outfit {
      */
     public List<String> getTags() {
         //Check to see if outfit tags is empty or null
-        if(tags.isEmpty() && tags == null){
+        if(tags.isEmpty() || tags == null){
             return null;
         }
         else{
@@ -171,13 +168,7 @@ public class Outfit {
      * @return int the length (total amount) of tags.
      */
     public int getTagsLength(){
-        //Check to see if the tags List is empty, if so return int 0
-        if(!tags.isEmpty() && tags != null){
-            return tags.size();
-        }
-        else{
-            return 0;
-        }
+        return tags.size();
     }
 
 
@@ -197,7 +188,7 @@ public class Outfit {
 
 
     /**
-     * Sets Outfit's Items List.
+     * Sets the Outfit's Items List.
      * @param items List of type Item.
      */
     public void setItems(List<String> items) {
@@ -279,12 +270,6 @@ public class Outfit {
      * @return int the length (total amount) of Items.
      */
     public int getItemsLength(){
-        //Check to see if the items List is empty, if so return int 0
-        if(!items.isEmpty() && items != null){
-            return items.size();
-        }
-        else{
-            return 0;
-        }
+        return items.size();
     }
 }

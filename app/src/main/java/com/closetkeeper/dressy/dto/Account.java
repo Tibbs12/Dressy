@@ -4,7 +4,7 @@ import com.closetkeeper.dressy.dao.DatabaseMock;
 
 /**
  * Holds important data like user account number (or account ID), email, and password. When the user registers
- * for the first time, the basic class constructor will automatically create an account ID for the user. If the user already has
+ * for the first time, the default constructor will automatically create an account ID for the user. If the user already has
  * an account, then the secondary constructor needs to be executed allowing this class to receive the existing user's data.
  *
  * <br>
@@ -26,9 +26,9 @@ public class Account {
 
     /**
      * This constructor is used when account already exist and the user is signing back in.
-     * @param accountNum The pre-existing account number from live database.
-     * @param email The pre-existing account email from live database.
-     * @param password The pre-existing account password from live database.
+     * @param accountNum The pre-existing account number from database.
+     * @param email The pre-existing account email from database.
+     * @param password The pre-existing account password from database.
      */
     public Account(int accountNum, String email, String password){
 
@@ -40,7 +40,7 @@ public class Account {
 
     /**
      * Returns Account's email.
-     * @return String the account's email.
+     * @return String of account's email.
      */
     public String getEmail() {
         return email;
@@ -61,7 +61,7 @@ public class Account {
 
     /**
      * Returns the Account's password.
-     * @return String (non-encrypted) the account's password.
+     * @return String (non-encrypted) of account's password.
      */
     public String getPassword() {
         return password;
@@ -85,6 +85,7 @@ public class Account {
      * one and returning it.
      */
     private void generateAccountNum(){
+        //ToDo: Probably should have a function in Database class do this instead of Account class generating own ID. Can have this method pull from Database and assign to user.
         DatabaseMock myMockData = new DatabaseMock();
         int lastAccountNum_DB = Integer.parseInt(myMockData.fetchLatestID()); //ToDo: Get lastAccountNum_DB value from live database
 
@@ -98,7 +99,7 @@ public class Account {
 
     /**
      * Returns the Account's ID.
-     * @return int the account number (account ID).
+     * @return int of account number (account ID).
      */
     public int getID(){
         return accountNum;
