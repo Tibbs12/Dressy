@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         //We will first display the contents of the splash screen and then move to access page
 
-        setContentView(R.layout.activity_access);
+        Intent intent = new Intent(this, com.closetkeeper.dressy.access.class);
+        startActivity(intent);
 
     }
 
