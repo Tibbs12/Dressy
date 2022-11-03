@@ -31,7 +31,7 @@ public class Outfit {
      * @param tags The pre-existing tags from database.
      * @param items The pre-existing Items from database.
      */
-    public Outfit(String name, List<String> tags, List<String> items){
+    public Outfit(String name, List<String> tags, List<String> items){  //ToDo: Change List<String> items to List<Item> items
         this.name = name;
         this.tags = tags;
         this.items = items;
@@ -176,7 +176,7 @@ public class Outfit {
      * Returns List of Items the Outfit is consisted of.
      * @return List<Item> associated with this outfit.
      */
-    public List<String> getItems() {
+    public List<String> getItems() {  //ToDo: Change List<String> to List<Item>
         //Check to see if the items List is empty, if so return null
         if(!items.isEmpty() && items != null){
             return items;
@@ -191,7 +191,7 @@ public class Outfit {
      * Sets the Outfit's Items List.
      * @param items List of type Item.
      */
-    public void setItems(List<String> items) {
+    public void setItems(List<String> items) {  //ToDo: Change List<String> to List<Item>
         //Check to see if items parameter is empty
         if(!items.isEmpty() && items != null){
             this.items = items;
