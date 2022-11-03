@@ -40,8 +40,8 @@ public class createOutfit extends AppCompatActivity {
     /**Opens Home activity page*/
     public void openHome() {
 
-        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
-        startActivity(intent);
+        finish();                   /** Using this finish() method allows us to open the parent
+                                    * page, this makes the back button on a page more functionally correct */
     }
 
     /**Opens selectOutfit activity page*/

@@ -46,7 +46,7 @@ public class createCloset extends AppCompatActivity {
     /**Opens selectOutfit activity page*/
     public void selectCloset() {
 
-        Intent intent = new Intent(this, com.closetkeeper.dressy.selectOutfit.class);
+        Intent intent = new Intent(this, com.closetkeeper.dressy.selectCloset.class);
         startActivity(intent);      //Take in user input from this XML sheet and pass it to the new page
     }
 }
