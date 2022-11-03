@@ -23,8 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_back"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:background="null"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,7 +66,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_add"
-        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
-        android:background="null"/>
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

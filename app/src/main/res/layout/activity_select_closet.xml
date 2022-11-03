@@ -23,8 +23,7 @@
         app:layout_constraintStart_toEndOf="@+id/outfitsHeader"
         app:layout_constraintTop_toBottomOf="@+id/itemsGrid"
         app:srcCompat="@drawable/ic_add"
-        tools:ignore="DuplicateSpeakableTextCheck"
-        android:background="null"/>
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/closetNameInput"
@@ -111,8 +110,7 @@
         app:layout_constraintBottom_toTopOf="@+id/itemsGrid"
         app:layout_constraintStart_toEndOf="@+id/itemsHeader"
         app:layout_constraintTop_toBottomOf="@+id/searchView"
-        app:srcCompat="@drawable/ic_add"
-        android:background="null"/>
+        app:srcCompat="@drawable/ic_add" />
 
     <TextView
         android:id="@+id/outfitsHeader"
@@ -144,8 +142,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/closetAddOutfits"
-        app:srcCompat="@drawable/ic_arrow_forward"
-        android:background="null"/>
+        app:srcCompat="@drawable/ic_arrow_forward" />
 
     <ImageButton
         android:id="@+id/closetBackBtn"
@@ -160,8 +157,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back"
-         android:background="null"/>
+        app:srcCompat="@drawable/ic_arrow_back" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
