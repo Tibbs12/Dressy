@@ -78,8 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/searchView2"
-        app:srcCompat="@drawable/ic_add"
-        android:background="null"/>
+        app:srcCompat="@drawable/ic_add" />
 
     <ImageButton
         android:id="@+id/outfitFwdBtn"
@@ -95,8 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-        app:srcCompat="@drawable/ic_arrow_forward"
-        android:background="null"/>
+        app:srcCompat="@drawable/ic_arrow_forward" />
 
     <ImageButton
         android:id="@+id/outfitBackBtn"
@@ -111,6 +109,5 @@
         app:layout_constraintBottom_toTopOf="@+id/searchView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back"
-        android:background="null"/>
+        app:srcCompat="@drawable/ic_arrow_back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,7 @@ public class sign_in extends AppCompatActivity{
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMain();
+                openHome();
             }
         });
 
@@ -63,11 +63,11 @@ public class sign_in extends AppCompatActivity{
         startActivity(intent);
     }
 
-    /**Opens Main activity page*/
-    public void openMain() {
+    /**Opens Home activity page*/
+    public void openHome() {
 
         /**NOTE: This is where the account class needs to check to see if the account is valid*/
-        Intent intent = new Intent(this, com.closetkeeper.dressy.ui.MainActivity.class);
+        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
         startActivity(intent);
     }
 }

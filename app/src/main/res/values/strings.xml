@@ -42,7 +42,7 @@
     <string name="fwd_arrow">Grey arrow that navigates to the next screen in the app.</string>
     <string name="closet_home">Image btn for closet.</string>
     <string name="outfit_home">Image btn for an outfit.</string>
-    <string name="create_closet">Btn to create closet.</string>
+    <string name="closet_Btn">Btn to create closet.</string>
 
 
 
