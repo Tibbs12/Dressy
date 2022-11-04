@@ -6,16 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class selectCloset extends AppCompatActivity {
 
     private ImageButton closetBackBtn;           /**Instantiating the ImageButtons*/
     private ImageButton closetAddOutfits;
+    private TextView closetNameInput;
+
+    /** Need static variables to pass data using intent */
+    public final static String CLOSETNAME = "CLOSETNAME";
+
+    private String closetName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_closet);
+
+        /** Sets up textview on selectCloset page, sets passed data into the textview */
+        closetNameInput = (TextView) findViewById(R.id.closetNameInput);
+        Intent intent = getIntent();
+        closetName = intent.getStringExtra(CLOSETNAME);
+        closetNameInput.setText(closetName);
+
 
         /** setting variables equal to the xml button and creating OnClick listeners */
 
@@ -23,7 +37,7 @@ public class selectCloset extends AppCompatActivity {
         closetBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createCloset();
+                finish();
             }
         });
 
@@ -44,9 +58,5 @@ public class selectCloset extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /** Method that changes page to createCloset page */
-    public void createCloset() {
-        Intent intent = new Intent(this, com.closetkeeper.dressy.createCloset.class);
-        startActivity(intent);
-    }
+
 }
