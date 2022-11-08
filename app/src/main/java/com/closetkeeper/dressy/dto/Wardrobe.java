@@ -12,7 +12,7 @@ import java.util.*;
 public class Wardrobe {
 
     private int account_id;
-    private List<String> clothes;   //TODO: Rename type String to Items
+    private List<Item> clothes;
     private List<String> outfits;   //TODO: Rename type String to Outfit
 
     //Returns the user's Account ID
@@ -26,12 +26,12 @@ public class Wardrobe {
     }
 
     //Returns the list of Items[] from clothes
-    public List<String> getClothes() {
+    public List<Item> getClothes() {
         return clothes;
     }
 
     //Sets the List of clothes into List<Clothes> clothes
-    public void setClothes(List<String> clothes) {
+    public void setClothes(List<Item> clothes) {
         this.clothes = clothes;
     }
 
