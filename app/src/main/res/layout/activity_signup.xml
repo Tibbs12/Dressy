@@ -8,6 +8,21 @@
     tools:context=".sign_up">
 
     <TextView
+        android:id="@+id/signUpError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:gravity="clip_horizontal|center|center_vertical"
+        android:text="Error: email is invalid"
+        android:textColor="#FF3A3A"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
         android:id="@+id/motto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

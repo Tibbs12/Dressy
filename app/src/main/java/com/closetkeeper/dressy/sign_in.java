@@ -6,10 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.closetkeeper.dressy.ui.MainActivity;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class sign_in extends AppCompatActivity{
 
@@ -18,11 +22,16 @@ public class sign_in extends AppCompatActivity{
     private TextView existingAcct;
     private ImageButton signInBack;
     private Button loginBtn;
+    private EditText loginEmailHint;
+    private TextView loginError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
+
+        loginEmailHint = (EditText) findViewById(R.id.loginEmailHint);
+        loginError = (TextView) findViewById(R.id.loginError);
 
         /**Onclick listeners for sign_in activity*/
 
@@ -66,8 +75,20 @@ public class sign_in extends AppCompatActivity{
     /**Opens Home activity page*/
     public void openHome() {
 
-        /**NOTE: This is where the account class needs to check to see if the account is valid*/
-        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
-        startActivity(intent);
+        String email;
+        email = loginEmailHint.getText().toString().trim();
+        Pattern p = Pattern.compile("@");
+        Pattern p2 = Pattern.compile(".");
+        Matcher m = p.matcher(email);
+        Matcher m2 = p2.matcher(email);
+
+        if(m.find() && m2.find()) {
+
+            /**NOTE: This is where the account class needs to check to see if the account is valid*/
+            Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+            startActivity(intent);
+        }
+        else
+            loginError.setVisibility(View.VISIBLE);
     }
 }

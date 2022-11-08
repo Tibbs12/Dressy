@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class sign_up extends AppCompatActivity {
 
@@ -18,11 +22,16 @@ public class sign_up extends AppCompatActivity {
     private TextView textView6;
     private ImageButton signUpBack;
     private Button signUpBtn;
+    private EditText emailHint;
+    private TextView signUpError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        emailHint = (EditText) findViewById(R.id.emailHint);
+        signUpError = (TextView) findViewById(R.id.signUpError);
 
     /**
     * Onclick listeners for signup activity
@@ -72,9 +81,21 @@ public class sign_up extends AppCompatActivity {
     /**Opens Home activity page*/
     public void openHome() {
 
-        /**NOTE: This is where the account class needs to check to see if the account is valid*/
-        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
-        startActivity(intent);
+        String email;
+        email = emailHint.getText().toString().trim();
+        Pattern p = Pattern.compile("@");
+        Pattern p2 = Pattern.compile(".");
+        Matcher m = p.matcher(email);
+        Matcher m2 = p2.matcher(email);
+
+        if(m.find() && m2.find()) {
+
+            /**NOTE: This is where the account class needs to check to see if the account is valid*/
+            Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+            startActivity(intent);
+        }
+        else
+            signUpError.setVisibility(View.VISIBLE);
     }
 
 }

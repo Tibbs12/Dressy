@@ -34,36 +34,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <LinearLayout
+            android:id="@+id/MyClosets"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/closet1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/closet_home"
-                app:srcCompat="@drawable/ic_placeholder"
-                tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
-
-            <ImageButton
-                android:id="@+id/closet2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/closet_home"
-                app:srcCompat="@drawable/ic_placeholder"
-                tools:ignore="ImageContrastCheck" />
-
-            <ImageButton
-                android:id="@+id/closet3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/closet_home"
-                app:srcCompat="@drawable/ic_placeholder"
-                tools:ignore="ImageContrastCheck" />
 
             <ImageButton
                 android:id="@+id/newclosetbtn"
@@ -103,34 +77,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <LinearLayout
+            android:id="@+id/MyOutfits"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/outfit1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="@string/outfit_home"
-                app:srcCompat="@drawable/ic_placeholder"
-                tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
-
-            <ImageButton
-                android:id="@+id/outfit2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="@string/outfit_home"
-                app:srcCompat="@drawable/ic_placeholder"
-                tools:ignore="ImageContrastCheck" />
-
-            <ImageButton
-                android:id="@+id/outfit3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:contentDescription="@string/outfit_home"
-                app:srcCompat="@drawable/ic_placeholder"
-                tools:ignore="ImageContrastCheck" />
 
             <ImageButton
                 android:id="@+id/newoutfitbtn"
@@ -143,13 +93,14 @@
     </HorizontalScrollView>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/calendarClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="291dp"
         android:layout_marginBottom="273dp"
+        android:clickable="true"
         android:text="@string/calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
