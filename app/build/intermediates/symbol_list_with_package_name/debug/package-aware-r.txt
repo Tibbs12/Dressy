@@ -1761,6 +1761,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable ootd_date
 drawable selection_bg
 drawable splash_bg
 drawable test_custom_background
@@ -1992,6 +1993,11 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageButton
+id imageButton2
+id imageButton3
+id imageButton4
+id imageView
 id info
 id invisible
 id inward
@@ -2215,8 +2221,10 @@ id textTop
 id textView
 id textView2
 id textView3
+id textView4
 id textView5
 id textView6
+id textView7
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2331,6 +2339,7 @@ layout activity_create_closet
 layout activity_create_outfit
 layout activity_home
 layout activity_main
+layout activity_ootd
 layout activity_outfit_canvas
 layout activity_select_closet
 layout activity_select_outfit
@@ -2471,6 +2480,7 @@ string closet_placeholder
 string closets
 string create_closet
 string create_outfit
+string date_placeholder
 string delete_btn
 string done
 string edit_btn

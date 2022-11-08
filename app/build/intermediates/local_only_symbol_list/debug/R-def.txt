@@ -34,6 +34,7 @@ drawable ic_launcher_foreground
 drawable ic_password
 drawable ic_placeholder
 drawable ic_user
+drawable ootd_date
 drawable selection_bg
 drawable splash_bg
 font poppins
@@ -72,6 +73,11 @@ id existingAcct
 id gridLayout
 id horizontalScrollView
 id horizontalScrollView2
+id imageButton
+id imageButton2
+id imageButton3
+id imageButton4
+id imageView
 id itemsGrid
 id itemsHeader
 id login
@@ -103,14 +109,17 @@ id signUpError
 id textView
 id textView2
 id textView3
+id textView4
 id textView5
 id textView6
+id textView7
 layout activity_access
 layout activity_calendar
 layout activity_create_closet
 layout activity_create_outfit
 layout activity_home
 layout activity_main
+layout activity_ootd
 layout activity_outfit_canvas
 layout activity_select_closet
 layout activity_select_outfit
@@ -131,6 +140,7 @@ string closet_placeholder
 string closets
 string create_closet
 string create_outfit
+string date_placeholder
 string delete_btn
 string done
 string edit_btn

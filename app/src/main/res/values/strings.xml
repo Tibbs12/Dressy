@@ -9,6 +9,7 @@
     <string name="closets">My Closets</string>
     <string name="outfits">My Outfits</string>
     <string name="calendar">My Calendar</string>
+    <string name="date_placeholder">displayDate</string>
 
     <!--access-->
     <string name="or">OR</string>
