@@ -10,18 +10,18 @@ import java.util.List;
  ******/
 public class Item
 {
-    private String name;
+    private String id;
     private List<String> tags;
     private File image;
     private File thumbnail;
 
 
-    public String getName() {
-        return name;
+    public String getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(String id) {
+        this.id = id;
     }
 
 
