@@ -32,13 +32,19 @@
     <string name="app_name">Dressy</string>
     <string name="back_arrow">Grey arrow that navigates backwards in the app.</string>
     <string name="calendar">My Calendar</string>
+    <string name="canvas_view">Canvas for the user to drag and drop outfit items.</string>
+    <string name="closet_Btn">Btn to create closet.</string>
     <string name="closet_hint">[closetName]</string>
+    <string name="closet_home">Image btn for closet.</string>
     <string name="closet_name">Closet Name:</string>
     <string name="closet_placeholder">ex. Winter Clothes</string>
     <string name="closets">My Closets</string>
     <string name="create_closet">Create a Closet</string>
     <string name="create_outfit">Create an Outfit</string>
+    <string name="date_placeholder">displayDate</string>
+    <string name="delete_btn">Image btn to delete contents of an outfit.</string>
     <string name="done">Done</string>
+    <string name="edit_btn">Edit btn to edit an existing outfit or save changes to an outfit.</string>
     <string name="email">Email</string>
     <string name="existing_acct">Already have an account? <b>Log In</b></string>
     <string name="fwd_arrow">Grey arrow that navigates to the next screen in the app.</string>
@@ -48,6 +54,7 @@
     <string name="no_account">Don\'t have an account? <b>Sign Up</b></string>
     <string name="or">OR</string>
     <string name="outfit_hint">[outfitName]</string>
+    <string name="outfit_home">Image btn for an outfit.</string>
     <string name="outfit_name">Outfit Name:</string>
     <string name="outfit_placeholder">ex. Date Night</string>
     <string name="outfits">My Outfits</string>

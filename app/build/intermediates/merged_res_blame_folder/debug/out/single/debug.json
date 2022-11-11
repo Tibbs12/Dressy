@@ -4,6 +4,14 @@
         "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-ldpi/splash_bg.png"
     },
     {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-mdpi_home_bg.png.flat",
+        "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-mdpi/home_bg.png"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_canvas.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/canvas.xml"
+    },
+    {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-xxhdpi_calendar_bg.png.flat",
         "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-xxhdpi/calendar_bg.png"
     },
@@ -34,6 +42,10 @@
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/layout_activity_create_outfit.xml.flat",
         "source": "com.closetkeeper.dressy.app-main-21:/layout/activity_create_outfit.xml"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-hdpi_home_bg.png.flat",
+        "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-hdpi/home_bg.png"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-ldpi_calendar_bg.png.flat",
@@ -92,8 +104,16 @@
         "source": "com.closetkeeper.dressy.app-main-21:/drawable/ic_password.xml"
     },
     {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_create_closet.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/create_closet.xml"
+    },
+    {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "com.closetkeeper.dressy.app-main-21:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-anydpi-v24_home_bg.xml.flat",
+        "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-anydpi-v24/home_bg.xml"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-mdpi_selection_bg.png.flat",
@@ -102,6 +122,10 @@
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "com.closetkeeper.dressy.app-main-21:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_ic_edit.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/ic_edit.xml"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/layout_activity_signup.xml.flat",
@@ -120,6 +144,14 @@
         "source": "com.closetkeeper.dressy.app-main-21:/drawable/ic_add.xml"
     },
     {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/layout_activity_ootd.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/layout/activity_ootd.xml"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_ic_add_canvas.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/ic_add_canvas.xml"
+    },
+    {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
@@ -136,12 +168,20 @@
         "source": "com.closetkeeper.dressy.app-main-21:/layout/activity_calendar.xml"
     },
     {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_ootd_date.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/ootd_date.xml"
+    },
+    {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/layout_activity_select_outfit.xml.flat",
         "source": "com.closetkeeper.dressy.app-main-21:/layout/activity_select_outfit.xml"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/font_poppins.xml.flat",
         "source": "com.closetkeeper.dressy.app-main-21:/font/poppins.xml"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_create_outfit.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/create_outfit.xml"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/layout_activity_access.xml.flat",
@@ -168,8 +208,24 @@
         "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-xhdpi/selection_bg.png"
     },
     {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-xxxhdpi_home_bg.png.flat",
+        "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-xxxhdpi/home_bg.png"
+    },
+    {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "com.closetkeeper.dressy.app-main-21:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-xhdpi_home_bg.png.flat",
+        "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-xhdpi/home_bg.png"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/layout_activity_home.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-ldpi_home_bg.png.flat",
+        "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-ldpi/home_bg.png"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-xhdpi_calendar_bg.png.flat",
@@ -196,8 +252,16 @@
         "source": "com.closetkeeper.dressy.app-main-21:/xml/data_extraction_rules.xml"
     },
     {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/layout_activity_outfit_canvas.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/layout/activity_outfit_canvas.xml"
+    },
+    {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-hdpi_calendar_bg.png.flat",
         "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-hdpi/calendar_bg.png"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_ic_delete.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/ic_delete.xml"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_buttons.xml.flat",
@@ -206,6 +270,14 @@
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "com.closetkeeper.dressy.app-main-21:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable_ic_placeholder.xml.flat",
+        "source": "com.closetkeeper.dressy.app-main-21:/drawable/ic_placeholder.xml"
+    },
+    {
+        "merged": "com.closetkeeper.dressy.app-merged_res-19:/drawable-xxhdpi_home_bg.png.flat",
+        "source": "com.closetkeeper.dressy.app-pngs-14:/drawable-xxhdpi/home_bg.png"
     },
     {
         "merged": "com.closetkeeper.dressy.app-merged_res-19:/mipmap-xhdpi_ic_launcher.webp.flat",

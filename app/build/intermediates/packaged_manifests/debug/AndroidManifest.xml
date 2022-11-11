@@ -21,6 +21,27 @@
         android:testOnly="true"
         android:theme="@style/Theme.Dressy" >
         <activity
+            android:name="com.closetkeeper.dressy.ootd"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.closetkeeper.dressy.outfit_canvas"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.closetkeeper.dressy.home"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.closetkeeper.dressy.selectOutfit"
             android:exported="false" >
             <meta-data
@@ -74,13 +95,6 @@
             android:exported="true" >
 
             <!-- This code makes the current page the first to be loaded -->
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -88,6 +102,11 @@
         <activity
             android:name="com.closetkeeper.dressy.ui.MainActivity"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data

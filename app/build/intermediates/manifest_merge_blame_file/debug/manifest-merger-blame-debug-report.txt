@@ -6,164 +6,201 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="22"
-8-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml
+8-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml
+9-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:6:5-90:19
+11-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:6:5-108:19
 12        android:allowBackup="true"
-12-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:7:9-35
+12-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:7:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.5.0] C:\Users\Matt-PC\.gradle\caches\transforms-3\09dce287f966ede6f56d2bc091f83727\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.5.0] C:\Users\Not Namik\.gradle\caches\transforms-3\09dce287f966ede6f56d2bc091f83727\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 14        android:dataExtractionRules="@xml/data_extraction_rules"
-14-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:8:9-65
+14-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:8:9-65
 15        android:debuggable="true"
 16        android:fullBackupContent="@xml/backup_rules"
-16-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:9:9-54
+16-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:9:9-54
 17        android:icon="@mipmap/ic_launcher"
-17-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:10:9-43
+17-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:10:9-43
 18        android:label="@string/app_name"
-18-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:11:9-41
+18-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:11:9-41
 19        android:roundIcon="@mipmap/ic_launcher_round"
-19-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:12:9-54
+19-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:12:9-54
 20        android:supportsRtl="true"
-20-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:13:9-35
+20-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:13:9-35
 21        android:testOnly="true"
 22        android:theme="@style/Theme.Dressy" >
-22-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:14:9-44
+22-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:14:9-44
 23        <activity
-23-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:16:9-22:20
-24            android:name="com.closetkeeper.dressy.selectOutfit"
-24-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:17:13-41
+23-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:16:9-22:20
+24            android:name="com.closetkeeper.dressy.ootd"
+24-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:17:13-33
 25            android:exported="false" >
-25-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:18:13-37
+25-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:18:13-37
 26            <meta-data
-26-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+26-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
 27                android:name="android.app.lib_name"
-27-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+27-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
 28                android:value="" />
-28-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+28-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 29        </activity>
 30        <activity
-30-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:23:9-29:20
-31            android:name="com.closetkeeper.dressy.selectCloset"
-31-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:24:13-41
+30-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:23:9-29:20
+31            android:name="com.closetkeeper.dressy.outfit_canvas"
+31-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:24:13-42
 32            android:exported="false" >
-32-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:25:13-37
+32-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:25:13-37
 33            <meta-data
-33-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+33-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
 34                android:name="android.app.lib_name"
-34-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+34-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
 35                android:value="" />
-35-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+35-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 36        </activity>
 37        <activity
-37-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:30:9-36:20
-38            android:name="com.closetkeeper.dressy.calendar"
-38-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:31:13-37
+37-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:30:9-36:20
+38            android:name="com.closetkeeper.dressy.home"
+38-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:31:13-33
 39            android:exported="false" >
-39-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:32:13-37
+39-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:32:13-37
 40            <meta-data
-40-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+40-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
 41                android:name="android.app.lib_name"
-41-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+41-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
 42                android:value="" />
-42-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+42-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 43        </activity>
 44        <activity
-44-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:37:9-43:20
-45            android:name="com.closetkeeper.dressy.createCloset"
-45-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:38:13-41
+44-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:37:9-43:20
+45            android:name="com.closetkeeper.dressy.selectOutfit"
+45-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:38:13-41
 46            android:exported="false" >
-46-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:39:13-37
+46-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:39:13-37
 47            <meta-data
-47-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+47-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
 48                android:name="android.app.lib_name"
-48-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+48-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
 49                android:value="" />
-49-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+49-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 50        </activity>
 51        <activity
-51-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:44:9-50:20
-52            android:name="com.closetkeeper.dressy.createOutfit"
-52-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:45:13-41
+51-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:44:9-50:20
+52            android:name="com.closetkeeper.dressy.selectCloset"
+52-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:45:13-41
 53            android:exported="false" >
-53-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:46:13-37
+53-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:46:13-37
 54            <meta-data
-54-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+54-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
 55                android:name="android.app.lib_name"
-55-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+55-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
 56                android:value="" />
-56-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+56-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 57        </activity>
 58        <activity
-58-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:51:9-57:20
-59            android:name="com.closetkeeper.dressy.sign_up"
-59-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:52:13-36
+58-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:51:9-57:20
+59            android:name="com.closetkeeper.dressy.calendar"
+59-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:52:13-37
 60            android:exported="false" >
-60-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:53:13-37
+60-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:53:13-37
 61            <meta-data
-61-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+61-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
 62                android:name="android.app.lib_name"
-62-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+62-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
 63                android:value="" />
-63-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+63-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 64        </activity>
 65        <activity
-65-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:58:9-64:20
-66            android:name="com.closetkeeper.dressy.sign_in"
-66-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:59:13-36
+65-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:58:9-64:20
+66            android:name="com.closetkeeper.dressy.createCloset"
+66-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:59:13-41
 67            android:exported="false" >
-67-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:60:13-37
+67-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:60:13-37
 68            <meta-data
-68-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+68-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
 69                android:name="android.app.lib_name"
-69-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+69-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
 70                android:value="" />
-70-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+70-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
 71        </activity>
 72        <activity
-72-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:65:9-81:20
-73            android:name="com.closetkeeper.dressy.access"
-73-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:66:13-35
-74            android:exported="true" >
-74-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:67:13-36
-75
-76            <!-- This code makes the current page the first to be loaded -->
-77
-78            <intent-filter>
-78-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:71:13-75:29
-79                <action android:name="android.intent.action.MAIN" />
-79-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:72:17-69
-79-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:72:25-66
-80
-81                <category android:name="android.intent.category.LAUNCHER" />
-81-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:74:17-77
-81-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:74:27-74
-82            </intent-filter>
-83
-84            <meta-data
-84-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
-85                android:name="android.app.lib_name"
-85-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:20:17-52
-86                android:value="" />
-86-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:21:17-33
-87        </activity>
-88        <activity
-88-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:82:9-85:20
-89            android:name="com.closetkeeper.dressy.ui.MainActivity"
-89-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:83:13-67
-90            android:exported="true" >
-90-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:84:13-36
-91        </activity>
-92
-93        <meta-data
-93-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:87:9-89:57
-94            android:name="preloaded_fonts"
-94-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:88:13-43
-95            android:resource="@array/preloaded_fonts" />
-95-->C:\Users\Matt-PC\AndroidStudioProjects\Dressy\app\src\main\AndroidManifest.xml:89:13-54
-96    </application>
-97
-98</manifest>
+72-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:65:9-71:20
+73            android:name="com.closetkeeper.dressy.createOutfit"
+73-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:66:13-41
+74            android:exported="false" >
+74-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:67:13-37
+75            <meta-data
+75-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+76                android:name="android.app.lib_name"
+76-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+77                android:value="" />
+77-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+78        </activity>
+79        <activity
+79-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:72:9-78:20
+80            android:name="com.closetkeeper.dressy.sign_up"
+80-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:73:13-36
+81            android:exported="false" >
+81-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:74:13-37
+82            <meta-data
+82-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+83                android:name="android.app.lib_name"
+83-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+84                android:value="" />
+84-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+85        </activity>
+86        <activity
+86-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:79:9-85:20
+87            android:name="com.closetkeeper.dressy.sign_in"
+87-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:80:13-36
+88            android:exported="false" >
+88-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:81:13-37
+89            <meta-data
+89-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+90                android:name="android.app.lib_name"
+90-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+91                android:value="" />
+91-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+92        </activity>
+93        <activity
+93-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:86:9-94:20
+94            android:name="com.closetkeeper.dressy.access"
+94-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:87:13-35
+95            android:exported="true" >
+95-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:88:13-36
+96
+97            <!-- This code makes the current page the first to be loaded -->
+98            <meta-data
+98-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:19:13-21:36
+99                android:name="android.app.lib_name"
+99-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:20:17-52
+100                android:value="" />
+100-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:21:17-33
+101        </activity>
+102        <activity
+102-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:95:9-103:20
+103            android:name="com.closetkeeper.dressy.ui.MainActivity"
+103-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:96:13-44
+104            android:exported="true" >
+104-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:97:13-36
+105            <intent-filter>
+105-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:98:13-102:29
+106                <action android:name="android.intent.action.MAIN" />
+106-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:99:17-69
+106-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:99:25-66
+107
+108                <category android:name="android.intent.category.LAUNCHER" />
+108-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:101:17-77
+108-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:101:27-74
+109            </intent-filter>
+110        </activity>
+111
+112        <meta-data
+112-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:105:9-107:57
+113            android:name="preloaded_fonts"
+113-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:106:13-43
+114            android:resource="@array/preloaded_fonts" />
+114-->C:\Users\Not Namik\Documents\GitHub\Dressy\app\src\main\AndroidManifest.xml:107:13-54
+115    </application>
+116
+117</manifest>
