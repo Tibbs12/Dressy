@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.dto.Account;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,6 +26,7 @@ public class sign_up extends AppCompatActivity {
     private Button signUpBtn;
     private EditText emailHint;
     private TextView signUpError;
+    private EditText pwdHint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class sign_up extends AppCompatActivity {
 
         emailHint = (EditText) findViewById(R.id.emailHint);
         signUpError = (TextView) findViewById(R.id.signUpError);
+        pwdHint = (EditText) findViewById(R.id.pwdHint);
 
     /**
     * Onclick listeners for signup activity
@@ -82,16 +86,23 @@ public class sign_up extends AppCompatActivity {
     public void openHome() {
 
         String email;
+        String pass;
+        pass = pwdHint.getText().toString().trim();
         email = emailHint.getText().toString().trim();
         Pattern p = Pattern.compile("@");
         Pattern p2 = Pattern.compile(".");
         Matcher m = p.matcher(email);
         Matcher m2 = p2.matcher(email);
 
+
         if(m.find() && m2.find()) {
 
+            Account MyAccount = new Account();
+            MyAccount.setEmail(email);
+            MyAccount.setPassword(pass);
+
             /**NOTE: This is where the account class needs to check to see if the account is valid*/
-            Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+            Intent intent = new Intent(this, home.class);
             startActivity(intent);
         }
         else

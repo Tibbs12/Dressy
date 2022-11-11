@@ -70,7 +70,7 @@ public class home extends AppCompatActivity {
 
     public void createOutfit() {
         ImageButton outfit = new ImageButton(this);         /** This code adds a button each time*/
-        outfit.setLayoutParams(MyOutfits.getLayoutParams());       /** we create a new closet */
+        outfit.setLayoutParams(MyOutfits.getLayoutParams());       /** we create a new outfit */
         MyOutfits.addView(outfit);
         Intent intent = new Intent(this, com.closetkeeper.dressy.createOutfit.class);
         startActivity(intent);
