@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/closetNavBtn"
+        android:icon="@drawable/ic_closet" />
+    <item android:id="homeNavBtn"
+        android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/addNavBtn"
+        android:icon="@drawable/ic_add_canvas"/>
+    <item android:id="@+id/searchNavBar"
+        android:icon="@drawable/ic_search" />
+    <item android:id="@+id/outfitsNavBtn"
+        android:icon="@drawable/outfits_01"/>
+
+
+
+</menu>
