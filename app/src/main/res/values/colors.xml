@@ -5,7 +5,9 @@
     <color name="light_blue">#FFBDE0FE</color>
     <color name="hot_pink">#FFFFAFCC</color>
     <color name="pink">#FFFFC8DD</color>
+    <color name="pastel_pink">#FFF5DCE0</color>
     <color name="lavender">#FFCDB4DB</color>
+    <color name="pastel_purple">#FFD9C4EC</color>
     <color name="purple">#FF6A4C93</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
