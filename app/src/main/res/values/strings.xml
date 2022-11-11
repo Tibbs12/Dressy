@@ -61,4 +61,11 @@
     <string name="date5">Nov 15</string>
     <string name="day5">Tues</string>
 
+    <!--menu-->
+    <string name="home">Home</string>
+    <string name="home_closets">Closets</string>
+    <string name="add">Add</string>
+    <string name="search">Search</string>
+    <string name="home_outfits">Outfits</string>
+
 </resources>

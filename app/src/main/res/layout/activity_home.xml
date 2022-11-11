@@ -23,28 +23,27 @@
         android:id="@+id/toClosets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="243dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginBottom="11dp"
         android:background="@drawable/ic_forward"
+        android:contentDescription="@string/fwd_arrow"
         app:layout_constraintBottom_toTopOf="@+id/closetScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/myClosetstxt"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/fwd_arrow"/>
+        tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/myClosetstxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="146dp"
-        android:layout_marginEnd="298dp"
+        android:layout_marginEnd="21dp"
         android:layout_marginBottom="9dp"
         android:text="@string/closets"
         app:layout_constraintBottom_toTopOf="@+id/closetScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toClosets"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
@@ -73,7 +72,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/layout_buttons"
                 android:contentDescription="@string/create_closet"
-                app:srcCompat="@drawable/ic_create_closet" />
+                app:srcCompat="@drawable/ic_create_closet"
+                tools:ignore="DuplicateClickableBoundsCheck" />
         </LinearLayout>
 
     </HorizontalScrollView>
@@ -82,26 +82,27 @@
         android:id="@+id/toOutfits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="41dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/ic_forward"
+        android:contentDescription="@string/fwd_arrow"
         app:layout_constraintBottom_toTopOf="@+id/outfitScrollView"
         app:layout_constraintStart_toEndOf="@+id/myOutfitsTxt"
         app:layout_constraintTop_toBottomOf="@+id/closetScrollView"
-        android:contentDescription="@string/fwd_arrow"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/myOutfitsTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="305dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="8dp"
         android:text="@string/outfits"
         app:layout_constraintBottom_toTopOf="@+id/outfitScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toOutfits"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/closetScrollView"
         tools:ignore="TextContrastCheck" />
@@ -139,27 +140,26 @@
         android:id="@+id/toCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="233dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="11dp"
         android:background="@drawable/ic_forward"
+        android:contentDescription="@string/fwd_arrow"
         app:layout_constraintBottom_toTopOf="@+id/calendarScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/calendarClick"
         app:layout_constraintTop_toBottomOf="@+id/outfitScrollView"
-        android:contentDescription="@string/fwd_arrow"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/calendarClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="38dp"
-        android:layout_marginEnd="284dp"
+        android:layout_marginEnd="7dp"
         android:clickable="true"
         android:text="@string/calendar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toCalendar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outfitScrollView"
         tools:ignore="KeyboardInaccessibleWidget,TextContrastCheck,TouchTargetSizeCheck" />
@@ -186,7 +186,7 @@
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="110dp"
-                android:background="@color/baby_blue">
+                android:background="@drawable/dates_bg">
 
                 <TextView
                     android:id="@+id/day1"
@@ -221,7 +221,7 @@
                 android:layout_width="100dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="10dp"
-                android:background="@color/light_blue">
+                android:background="@drawable/dates_bg">
 
                 <TextView
                     android:id="@+id/day2"
@@ -256,7 +256,7 @@
                 android:layout_width="100dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="10dp"
-                android:background="@color/pink">
+                android:background="@drawable/dates_bg">
 
                 <TextView
                     android:id="@+id/day3"
@@ -290,7 +290,7 @@
                 android:layout_width="100dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="10dp"
-                android:background="@color/pastel_pink">
+                android:background="@drawable/dates_bg">
 
                 <TextView
                     android:id="@+id/day4"
@@ -324,7 +324,7 @@
                 android:layout_width="100dp"
                 android:layout_height="110dp"
                 android:layout_marginStart="10dp"
-                android:background="@color/pastel_purple">
+                android:background="@drawable/dates_bg">
 
                 <TextView
                     android:id="@+id/day5"

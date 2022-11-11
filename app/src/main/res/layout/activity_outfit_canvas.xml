@@ -4,111 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/selection_bg"
+    android:background="@drawable/select_bg_01"
     tools:context=".outfit_canvas">
 
     <TextView
         android:id="@+id/outfitNameCanvas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="31dp"
         android:hint="@string/outfit_hint"
-        app:layout_constraintBottom_toTopOf="@+id/canvasSearch"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
+        android:id="@+id/imageButton13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginEnd="356dp"
-        android:layout_marginBottom="155dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/ic_arrow_back"
+        android:contentDescription="@string/back_arrow"
         android:minWidth="24dp"
         android:minHeight="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/canvas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/back_arrow"
+        app:layout_constraintBottom_toTopOf="@+id/canvasSearch"
+        app:layout_constraintEnd_toStartOf="@+id/canvasSearch"
         tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
 
     <SearchView
         android:id="@+id/canvasSearch"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="55dp"
         android:background="@drawable/access_buttons"
+        app:layout_constraintBottom_toTopOf="@+id/canvas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outfitNameCanvas" />
+        app:layout_constraintTop_toTopOf="@+id/outfitNameCanvas" />
 
     <ImageView
         android:id="@+id/canvas"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="400dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="155dp"
         android:background="@drawable/canvas"
         android:contentDescription="@string/canvas_view"
-        app:layout_constraintBottom_toTopOf="@+id/editBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/canvasSearch" />
+        tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/canvasAddBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="27dp"
         android:background="@drawable/ic_add_canvas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editBtn"
+        android:contentDescription="@string/add_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/canvas"
-        tools:ignore="TouchTargetSizeCheck"
-        android:contentDescription="@string/add_button"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/editBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="27dp"
         android:background="@drawable/ic_edit"
+        android:contentDescription="@string/edit_btn"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/canvasAddBtn"
-        android:contentDescription="@string/edit_btn"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/canvas" />
 
     <ImageButton
         android:id="@+id/deleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="31dp"
         android:background="@drawable/ic_delete"
         android:contentDescription="@string/delete_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editBtn"
         app:layout_constraintTop_toBottomOf="@+id/canvas"
         tools:ignore="TouchTargetSizeCheck" />
 
