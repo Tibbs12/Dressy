@@ -47,6 +47,7 @@
     <string name="edit_btn">Edit btn to edit an existing outfit or save changes to an outfit.</string>
     <string name="canvas_view">Canvas for the user to drag and drop outfit items.</string>
     <string name="delete_btn">Image btn to delete contents of an outfit.</string>
+    <string name="dressy_btn">Image btn to add an outfit to a calendar date.</string>
 
     <!--date examples-->
     <string name="date1">Nov 11</string>

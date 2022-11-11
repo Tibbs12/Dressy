@@ -19,21 +19,46 @@
         app:menu="@menu/bottom_nav_menu" />
 
 
-    <TextView
-        android:id="@+id/textView2"
+    <ImageButton
+        android:id="@+id/toClosets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="243dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/ic_forward"
+        app:layout_constraintBottom_toTopOf="@+id/closetScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/myClosetstxt"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/fwd_arrow"/>
+
+    <TextView
+        android:id="@+id/myClosetstxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="298dp"
+        android:layout_marginBottom="9dp"
         android:text="@string/closets"
-        tools:ignore="TextContrastCheck"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="146dp" />
+        app:layout_constraintBottom_toTopOf="@+id/closetScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+        android:id="@+id/closetScrollView"
         android:layout_width="350dp"
         android:layout_height="100dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="177dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myClosetstxt">
 
         <LinearLayout
             android:id="@+id/MyClosets"
@@ -43,7 +68,7 @@
 
             <ImageButton
                 android:id="@+id/newclosetbtn"
-                android:layout_width="100dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:background="@drawable/layout_buttons"
@@ -53,21 +78,44 @@
 
     </HorizontalScrollView>
 
-    <TextView
-        android:id="@+id/textView3"
+    <ImageButton
+        android:id="@+id/toOutfits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_forward"
+        app:layout_constraintBottom_toTopOf="@+id/outfitScrollView"
+        app:layout_constraintStart_toEndOf="@+id/myOutfitsTxt"
+        app:layout_constraintTop_toBottomOf="@+id/closetScrollView"
+        android:contentDescription="@string/fwd_arrow"/>
+
+    <TextView
+        android:id="@+id/myOutfitsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="305dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/outfits"
-        tools:ignore="TextContrastCheck"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="316dp" />
+        app:layout_constraintBottom_toTopOf="@+id/outfitScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/closetScrollView"
+        tools:ignore="TextContrastCheck" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
+        android:id="@+id/outfitScrollView"
         android:layout_width="350dp"
         android:layout_height="100dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="346dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myOutfitsTxt">
 
         <LinearLayout
             android:id="@+id/MyOutfits"
@@ -87,22 +135,47 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    <ImageButton
+        android:id="@+id/toCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="233dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/ic_forward"
+        app:layout_constraintBottom_toTopOf="@+id/calendarScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calendarClick"
+        app:layout_constraintTop_toBottomOf="@+id/outfitScrollView"
+        android:contentDescription="@string/fwd_arrow"/>
+
     <TextView
         android:id="@+id/calendarClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="284dp"
         android:clickable="true"
         android:text="@string/calendar"
-        tools:ignore="KeyboardInaccessibleWidget,TextContrastCheck"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="484dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfitScrollView"
+        tools:ignore="KeyboardInaccessibleWidget,TextContrastCheck,TouchTargetSizeCheck" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView3"
+        android:id="@+id/calendarScrollView"
         android:layout_width="350dp"
         android:layout_height="110dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="515dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="49dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarClick">
 
 
         <LinearLayout
@@ -116,102 +189,118 @@
                 android:background="@color/baby_blue">
 
                 <TextView
+                    android:id="@+id/day1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day1" />
+                    android:text="@string/day1"
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
+                    android:id="@+id/date1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date1" />
+                    android:text="@string/date1"
+                    tools:ignore="TextContrastCheck" />
 
                 <ImageButton
-                    android:id="@+id/imageButton5"
+                    android:id="@+id/dressyBtn1"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_weight="1"
                     android:background="@drawable/layout_buttons"
-                    app:srcCompat="@drawable/get_dressy_btn" />
+                    android:contentDescription="@string/dressy_btn"
+                    app:srcCompat="@drawable/get_dressy_btn"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="110dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/light_blue">
 
                 <TextView
+                    android:id="@+id/day2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day2" />
+                    android:text="@string/day2"
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
+                    android:id="@+id/date2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date2" />
+                    android:text="@string/date2"
+                    tools:ignore="TextContrastCheck" />
 
                 <ImageButton
-                    android:id="@+id/imageButton6"
+                    android:id="@+id/dressyBtn2"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_weight="1"
                     android:background="@drawable/layout_buttons"
-                    app:srcCompat="@drawable/get_dressy_btn" />
+                    android:contentDescription="@string/dressy_btn"
+                    app:srcCompat="@drawable/get_dressy_btn"
+                    tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="110dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/pink">
 
                 <TextView
+                    android:id="@+id/day3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day3" />
+                    android:text="@string/day3"
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
+                    android:id="@+id/date3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date3" />
+                    android:text="@string/date3"
+                    tools:ignore="TextContrastCheck" />
 
                 <ImageButton
-                    android:id="@+id/imageButton7"
+                    android:id="@+id/dressyBtn3"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_weight="1"
                     android:background="@drawable/layout_buttons"
+                    android:contentDescription="@string/dressy_btn"
                     app:srcCompat="@drawable/get_dressy_btn" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="110dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/pastel_pink">
 
                 <TextView
+                    android:id="@+id/day4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/day4" />
 
                 <TextView
+                    android:id="@+id/date4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -219,30 +308,33 @@
                     android:text="@string/date4" />
 
                 <ImageButton
-                    android:id="@+id/imageButton8"
+                    android:id="@+id/dressyBtn4"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_weight="1"
                     android:background="@drawable/layout_buttons"
-                    app:srcCompat="@drawable/get_dressy_btn" />
+                    android:contentDescription="@string/dressy_btn"
+                    app:srcCompat="@drawable/get_dressy_btn"
+                    tools:ignore="ImageContrastCheck" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="110dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/pastel_purple">
 
                 <TextView
+                    android:id="@+id/day5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:text="@string/day5" />
 
                 <TextView
+                    android:id="@+id/date5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -250,13 +342,13 @@
                     android:text="@string/date5" />
 
                 <ImageButton
-                    android:id="@+id/imageButton9"
+                    android:id="@+id/dressyBtn5"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_weight="1"
                     android:background="@drawable/layout_buttons"
+                    android:contentDescription="@string/dressy_btn"
                     app:srcCompat="@drawable/get_dressy_btn" />
             </RelativeLayout>
 
