@@ -1,5 +1,6 @@
 package com.closetkeeper.dressy.dto;
 
+import com.closetkeeper.dressy.dao.Database;
 import com.closetkeeper.dressy.dao.DatabaseMock;
 
 /**
@@ -9,7 +10,7 @@ import com.closetkeeper.dressy.dao.DatabaseMock;
  *
  * <br>
  * <br>Created by Tim on 10/11/22.
- * <br>Last Modified on 11/1/2022.
+ * <br>Last Modified on 11/13/2022.
  */
 public class Account {
 
@@ -18,9 +19,9 @@ public class Account {
     private String password;
 
     public Account(){
-
-        //Generates the correct account number value when creating a new account
-        this.generateAccountNum();
+        accountNum = -1;
+        email = "";
+        password = "";
     }
 
 
@@ -31,7 +32,6 @@ public class Account {
      * @param password The pre-existing account password from database.
      */
     public Account(int accountNum, String email, String password){
-
         this.accountNum = accountNum;
         this.email = email;
         this.password = password;
@@ -81,19 +81,11 @@ public class Account {
 
 
     /**
-     * Generates the user's account ID by retrieving the last account ID value from the database, then increments the value by
-     * one and returning it.
+     * Request an account number (ID) from the server. This function must be called immediately after instantiating a new object Account or the default
+     * account number will be -1, which means it will not be verified and acknowledged by the server.
      */
-    private void generateAccountNum(){
-        //ToDo: Probably should have a function in Database class do this instead of Account class generating own ID. Can have this method pull from Database and assign to user.
-        DatabaseMock myMockData = new DatabaseMock();
-        int lastAccountNum_DB = Integer.parseInt(myMockData.fetchLatestID()); //ToDo: Get lastAccountNum_DB value from live database
-
-        accountNum = lastAccountNum_DB + 1;
-
-        //Convert latest account ID to String and push back to database
-        String currentID = String.format("%05d", accountNum);
-        myMockData.updateLatestID(currentID);
+    public void applyForAccountNumber(Database db){
+        accountNum = db.generateAccountNumber();
     }
 
 
