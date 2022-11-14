@@ -25,6 +25,8 @@ public class Outfit {
     }
 
 
+
+
     /**
      * This constructor is used when an Outfit already exist for a user.
      * @param name The pre-existing Outfit name from database.
@@ -75,7 +77,7 @@ public class Outfit {
      * @return List<String> of tags belonging to this outfit.
      */
     public List<String> getTags() {
-        //Check to see if outfit tags is empty or null
+        //Check to see if outfit tags is empty
         if(tags.isEmpty() || tags == null){
             return null;
         }
@@ -157,7 +159,7 @@ public class Outfit {
      */
     public void clearTags(){
         //Check to see if the tags List is empty
-        if(!tags.isEmpty() && tags != null){
+        if(!tags.isEmpty()){
             tags.clear();
         }
     }
@@ -178,7 +180,7 @@ public class Outfit {
      */
     public List<String> getItems() {  //ToDo: Change List<String> to List<Item>
         //Check to see if the items List is empty, if so return null
-        if(!items.isEmpty() && items != null){
+        if(!items.isEmpty()){
             return items;
         }
         else{
@@ -193,7 +195,7 @@ public class Outfit {
      */
     public void setItems(List<String> items) {  //ToDo: Change List<String> to List<Item>
         //Check to see if items parameter is empty
-        if(!items.isEmpty() && items != null){
+        if(!items.isEmpty()){
             this.items = items;
         }
     }

@@ -13,7 +13,7 @@ public class Closet
 {
     // Declaring variables of type String: name, description, and of type List: items, outfits.
     private String name;
-    private String description;
+    private String description;             //ToDo: Get rid of description variable
     private List<String>[] items;           //List items will contain type item TODO: replace type String with type Item/Items
     private List<String>[] outfits;         //List outfits will contain type outfit TODO: replace type String with type Outfit
 
