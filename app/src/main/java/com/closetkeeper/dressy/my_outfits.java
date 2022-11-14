@@ -1,5 +1,7 @@
 package com.closetkeeper.dressy;
 
+import static com.closetkeeper.dressy.home.Items;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -81,6 +83,7 @@ public class my_outfits extends AppCompatActivity {
             //image.setLayoutParams(gridLayout.getLayoutParams());
             //gridLayout.addView(image);
             //image.setImageBitmap(bitmap);
+            Items.add(bitmap);
         }
     }
 

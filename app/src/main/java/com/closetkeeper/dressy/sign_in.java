@@ -82,13 +82,13 @@ public class sign_in extends AppCompatActivity{
         Matcher m = p.matcher(email);
         Matcher m2 = p2.matcher(email);
 
-        if(m.find() && m2.find()) {
+        //if(m.find() && m2.find()) {           Commented out for now to allow easy access
 
             /**NOTE: This is where the account class needs to check to see if the account is valid*/
             Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
             startActivity(intent);
-        }
-        else
-            loginError.setVisibility(View.VISIBLE);
+       // }
+        //else
+            //loginError.setVisibility(View.VISIBLE);
     }
 }

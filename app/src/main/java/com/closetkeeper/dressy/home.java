@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,6 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.closetkeeper.dressy.databinding.ActivityHomeBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class home extends AppCompatActivity {
@@ -35,6 +39,16 @@ public class home extends AppCompatActivity {
     private TextView calendarClick;
     private LinearLayout MyClosets;
     private LinearLayout MyOutfits;
+
+    /** list for each item, outfit, and closet */
+    public static List<Bitmap> Items = new ArrayList<Bitmap>();  /** Items will have a bitmap and String "tag" */
+    public static Bitmap startingList[] = {};
+
+    public static ArrayAdapter adapter;
+
+    public static ArrayList<Object> Outfits = new ArrayList<Object>();
+    public static ArrayList<Object> Closets = new ArrayList<Object>();
+
     /** Used for permissions to access camera*/
     public static final int RequestPermissionCode = 1;
 
@@ -153,6 +167,7 @@ public class home extends AppCompatActivity {
             //image.setLayoutParams(gridLayout.getLayoutParams());
             //gridLayout.addView(image);
             //image.setImageBitmap(bitmap);
+            Items.add(bitmap);      //When items class is done we will use datatype Item instead of bitmap
         }
     }
 

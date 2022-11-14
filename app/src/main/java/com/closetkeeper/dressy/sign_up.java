@@ -95,7 +95,7 @@ public class sign_up extends AppCompatActivity {
         Matcher m2 = p2.matcher(email);
 
 
-        if(m.find() && m2.find()) {
+        //if(m.find() && m2.find()) {
 
             Account MyAccount = new Account();
             MyAccount.setEmail(email);
@@ -104,9 +104,9 @@ public class sign_up extends AppCompatActivity {
             /**NOTE: This is where the account class needs to check to see if the account is valid*/
             Intent intent = new Intent(this, home.class);
             startActivity(intent);
-        }
-        else
-            signUpError.setVisibility(View.VISIBLE);
+        //}
+        //else
+            //signUpError.setVisibility(View.VISIBLE);
     }
 
 }

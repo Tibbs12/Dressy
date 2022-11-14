@@ -1,5 +1,7 @@
 package com.closetkeeper.dressy;
 
+import static com.closetkeeper.dressy.home.Items;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -75,6 +77,7 @@ public class my_closets extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 7 && resultCode == RESULT_OK) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+            Items.add(bitmap);
             /** Instead of all below code, we will pass bitmap and tag string to method CreateItem(); */
             //ImageView image = new ImageView(this);/** This code adds a button each time*/
             //image.setLayoutParams(gridLayout.getLayoutParams());

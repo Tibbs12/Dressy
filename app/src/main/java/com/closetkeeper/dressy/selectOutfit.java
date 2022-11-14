@@ -1,24 +1,19 @@
 package com.closetkeeper.dressy;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
+import static com.closetkeeper.dressy.home.Items;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.GridLayout;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.closetkeeper.dressy.ui.MainActivity;
 
 public class selectOutfit extends AppCompatActivity {
 
@@ -26,6 +21,8 @@ public class selectOutfit extends AppCompatActivity {
     private ImageButton addItemsBtn;
     private TextView outfitNameInput;
     private GridLayout gridLayout;
+    private ImageButton outfitFwdBtn;
+    //private ListView adapterView;
 
     /** Used for permissions to access camera*/
     public static final int RequestPermissionCode = 1;
@@ -41,7 +38,13 @@ public class selectOutfit extends AppCompatActivity {
         setContentView(R.layout.activity_select_outfit);
 
         gridLayout = (GridLayout) findViewById(R.id.gridLayout);
-        EnableRuntimePermission();
+
+
+
+       /* adapterView = (ListView) findViewById(R.id.adapterView);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_select_outfit,Items);
+        adapterView.setAdapter(adapter); */
 
         /** Sets up textview on selectCloset page, sets passed data into the textview */
         outfitNameInput = (TextView) findViewById(R.id.outfitNameInput);
@@ -60,6 +63,15 @@ public class selectOutfit extends AppCompatActivity {
             }
         });
 
+        outfitFwdBtn = (ImageButton) findViewById(R.id.outfitFwdBtn);
+        outfitFwdBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
         addItemsBtn = (ImageButton) findViewById(R.id.addItemsBtn);
         addItemsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,47 +81,22 @@ public class selectOutfit extends AppCompatActivity {
         });
 
         /** End of OnClick Listeners */
-    }
 
 
-    /** methods for camera */
-    private void EnableRuntimePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(selectOutfit.this, Manifest.permission.CAMERA)) {
-            Toast.makeText(selectOutfit.this, "CAMERA permission allows us to Access your camera", Toast.LENGTH_LONG).show();
-        }
-        else
+        //For loop to display items
+        for (Bitmap image : Items)
         {
-            ActivityCompat.requestPermissions(selectOutfit.this, new String[]{Manifest.permission.CAMERA}, RequestPermissionCode);
-        }
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 7 && resultCode == RESULT_OK) {
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            ImageView image = new ImageView(this);/** This code adds a button each time*/
-            //image.setLayoutParams(gridLayout.getLayoutParams());
-            gridLayout.addView(image);
-            image.setImageBitmap(bitmap);
-        }
-    }
-
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] result) {
-        super.onRequestPermissionsResult(requestCode, permissions, result);
-        switch (requestCode) {
-            case RequestPermissionCode:
-                if (result.length > 0 && result[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(selectOutfit.this, "Permission Granted, Now your application can access CAMERA.", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(selectOutfit.this, "Permission Canceled, Now your application cannot access CAMERA.", Toast.LENGTH_LONG).show();
-                }
-                break;
+            ImageView map = new ImageView(this);/** This code adds a button each time*/
+            //map.setLayoutParams(gridLayout.getLayoutParams());
+            map.setImageBitmap(image);
+            gridLayout.addView(map);
         }
     }
 
     /** Empty method to prevent errors */
     public void createItem()
     {
+        //MyItem Item = new Item(tag)
         Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, 7); /** this is connected to "OnActivityResult" Method */
     }
