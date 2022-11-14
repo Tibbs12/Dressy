@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeNavBtn"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
     <item android:id="@+id/closetNavBtn"
         android:icon="@drawable/ic_closet"
         android:title="@string/home_closets" />
-
-    <item android:id="@+id/homeNavBtn"
-        android:icon="@drawable/ic_home"
-        android:title="@string/home"
-        />
 
     <item android:id="@+id/addNavBtn"
         android:icon="@drawable/ic_add_canvas"
