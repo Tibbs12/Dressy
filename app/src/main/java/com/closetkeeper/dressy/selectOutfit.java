@@ -3,6 +3,7 @@ package com.closetkeeper.dressy;
 
 
 import static com.closetkeeper.dressy.home.Items;
+import static com.closetkeeper.dressy.home.Outfits;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -67,7 +68,8 @@ public class selectOutfit extends AppCompatActivity {
         outfitFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Outfits.add(outfitName);
+                createOutfit();
             }
         });
 
@@ -99,6 +101,11 @@ public class selectOutfit extends AppCompatActivity {
         //MyItem Item = new Item(tag)
         Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, 7); /** this is connected to "OnActivityResult" Method */
+    }
+
+    public void createOutfit() {
+        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+        startActivity(intent);
     }
 
 }

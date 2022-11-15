@@ -1,6 +1,7 @@
 package com.closetkeeper.dressy;
 
 
+import static com.closetkeeper.dressy.home.Closets;
 import static com.closetkeeper.dressy.home.Items;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class selectCloset extends AppCompatActivity {
     private TextView closetNameInput;
     private ListView adapterView;
     private GridLayout itemsGrid;
+    private ImageButton closetFwdBtn;
 
     /** Need static variables to pass data using intent */
     public final static String CLOSETNAME = "CLOSETNAME";
@@ -60,6 +62,15 @@ public class selectCloset extends AppCompatActivity {
             }
         });
 
+        closetFwdBtn = (ImageButton) findViewById(R.id.closetFwdBtn);
+        closetFwdBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Closets.add(closetName);
+                createCloset();
+            }
+        });
+
         closetAddOutfits = (ImageButton) findViewById(R.id.closetAddOutfits);
         closetAddOutfits.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +95,11 @@ public class selectCloset extends AppCompatActivity {
     /** Method that changes page to createOutfit page */
     public void createOutfit() {
         Intent intent = new Intent(this, com.closetkeeper.dressy.createOutfit.class);
+        startActivity(intent);
+    }
+
+    public void createCloset() {
+        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
         startActivity(intent);
     }
 
