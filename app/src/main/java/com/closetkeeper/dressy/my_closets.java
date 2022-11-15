@@ -1,6 +1,8 @@
 package com.closetkeeper.dressy;
 
+import static com.closetkeeper.dressy.home.Closets;
 import static com.closetkeeper.dressy.home.Items;
+import static com.closetkeeper.dressy.home.Outfits;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -10,6 +12,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.closetkeeper.dressy.databinding.ActivityMyClosetsBinding;
@@ -17,17 +22,17 @@ import com.closetkeeper.dressy.databinding.ActivityMyClosetsBinding;
 public class my_closets extends AppCompatActivity {
 
     ActivityMyClosetsBinding binding;
-
     public static final int RequestPermissionCode = 1;
+    private GridLayout closetsGridLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMyClosetsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         binding.bottomNavBar.setSelectedItemId(R.id.closetNavBtn);  /** this sets the correct nav button each time we load this page */
 
+        //Navigation menu code
         binding.bottomNavBar.setOnItemSelectedListener(item -> {
 
             switch(item.getItemId()){
@@ -59,9 +64,19 @@ public class my_closets extends AppCompatActivity {
 
             return true;
         });
+        closetsGridLayout = findViewById(R.id.closetsGridLayout);
 
-
+        //For loop to display Closets
+        for (String string : Closets)
+         {
+             TextView map = new TextView(this);/** This code adds a button each time*/
+             //map.setLayoutParams(closetsGridLayout.getLayoutParams());
+             map.setText(string);
+             closetsGridLayout.addView(map);
+         }
     }
+
+
     /** methods for camera */
     private void EnableRuntimePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(my_closets.this, Manifest.permission.CAMERA)) {

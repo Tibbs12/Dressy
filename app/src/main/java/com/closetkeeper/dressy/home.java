@@ -44,10 +44,13 @@ public class home extends AppCompatActivity {
     public static List<Bitmap> Items = new ArrayList<Bitmap>();  /** Items will have a bitmap and String "tag" */
     public static Bitmap startingList[] = {};
 
-    public static ArrayAdapter adapter;
+    public static List<String> Outfits = new ArrayList<String>();
+    public static String startOutfit[] = {};
+                                                        /** Both of these list need to be changed to Objects */
+    public static List<String> Closets = new ArrayList<String>();
+    public static String startClosets[] = {};
 
-    public static ArrayList<Object> Outfits = new ArrayList<Object>();
-    public static ArrayList<Object> Closets = new ArrayList<Object>();
+    public static ArrayAdapter adapter;
 
     /** Used for permissions to access camera*/
     public static final int RequestPermissionCode = 1;
@@ -57,10 +60,30 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        //updateUI();
 
 
         MyClosets = (LinearLayout) findViewById(R.id.MyClosets);
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);
+
+        //For loop to display Outfits
+        for (String string : Outfits)
+        {
+            ImageButton map = new ImageButton(this);/** This code adds a button each time*/
+            map.setLayoutParams(MyOutfits.getLayoutParams());
+            //map.set(string); This needs to be figured out still
+            MyOutfits.addView(map);
+        }
+
+        //For loop to display Closets
+        for (String closet : Closets)
+        {
+            ImageButton map = new ImageButton(this);/** This code adds a button each time*/
+            map.setLayoutParams(MyClosets.getLayoutParams());
+            //map.set(closet); This needs to be figured out still
+            MyClosets.addView(map);
+        }
+
 
         /** setting variables equal to the xml button and creating OnClick listeners */
 
@@ -128,17 +151,18 @@ public class home extends AppCompatActivity {
     /** Start of methods createCloset and createOutfit */
 
     public void createCloset() {
-        ImageButton closet = new ImageButton(this);         /** This code adds a button each time*/
-        closet.setLayoutParams(MyClosets.getLayoutParams());       /** we create a new closet */
-        MyClosets.addView(closet);
+      //  ImageButton closet = new ImageButton(this);         /** This code adds a button each time*/
+      //  closet.setLayoutParams(MyClosets.getLayoutParams());       /** we create a new closet */
+      //  MyClosets.addView(closet);
         Intent intent = new Intent(this, com.closetkeeper.dressy.createCloset.class);
         startActivity(intent);
     }
 
-    public void createOutfit() {
-        ImageButton outfit = new ImageButton(this);         /** This code adds a button each time*/
-        outfit.setLayoutParams(MyOutfits.getLayoutParams());       /** we create a new outfit */
-        MyOutfits.addView(outfit);
+     public void createOutfit() {
+        /*ImageButton outfit = new ImageButton(this);         /** This code adds a button each time*/
+     /*   outfit.setLayoutParams(MyOutfits.getLayoutParams());       /** we create a new outfit */
+      /*  MyOutfits.addView(outfit);
+      Updated since last use. NOT NEEDED FOR NOW*/
         Intent intent = new Intent(this, com.closetkeeper.dressy.createOutfit.class);
         startActivity(intent);
     }
