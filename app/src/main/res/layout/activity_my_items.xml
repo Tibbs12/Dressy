@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".my_items"
+    android:background="@drawable/select_bg_01">
+
+    <TextView
+        android:id="@+id/myItemsHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/my_items"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/myItemsSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/myItemsSearch"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/access_buttons"
+        app:layout_constraintBottom_toTopOf="@+id/myItemsGrid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myItemsHeader" />
+
+    <GridLayout
+        android:id="@+id/myItemsGrid"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/grid_border"
+        app:layout_constraintBottom_toTopOf="@+id/addCamera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myItemsSearch" />
+
+    <ImageButton
+        android:id="@+id/addCamera"
+        android:layout_width="42dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginBottom="91dp"
+        android:background="@drawable/ic_outline_add_a_photo_24"
+        android:contentDescription="@string/add_camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myItemsGrid"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/addGallery"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="91dp"
+        android:background="@drawable/ic_outline_add_photo_alternate_24"
+        android:contentDescription="@string/add_gallery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteMyItems"
+        app:layout_constraintStart_toEndOf="@+id/addCamera"
+        app:layout_constraintTop_toBottomOf="@+id/myItemsGrid"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/deleteMyItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="91dp"
+        android:background="@drawable/ic_delete"
+        android:contentDescription="@string/delete_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addGallery"
+        app:layout_constraintTop_toBottomOf="@+id/myItemsGrid"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

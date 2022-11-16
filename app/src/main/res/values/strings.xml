@@ -48,6 +48,8 @@
     <string name="canvas_view">Canvas for the user to drag and drop outfit items.</string>
     <string name="delete_btn">Image btn to delete contents of an outfit.</string>
     <string name="dressy_btn">Image btn to add an outfit to a calendar date.</string>
+    <string name="add_camera">Image btn to add an item from camera.</string>
+    <string name="add_gallery">Image btn to add an item from gallery.</string>
 
     <!--date examples-->
     <string name="date1">Nov 11</string>
