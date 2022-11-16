@@ -105,7 +105,7 @@ public class selectOutfit extends AppCompatActivity {
     }
 
     public void createOutfit() {
-        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+        Intent intent = new Intent(this, com.closetkeeper.dressy.outfit_canvas.class);
         startActivity(intent);
     }
 
