@@ -43,13 +43,7 @@ public class sign_in extends AppCompatActivity{
             }
         });
 
-        signInBack = (ImageButton) findViewById(R.id.signInBack);
-        signInBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAccess();
-            }
-        });
+
 
         existingAcct = (TextView) findViewById(R.id.existingAcct);
         existingAcct.setOnClickListener(new View.OnClickListener() {

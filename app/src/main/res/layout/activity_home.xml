@@ -19,32 +19,15 @@
         app:menu="@menu/bottom_nav_menu" />
 
 
-
-    <ImageButton
-        android:id="@+id/toClosets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="146dp"
-        android:layout_marginBottom="11dp"
-        android:background="@drawable/ic_forward"
-        android:contentDescription="@string/fwd_arrow"
-        app:layout_constraintBottom_toTopOf="@+id/closetScrollView"
-        app:layout_constraintStart_toEndOf="@+id/myClosetstxt"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck,DuplicateSpeakableTextCheck" />
-
     <TextView
         android:id="@+id/myClosetstxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="146dp"
-        android:layout_marginEnd="21dp"
         android:layout_marginBottom="9dp"
         android:text="@string/closets"
         app:layout_constraintBottom_toTopOf="@+id/closetScrollView"
-        app:layout_constraintEnd_toStartOf="@+id/toClosets"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck" />
@@ -79,31 +62,15 @@
 
     </HorizontalScrollView>
 
-    <ImageButton
-        android:id="@+id/toOutfits"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/ic_forward"
-        android:contentDescription="@string/fwd_arrow"
-        app:layout_constraintBottom_toTopOf="@+id/outfitScrollView"
-        app:layout_constraintStart_toEndOf="@+id/myOutfitsTxt"
-        app:layout_constraintTop_toBottomOf="@+id/closetScrollView"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <TextView
         android:id="@+id/myOutfitsTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="28dp"
         android:layout_marginBottom="8dp"
         android:text="@string/outfits"
         app:layout_constraintBottom_toTopOf="@+id/outfitScrollView"
-        app:layout_constraintEnd_toStartOf="@+id/toOutfits"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/closetScrollView"
         tools:ignore="TextContrastCheck" />
@@ -158,8 +125,10 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="7dp"
+        android:layout_marginBottom="9dp"
         android:clickable="true"
         android:text="@string/calendar"
+        app:layout_constraintBottom_toTopOf="@+id/calendarScrollView"
         app:layout_constraintEnd_toStartOf="@+id/toCalendar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outfitScrollView"
@@ -356,15 +325,5 @@
 
         </LinearLayout>
     </HorizontalScrollView>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="409dp"
-        android:layout_height="268dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2"
-        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

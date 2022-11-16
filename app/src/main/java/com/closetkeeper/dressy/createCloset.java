@@ -27,12 +27,6 @@ public class createCloset extends AppCompatActivity {
 
         /** setting variables equal to the xml button and creating OnClick listeners */
 
-        createClosetBack = (ImageButton) findViewById(R.id.createClosetBack);
-        createClosetBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { openHome();
-            }
-        });
 
         closetDoneBtn = (AppCompatButton) findViewById(R.id.closetDoneBtn);
         closetDoneBtn.setOnClickListener(new View.OnClickListener() {

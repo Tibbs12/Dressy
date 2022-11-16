@@ -35,22 +35,6 @@
         app:layout_constraintTop_toBottomOf="@+id/closetHeader"
         tools:ignore="TextContrastCheck" />
 
-    <ImageButton
-        android:id="@+id/createClosetBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="333dp"
-        android:contentDescription="@string/back_arrow"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back"
-        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
-
     <!--use intent to get user input and display it on the next screen-->
     <EditText
         android:id="@+id/closetInput"
