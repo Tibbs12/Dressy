@@ -15,10 +15,14 @@
         android:id="@+id/closetNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="5dp"
         android:hint="@string/closet_hint"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/searchView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,11 +31,12 @@
         android:id="@+id/searchView"
         android:layout_width="302dp"
         android:layout_height="53dp"
+        android:layout_marginStart="54dp"
         android:layout_marginTop="76dp"
+        android:layout_marginEnd="55dp"
         android:background="@drawable/access_buttons"
         app:layout_constraintBottom_toTopOf="@+id/itemsHeader"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -41,37 +46,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="314dp"
         android:text="@string/my_items"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="156dp" />
-
-    <GridLayout
-        android:id="@+id/itemsGrid"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="79dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="79dp"
-        android:background="@drawable/grid_border"
-        android:numColumns="4"
-        app:layout_constraintBottom_toTopOf="@+id/outfitsGrid"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/itemsGrid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <GridLayout
-        android:id="@+id/outfitsGrid"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/itemsGrid"
+        android:layout_width="351dp"
+        android:layout_height="150dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="18dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/grid_border"
         android:numColumns="4"
-        app:layout_constraintBottom_toTopOf="@+id/closetFwdBtn"
+        app:layout_constraintBottom_toTopOf="@+id/outfitsHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemsHeader" />
+
+    <GridLayout
+        android:id="@+id/outfitsGrid"
+        android:layout_width="351dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/grid_border"
+        android:numColumns="4"
+        app:layout_constraintBottom_toTopOf="@+id/appCompatButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outfitsHeader" />
@@ -80,25 +87,42 @@
         android:id="@+id/outfitsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
-        android:layout_marginBottom="235dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="307dp"
         android:text="@string/outfits"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/closetFwdBtn"
-        app:layout_constraintStart_toStartOf="@+id/outfitsGrid"
-        app:layout_constraintTop_toTopOf="@+id/itemsHeader" />
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemsGrid" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton2"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="125dp"
+        android:background="@drawable/access_buttons"
+        android:backgroundTint="@color/lavender"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outfitsGrid" />
 
     <ImageButton
         android:id="@+id/closetFwdBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
         android:contentDescription="@string/fwd_arrow"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/outfitsGrid"
-        app:srcCompat="@drawable/ic_arrow_forward" />
+        app:srcCompat="@drawable/ic_arrow_forward"
+        tools:layout_editor_absoluteX="333dp"
+        tools:layout_editor_absoluteY="607dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
