@@ -12,11 +12,12 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.closetkeeper.dressy.databinding.ActivityMyOutfitsBinding;
+import com.closetkeeper.dressy.dto.Item;
+import com.closetkeeper.dressy.dto.Outfit;
 
 public class my_outfits extends AppCompatActivity {
 
@@ -67,11 +68,11 @@ public class my_outfits extends AppCompatActivity {
         outfitsGridLayout = findViewById(R.id.outfitsGridLayout);
 
         //For loop to display Outfits
-        for (String string : Outfits)
+        for (Outfit string : Outfits)
          {
              TextView map = new TextView(this);/** This code adds a button each time*/
              //map.setLayoutParams(outfitsGridLayout.getLayoutParams());
-             map.setText(string);
+             map.setText(string.getItems().toString());
              outfitsGridLayout.addView(map);
          }
     }
@@ -92,7 +93,9 @@ public class my_outfits extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 7 && resultCode == RESULT_OK) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            Items.add(bitmap);
+            Item myItem = new Item();
+            myItem.setImage(bitmap);
+            Items.add(myItem);
             /** Instead of all below code, we will pass bitmap and tag string to method CreateItem(); */
             //ImageView image = new ImageView(this);/** This code adds a button each time*/
             //image.setLayoutParams(gridLayout.getLayoutParams());

@@ -16,6 +16,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.dto.Item;
+import com.closetkeeper.dressy.dto.Outfit;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class selectOutfit extends AppCompatActivity {
 
     private ImageButton outfitBackBtn;           /**Instantiating the ImageButtons*/
@@ -24,6 +30,8 @@ public class selectOutfit extends AppCompatActivity {
     private GridLayout gridLayout;
     private ImageButton outfitFwdBtn;
     //private ListView adapterView;
+
+    public static List<Item> selectedItems = new ArrayList<Item>();
 
     /** Used for permissions to access camera*/
     public static final int RequestPermissionCode = 1;
@@ -62,7 +70,12 @@ public class selectOutfit extends AppCompatActivity {
         outfitFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Outfits.add(outfitName);
+                for (Item item : selectedItems)
+                {
+                    Outfit MyOutfit = new Outfit();
+                    MyOutfit.addItem(item);
+                    Outfits.add(MyOutfit);
+                }
                 createOutfit();
             }
         });
@@ -74,11 +87,11 @@ public class selectOutfit extends AppCompatActivity {
 
 
         //For loop to display items
-        for (Bitmap image : Items)
+        for (Item image : Items)
         {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
             //map.setLayoutParams(gridLayout.getLayoutParams());
-            map.setImageBitmap(image);
+            map.setImageBitmap(image.getImage());
             gridLayout.addView(map);
         }
     }
