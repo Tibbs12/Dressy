@@ -50,31 +50,13 @@
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="67dp"
+        android:layout_width="351dp"
+        android:layout_height="400dp"
         android:background="@drawable/grid_border"
         android:numColumns="4"
-        app:layout_constraintBottom_toBottomOf="@+id/outfitFwdBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addItemsBtn" />
-
-    <ImageButton
-        android:id="@+id/addItemsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:contentDescription="@string/add_button"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/searchView2"
-        app:layout_constraintStart_toEndOf="@+id/searchView2"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2"
-        app:srcCompat="@drawable/ic_add" />
+        tools:layout_editor_absoluteY="214dp" />
 
     <ImageButton
         android:id="@+id/outfitFwdBtn"
@@ -88,15 +70,4 @@
         app:layout_constraintEnd_toEndOf="@+id/gridLayout"
         app:srcCompat="@drawable/ic_arrow_forward" />
 
-    <ImageButton
-        android:id="@+id/outfitBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:contentDescription="@string/back_arrow"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/searchView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back" />
 </androidx.constraintlayout.widget.ConstraintLayout>

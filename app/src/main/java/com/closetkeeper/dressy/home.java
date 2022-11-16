@@ -39,6 +39,7 @@ public class home extends AppCompatActivity {
     private TextView calendarClick;
     private LinearLayout MyClosets;
     private LinearLayout MyOutfits;
+    private ImageButton toCalendar;
 
     /** list for each item, outfit, and closet */
     public static List<Bitmap> Items = new ArrayList<Bitmap>();  /** Items will have a bitmap and String "tag" */
@@ -105,6 +106,14 @@ public class home extends AppCompatActivity {
 
         calendarClick = (TextView) findViewById(R.id.calendarClick);
         calendarClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCalendar();
+            }
+        });
+
+        toCalendar = (ImageButton) findViewById(R.id.toCalendar);
+        toCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openCalendar();

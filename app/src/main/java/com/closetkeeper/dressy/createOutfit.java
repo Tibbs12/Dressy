@@ -27,13 +27,7 @@ public class createOutfit extends AppCompatActivity {
 
         /** setting variables equal to the xml button and creating OnClick listeners */
 
-        createOutfitBack = (ImageButton) findViewById(R.id.createOutfitBack);
-        createOutfitBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openHome();
-            }
-        });
+
 
         outfitDoneBtn = (AppCompatButton) findViewById(R.id.outfitDoneBtn);
         outfitDoneBtn.setOnClickListener(new View.OnClickListener() {

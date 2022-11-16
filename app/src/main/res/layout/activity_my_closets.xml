@@ -18,18 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-    <ImageButton
-        android:id="@+id/myClosetsBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/ic_arrow_back"
-        android:contentDescription="@string/back_arrow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
-
     <TextView
         android:id="@+id/myClosetsHeader"
         android:layout_width="wrap_content"

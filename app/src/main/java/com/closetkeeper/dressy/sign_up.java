@@ -49,13 +49,6 @@ public class sign_up extends AppCompatActivity {
             }
         });
 
-        signUpBack = (ImageButton) findViewById(R.id.signUpBack);
-        signUpBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAccess();
-            }
-        });
 
         textView6 = (TextView) findViewById(R.id.textView6);
         textView6.setOnClickListener(new View.OnClickListener() {

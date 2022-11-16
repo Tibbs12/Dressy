@@ -32,13 +32,6 @@ public class calendar extends AppCompatActivity {
 
         /** OnClick listener for addOutfitButton */
 
-        addOutfitBtn = (ImageButton) findViewById(R.id.addOutfitBtn);
-        addOutfitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {               /** button on click listener for addoutfitbutton */
-                outfitToCalender();
-            }
-        });
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
             @Override
@@ -48,13 +41,7 @@ public class calendar extends AppCompatActivity {
             }
         });
 
-        calendarBack = (ImageButton) findViewById(R.id.calendarBack);
-        calendarBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {           /** back button method*/
-                finish();
-            }
-        });
+
 
     }
     /** saves date and outfit that is chosen by the user */

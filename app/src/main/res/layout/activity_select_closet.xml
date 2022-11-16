@@ -11,20 +11,6 @@
 
     <!--placeholder for search bar must be done in java-->
 
-    <ImageButton
-        android:id="@+id/closetAddOutfits"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="174dp"
-        android:layout_marginBottom="168dp"
-        android:contentDescription="@string/add_button"
-        app:layout_constraintBottom_toBottomOf="@+id/outfitsGrid"
-        app:layout_constraintStart_toEndOf="@+id/outfitsHeader"
-        app:layout_constraintTop_toTopOf="@+id/itemsGrid"
-        app:srcCompat="@drawable/ic_add"
-        tools:ignore="DuplicateSpeakableTextCheck" />
-
     <TextView
         android:id="@+id/closetNameInput"
         android:layout_width="wrap_content"
@@ -39,28 +25,26 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="13dp"
+        android:layout_width="302dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintBottom_toTopOf="@+id/closetAddItems"
+        app:layout_constraintBottom_toTopOf="@+id/itemsHeader"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/closetNameInput" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/itemsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="7dp"
         android:text="@string/my_items"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/closetAddItems"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="156dp" />
 
     <GridLayout
         android:id="@+id/itemsGrid"
@@ -92,19 +76,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outfitsHeader" />
 
-    <ImageButton
-        android:id="@+id/closetAddItems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="72dp"
-        android:contentDescription="@string/add_button"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/itemsHeader"
-        app:layout_constraintTop_toBottomOf="@+id/closetNameInput"
-        app:srcCompat="@drawable/ic_add" />
-
     <TextView
         android:id="@+id/outfitsHeader"
         android:layout_width="wrap_content"
@@ -128,18 +99,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/outfitsGrid"
         app:srcCompat="@drawable/ic_arrow_forward" />
-
-    <ImageButton
-        android:id="@+id/closetBackBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:contentDescription="@string/back_arrow"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/searchView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_arrow_back" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,13 +56,7 @@ public class selectOutfit extends AppCompatActivity {
 
         /** setting variables equal to the xml button and creating OnClick listeners */
 
-        outfitBackBtn = (ImageButton) findViewById(R.id.outfitBackBtn);
-        outfitBackBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         outfitFwdBtn = (ImageButton) findViewById(R.id.outfitFwdBtn);
         outfitFwdBtn.setOnClickListener(new View.OnClickListener() {
@@ -74,13 +68,7 @@ public class selectOutfit extends AppCompatActivity {
         });
 
 
-        addItemsBtn = (ImageButton) findViewById(R.id.addItemsBtn);
-        addItemsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createItem(); /** This is where we need to call the item creation method */
-            }
-        });
+
 
         /** End of OnClick Listeners */
 

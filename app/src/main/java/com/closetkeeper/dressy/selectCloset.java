@@ -54,13 +54,7 @@ public class selectCloset extends AppCompatActivity {
 
         /** setting variables equal to the xml button and creating OnClick listeners */
 
-        closetBackBtn = (ImageButton) findViewById(R.id.closetBackBtn);
-        closetBackBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         closetFwdBtn = (ImageButton) findViewById(R.id.closetFwdBtn);
         closetFwdBtn.setOnClickListener(new View.OnClickListener() {
@@ -71,13 +65,7 @@ public class selectCloset extends AppCompatActivity {
             }
         });
 
-        closetAddOutfits = (ImageButton) findViewById(R.id.closetAddOutfits);
-        closetAddOutfits.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createOutfit();
-            }
-        });
+
 
         /** End of OnClick Listeners */
 
