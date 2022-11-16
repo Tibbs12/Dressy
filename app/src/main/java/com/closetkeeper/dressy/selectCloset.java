@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.dto.Item;
+
 import java.util.ArrayList;
 
 public class selectCloset extends AppCompatActivity {
@@ -71,11 +73,11 @@ public class selectCloset extends AppCompatActivity {
 
 
         //For loop to display items
-        for (Bitmap image : Items)
+        for (Item image : Items)
         {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
             //map.setLayoutParams(gridLayout.getLayoutParams());
-            map.setImageBitmap(image);
+            map.setImageBitmap(image.getImage());
             itemsGrid.addView(map);
         }
     }

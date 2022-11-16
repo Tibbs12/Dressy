@@ -1,29 +1,23 @@
 package com.closetkeeper.dressy;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.closetkeeper.dressy.databinding.ActivityHomeBinding;
+import com.closetkeeper.dressy.dto.Item;
+import com.closetkeeper.dressy.dto.Outfit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,10 +36,10 @@ public class home extends AppCompatActivity {
     private ImageButton toCalendar;
 
     /** list for each item, outfit, and closet */
-    public static List<Bitmap> Items = new ArrayList<Bitmap>();  /** Items will have a bitmap and String "tag" */
-    public static Bitmap startingList[] = {};
+    public static List<Item> Items = new ArrayList<Item>();  /** Items will have a bitmap and String "tag" */
+    public static Item startingList[] = {};
 
-    public static List<String> Outfits = new ArrayList<String>();
+    public static List<Outfit> Outfits = new ArrayList<Outfit>();
     public static String startOutfit[] = {};
                                                         /** Both of these list need to be changed to Objects */
     public static List<String> Closets = new ArrayList<String>();
@@ -68,7 +62,7 @@ public class home extends AppCompatActivity {
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);
 
         //For loop to display Outfits
-        for (String string : Outfits)
+        for (Outfit string : Outfits)
         {
             ImageButton map = new ImageButton(this);/** This code adds a button each time*/
             map.setLayoutParams(MyOutfits.getLayoutParams());
@@ -201,7 +195,9 @@ public class home extends AppCompatActivity {
             //image.setLayoutParams(gridLayout.getLayoutParams());
             //gridLayout.addView(image);
             //image.setImageBitmap(bitmap);
-            Items.add(bitmap);      //When items class is done we will use datatype Item instead of bitmap
+            Item myItem = new Item();
+            myItem.setImage(bitmap);
+            Items.add(myItem);      //When items class is done we will use datatype Item instead of bitmap
         }
     }
 
