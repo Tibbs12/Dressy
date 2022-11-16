@@ -15,7 +15,7 @@ public class Outfit {
 
     private String name;
     private List<String> tags;
-    private List<String> items; //ToDo: Change String data type to Item
+    private List<Item> items;
 
     private final String NULL_NAME = "Not Named";
 
@@ -25,15 +25,13 @@ public class Outfit {
     }
 
 
-
-
     /**
      * This constructor is used when an Outfit already exist for a user.
      * @param name The pre-existing Outfit name from database.
      * @param tags The pre-existing tags from database.
      * @param items The pre-existing Items from database.
      */
-    public Outfit(String name, List<String> tags, List<String> items){  //ToDo: Change List<String> items to List<Item> items
+    public Outfit(String name, List<String> tags, List<Item> items){
         this.name = name;
         this.tags = tags;
         this.items = items;
@@ -77,7 +75,7 @@ public class Outfit {
      * @return List<String> of tags belonging to this outfit.
      */
     public List<String> getTags() {
-        //Check to see if outfit tags is empty
+        //Check to see if outfit tags is empty or null
         if(tags.isEmpty() || tags == null){
             return null;
         }
@@ -159,7 +157,7 @@ public class Outfit {
      */
     public void clearTags(){
         //Check to see if the tags List is empty
-        if(!tags.isEmpty()){
+        if(!tags.isEmpty() && tags != null){
             tags.clear();
         }
     }
@@ -178,9 +176,9 @@ public class Outfit {
      * Returns List of Items the Outfit is consisted of.
      * @return List<Item> associated with this outfit.
      */
-    public List<String> getItems() {  //ToDo: Change List<String> to List<Item>
+    public List<Item> getItems() {
         //Check to see if the items List is empty, if so return null
-        if(!items.isEmpty()){
+        if(!items.isEmpty() && items != null){
             return items;
         }
         else{
@@ -193,9 +191,9 @@ public class Outfit {
      * Sets the Outfit's Items List.
      * @param items List of type Item.
      */
-    public void setItems(List<String> items) {  //ToDo: Change List<String> to List<Item>
+    public void setItems(List<Item> items) {
         //Check to see if items parameter is empty
-        if(!items.isEmpty()){
+        if(!items.isEmpty() && items != null){
             this.items = items;
         }
     }
@@ -206,9 +204,9 @@ public class Outfit {
      * @param itemIndex The index value of the specific Item you wish to return.
      * @return Item specified by parameter that belongs to this outfit.
      */
-    public String getSingleItem(int itemIndex){  //ToDo: Change return type from String to Item
+    public Item getSingleItem(int itemIndex){
         //Check to see if itemIndex is empty
-        if(!items.get(itemIndex).isEmpty()){
+        if(!items.get(itemIndex).getId().isEmpty()){
             return items.get(itemIndex);
         }
         else
@@ -222,9 +220,9 @@ public class Outfit {
      * Adds an additional tag to the List associated with this Outfit.
      * @param newItem The new Item being added to the outfit.
      */
-    public void addItem(String newItem){  //ToDo: Change String parameter data type to Item
+    public void addItem(Item newItem){
         //Check to see if itemName is empty
-        if(newItem != null && !newItem.trim().isEmpty()){
+        if(newItem != null && !newItem.getId().trim().isEmpty()){
             items.add(newItem);
         }
     }
@@ -235,9 +233,9 @@ public class Outfit {
      * @param itemIndex The int index value of the specific Item wished to be replaced.
      * @param newItem The new Item.
      */
-    public void changeItem(int itemIndex, String newItem){  //ToDo: Change String parameter data type to Item
+    public void changeItem(int itemIndex, Item newItem){
         //Check to see if itemIndex is within the List bounds and actually has data. Then checks if newItem is not null or empty
-        if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && (!items.get(itemIndex).isEmpty()) && (newItem != null && !newItem.trim().isEmpty()))
+        if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && (!items.get(itemIndex).getId().isEmpty()) && (newItem != null && !newItem.getId().trim().isEmpty()))
         {
             items.set(itemIndex, newItem);
         }
@@ -250,7 +248,7 @@ public class Outfit {
      */
     public void removeItem(int itemIndex){
         //Check to see if itemIndex is within the List bounds and actually has data
-        if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && !items.remove(itemIndex).isEmpty()){
+        if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && !items.remove(itemIndex).getId().isEmpty()){
             items.remove(itemIndex);
         }
     }
@@ -275,3 +273,4 @@ public class Outfit {
         return items.size();
     }
 }
+
