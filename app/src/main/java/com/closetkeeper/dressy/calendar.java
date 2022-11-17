@@ -10,10 +10,13 @@ import android.widget.CalendarView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.databinding.ActivityCalendarBinding;
+
 import java.util.Date;
 
 public class calendar extends AppCompatActivity {
 
+    ActivityCalendarBinding binding;
     private CalendarView calendarView;  /** Instantiating calender and button */
     private ImageButton addOutfitBtn;
     private ImageButton calendarBack;
@@ -24,7 +27,37 @@ public class calendar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        binding = ActivityCalendarBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        //Navigation menu code
+        binding.bottomNavBar.setOnItemSelectedListener(item -> {
+
+            switch(item.getItemId()){
+                case R.id.homeNavBtn:
+                    Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+                    startActivity(intent);
+                    break;
+                case R.id.closetNavBtn:
+                    Intent closet = new Intent(this, com.closetkeeper.dressy.my_closets.class);
+                    startActivity(closet);
+                    break;
+                case R.id.addNavBtn:
+                    Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
+                    break;
+                case R.id.searchNavBar:
+                    break;
+                case R.id.outfitsNavBtn:
+                    Intent outfit = new Intent(this, com.closetkeeper.dressy.my_outfits.class);
+                    startActivity(outfit);
+                    break;
+            }
+
+
+            return true;
+        });
+
 
         MyDate = (TextView) findViewById(R.id.MyDate);
 
