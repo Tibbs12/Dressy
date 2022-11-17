@@ -6,6 +6,7 @@ import static com.closetkeeper.dressy.home.Items;
 import static com.closetkeeper.dressy.home.Outfits;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -28,7 +29,7 @@ public class selectOutfit extends AppCompatActivity {
     private ImageButton addItemsBtn;
     private TextView outfitNameInput;
     private GridLayout gridLayout;
-    private ImageButton outfitFwdBtn;
+    private AppCompatButton outfitFwdBtn;
     //private ListView adapterView;
 
     public static List<Item> selectedItems = new ArrayList<Item>();
@@ -66,7 +67,7 @@ public class selectOutfit extends AppCompatActivity {
 
 
 
-        outfitFwdBtn = (ImageButton) findViewById(R.id.outfitFwdBtn);
+        outfitFwdBtn = (AppCompatButton) findViewById(R.id.outfitFwdBtn);
         outfitFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

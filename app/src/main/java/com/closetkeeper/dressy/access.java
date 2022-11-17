@@ -47,7 +47,7 @@ public class access extends AppCompatActivity {
 
     /**Opens Sign up page*/
     public void openSignUp() {
-        Intent intent = new Intent(this, com.closetkeeper.dressy.sign_up.class);
+        Intent intent = new Intent(this, com.closetkeeper.dressy.my_items.class);
         startActivity(intent);
     }
 

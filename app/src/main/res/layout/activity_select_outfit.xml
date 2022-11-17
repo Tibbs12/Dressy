@@ -58,13 +58,13 @@
         android:layout_marginBottom="13dp"
         android:background="@drawable/grid_border"
         android:numColumns="4"
-        app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
+        app:layout_constraintBottom_toTopOf="@+id/outfitFwdBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/appCompatButton"
+        android:id="@+id/outfitFwdBtn"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="83dp"
@@ -75,19 +75,7 @@
         android:text="@string/done"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/outfitFwdBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
-
-    <ImageButton
-        android:id="@+id/outfitFwdBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/fwd_arrow"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:srcCompat="@drawable/ic_arrow_forward"
-        tools:layout_editor_absoluteX="333dp"
-        tools:layout_editor_absoluteY="634dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
