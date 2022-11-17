@@ -5,6 +5,7 @@ import static com.closetkeeper.dressy.home.Closets;
 import static com.closetkeeper.dressy.home.Items;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -28,7 +29,7 @@ public class selectCloset extends AppCompatActivity {
     private TextView closetNameInput;
     private ListView adapterView;
     private GridLayout itemsGrid;
-    private ImageButton closetFwdBtn;
+    private AppCompatButton closetFwdBtn;
 
     /** Need static variables to pass data using intent */
     public final static String CLOSETNAME = "CLOSETNAME";
@@ -58,7 +59,7 @@ public class selectCloset extends AppCompatActivity {
 
 
 
-        closetFwdBtn = (ImageButton) findViewById(R.id.closetFwdBtn);
+        closetFwdBtn = (AppCompatButton) findViewById(R.id.closetFwdBtn);
         closetFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
