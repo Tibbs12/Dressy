@@ -9,11 +9,15 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
@@ -23,6 +27,9 @@ import android.widget.Toast;
 
 import com.closetkeeper.dressy.dto.Item;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +38,7 @@ public class my_items extends AppCompatActivity {
     private ImageButton addCamera;
     private GridLayout myItemsGrid;
     private ImageButton deleteMyItems;
+    private ImageButton addGallery;
 
     /**
      * Used for permissions to access camera
@@ -45,6 +53,7 @@ public class my_items extends AppCompatActivity {
         setContentView(R.layout.activity_my_items);
 
         myItemsGrid = findViewById(R.id.myItemsGrid);
+
 
         //For loop to display items
         myList.removeAll(myList);
@@ -69,6 +78,18 @@ public class my_items extends AppCompatActivity {
                 EnableRuntimePermission();
                 Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
+            }
+        });
+
+        addGallery = (ImageButton) findViewById(R.id.addGallery);
+        addGallery.setSelected(false);
+        addGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addGallery.setSelected(true);
+                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, 7);
             }
         });
 
@@ -105,11 +126,31 @@ public class my_items extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 7 && resultCode == RESULT_OK) {
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            Item myItem = new Item();
-            myItem.setImage(bitmap);
-            Items.add(myItem); //When items class is done we will use datatype Item instead of bitmap
-            updateView(myItemsGrid); //calls method to update the view
+            if (addGallery.isSelected()){
+                final Uri imageUri = data.getData();
+                InputStream imageStream = null;
+                try {
+                    imageStream = getContentResolver().openInputStream(imageUri);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                final Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+                Bitmap newmap = Bitmap.createScaledBitmap(bitmap, 200, 200, false);
+                Item myItem = new Item();
+                myItem.setImage(newmap);
+                Items.add(myItem); //When items class is done we will use datatype Item instead of bitmap
+                updateView(myItemsGrid); //calls method to update the view
+            }
+            else
+            {
+                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                Bitmap newmap = Bitmap.createScaledBitmap(bitmap, 200, 200, false);
+                Item myItem = new Item();
+                myItem.setImage(newmap);
+                Items.add(myItem); //When items class is done we will use datatype Item instead of bitmap
+                updateView(myItemsGrid); //calls method to update the view
+            }
+
         }
     }
 
@@ -153,7 +194,7 @@ public class my_items extends AppCompatActivity {
                 }
                 else { //isSelected() is true
                     map.setAlpha(1000);
-                    map.setPressed(false);
+                    map.setSelected(false);
                     //map.setBackgroundColor(getResources().getColor(R.color.purple));
                 }
                 return true;
