@@ -10,26 +10,35 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.closetkeeper.dressy.dto.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class my_items extends AppCompatActivity {
 
     private ImageButton addCamera;
     private GridLayout myItemsGrid;
+    private ImageButton deleteMyItems;
 
     /**
      * Used for permissions to access camera
      */
     public static final int RequestPermissionCode = 1;
 
+    public static List<ImageView> myList = new ArrayList<ImageView>();
+//myList[0] = Items[0] ...
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +47,18 @@ public class my_items extends AppCompatActivity {
         myItemsGrid = findViewById(R.id.myItemsGrid);
 
         //For loop to display items
+        myList.removeAll(myList);
         for (Item image : Items) {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
 
             map.setImageBitmap(image.getImage());
             map.setClickable(true);
-            map.setPadding(18, 18, 9, 0);
+            map.setPadding(18, 18, 18, 18);
+            map.setId(Items.indexOf(image));
+            map.setSelected(false);
             myItemsGrid.addView(map);
             createOnLongClick(map);
+            myList.add(map);
         }
 
 
@@ -59,13 +72,23 @@ public class my_items extends AppCompatActivity {
             }
         });
 
+        deleteMyItems = (ImageButton) findViewById(R.id.deleteMyItems);
+        deleteMyItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int x = 0;
+                for (ImageView view : myList ) {
+                    if (view.isSelected()){
+                        Items.remove(view.getId() - x);
+                        x++;
+                    }
 
-    }
+                    }
+                updateView(myItemsGrid);
+                }
+            });
 
-    /**Test method for onlongclick */
-    public boolean onClick(View v) {
-        v.setPadding(0,0,0,0);
-        return true;
+
     }
 
     /**
@@ -96,32 +119,43 @@ public class my_items extends AppCompatActivity {
             case RequestPermissionCode:
                 if (result.length > 0 && result[0] == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(my_items.this, "Permission Granted, Now your application can access CAMERA.", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(my_items.this, "Permission Canceled, Now your application cannot access CAMERA.", Toast.LENGTH_LONG).show();
                 }
                 break;
         }
     }
 
     public void updateView(GridLayout myLayout){
-        myLayout.removeAllViews();                      /**removing all views from grid and then running loop again */
+        myLayout.removeAllViews();
+        myList.removeAll(myList);/**removing all views from grid and then running loop again */
         for (Item image : Items) {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
             map.setImageBitmap(image.getImage());
             map.setClickable(true);
-            map.setPadding(18, 18, 9, 0);
+            map.setSelected(false);
+            map.setId(Items.indexOf(image));
+            map.setPadding(18, 18, 18, 18);
+            myList.add(map);
             myItemsGrid.addView(map);
             createOnLongClick(map);
         }
     }
 
+    /** this method creates an onlongclick listener for every button that calls this method. */
     public void createOnLongClick(ImageView map){
         map.setOnLongClickListener(new View.OnLongClickListener(){
-            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public boolean onLongClick(View v) {
-                map.setSelected(true);
-                map.setOutlineAmbientShadowColor(5);
+                if (map.isSelected() != true)
+                {
+                    map.setAlpha(70);
+                    map.setSelected(true);
+
+                }
+                else { //isSelected() is true
+                    map.setAlpha(1000);
+                    map.setPressed(false);
+                    //map.setBackgroundColor(getResources().getColor(R.color.purple));
+                }
                 return true;
             }
         });
