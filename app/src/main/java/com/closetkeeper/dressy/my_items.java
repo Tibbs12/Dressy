@@ -3,10 +3,12 @@ package com.closetkeeper.dressy;
 import static com.closetkeeper.dressy.home.Items;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -42,6 +44,7 @@ public class my_items extends AppCompatActivity {
     private GridLayout myItemsGrid;
     private ImageButton deleteMyItems;
     private ImageButton addGallery;
+    AlertDialog.Builder builder;
 
     /**
      * Used for permissions to access camera
@@ -127,9 +130,26 @@ public class my_items extends AppCompatActivity {
         });
 
         deleteMyItems = (ImageButton) findViewById(R.id.deleteMyItems);
+        builder = new AlertDialog.Builder(this);
         deleteMyItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                builder.setMessage("Are you sure you want to delete this item?");
+                builder.setCancelable(true);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                                .show();
+
                 int x = 0;
                 for (ImageView view : myList ) {
                     if (view.isSelected()){
@@ -234,4 +254,5 @@ public class my_items extends AppCompatActivity {
             }
         });
     }
+
 }
