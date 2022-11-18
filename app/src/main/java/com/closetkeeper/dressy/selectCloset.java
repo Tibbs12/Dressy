@@ -5,6 +5,7 @@ import static com.closetkeeper.dressy.home.Closets;
 import static com.closetkeeper.dressy.home.Items;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.dto.Item;
+
 import java.util.ArrayList;
 
 public class selectCloset extends AppCompatActivity {
@@ -26,7 +29,7 @@ public class selectCloset extends AppCompatActivity {
     private TextView closetNameInput;
     private ListView adapterView;
     private GridLayout itemsGrid;
-    private ImageButton closetFwdBtn;
+    private AppCompatButton closetFwdBtn;
 
     /** Need static variables to pass data using intent */
     public final static String CLOSETNAME = "CLOSETNAME";
@@ -56,7 +59,7 @@ public class selectCloset extends AppCompatActivity {
 
 
 
-        closetFwdBtn = (ImageButton) findViewById(R.id.closetFwdBtn);
+        closetFwdBtn = (AppCompatButton) findViewById(R.id.closetFwdBtn);
         closetFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,11 +74,11 @@ public class selectCloset extends AppCompatActivity {
 
 
         //For loop to display items
-        for (Bitmap image : Items)
+        for (Item image : Items)
         {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
             //map.setLayoutParams(gridLayout.getLayoutParams());
-            map.setImageBitmap(image);
+            map.setImageBitmap(image.getImage());
             itemsGrid.addView(map);
         }
     }

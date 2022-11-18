@@ -1,6 +1,8 @@
 package com.closetkeeper.dressy.dto;
 
 
+import android.graphics.Bitmap;
+
 import java.io.File;
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class Item
 {
     private String id;
     private List<String> tags;
-    private File image;
+    private Bitmap image;
     private File thumbnail;
 
 
@@ -34,11 +36,11 @@ public class Item
     }
 
 
-    public File getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
-    public void setImage(File image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 

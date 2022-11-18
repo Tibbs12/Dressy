@@ -6,6 +6,7 @@ import static com.closetkeeper.dressy.home.Items;
 import static com.closetkeeper.dressy.home.Outfits;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,14 +17,22 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.dto.Item;
+import com.closetkeeper.dressy.dto.Outfit;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class selectOutfit extends AppCompatActivity {
 
     private ImageButton outfitBackBtn;           /**Instantiating the ImageButtons*/
     private ImageButton addItemsBtn;
     private TextView outfitNameInput;
     private GridLayout gridLayout;
-    private ImageButton outfitFwdBtn;
+    private AppCompatButton outfitFwdBtn;
     //private ListView adapterView;
+
+    public static List<Item> selectedItems = new ArrayList<Item>();
 
     /** Used for permissions to access camera*/
     public static final int RequestPermissionCode = 1;
@@ -58,11 +67,16 @@ public class selectOutfit extends AppCompatActivity {
 
 
 
-        outfitFwdBtn = (ImageButton) findViewById(R.id.outfitFwdBtn);
+        outfitFwdBtn = (AppCompatButton) findViewById(R.id.outfitFwdBtn);
         outfitFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Outfits.add(outfitName);
+                for (Item item : selectedItems)
+                {
+                    Outfit MyOutfit = new Outfit();
+                    MyOutfit.addItem(item);
+                    Outfits.add(MyOutfit);
+                }
                 createOutfit();
             }
         });
@@ -74,11 +88,11 @@ public class selectOutfit extends AppCompatActivity {
 
 
         //For loop to display items
-        for (Bitmap image : Items)
+        for (Item image : Items)
         {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
             //map.setLayoutParams(gridLayout.getLayoutParams());
-            map.setImageBitmap(image);
+            map.setImageBitmap(image.getImage());
             gridLayout.addView(map);
         }
     }
@@ -92,7 +106,7 @@ public class selectOutfit extends AppCompatActivity {
     }
 
     public void createOutfit() {
-        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+        Intent intent = new Intent(this, com.closetkeeper.dressy.outfit_canvas.class);
         startActivity(intent);
     }
 
