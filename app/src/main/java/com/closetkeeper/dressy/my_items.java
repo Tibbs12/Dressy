@@ -136,33 +136,27 @@ public class my_items extends AppCompatActivity {
             public void onClick(View v) {
                 builder.setMessage("Are you sure you want to delete this item?");
                 builder.setCancelable(true);
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                });
-                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.cancel();
+                        int x = 0;
+                        for (ImageView view : myList ) {
+                            if (view.isSelected()){
+                                Items.remove(view.getId() - x);
+                                x++;
                             }
-                        })
-                                .show();
-
-                int x = 0;
-                for (ImageView view : myList ) {
-                    if (view.isSelected()){
-                        Items.remove(view.getId() - x);
-                        x++;
+                        }
+                        updateView(myItemsGrid);
                     }
-
-                    }
-                updateView(myItemsGrid);
-                }
-            });
-
-
+                }).show();
+            }
+        });
     }
 
     /**
