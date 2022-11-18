@@ -7,9 +7,16 @@
     android:background="@drawable/select_bg_01"
     tools:context=".selectOutfit">
 
-    <!--use intent to get user input from previous activity and display in this activity-->
-
-    <!--placeholder for search bar must be done in java-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
     <TextView
         android:id="@+id/outfitNameInput"
@@ -44,10 +51,14 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="307dp"
         android:text="@string/my_items"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="145dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView2" />
 
     <GridLayout
         android:id="@+id/gridLayout"

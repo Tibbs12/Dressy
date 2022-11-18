@@ -17,6 +17,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.databinding.ActivitySelectClosetBinding;
+import com.closetkeeper.dressy.databinding.ActivitySelectOutfitBinding;
 import com.closetkeeper.dressy.dto.Item;
 import com.closetkeeper.dressy.dto.Outfit;
 
@@ -25,6 +27,7 @@ import java.util.List;
 
 public class selectOutfit extends AppCompatActivity {
 
+    ActivitySelectOutfitBinding binding;
     private ImageButton outfitBackBtn;           /**Instantiating the ImageButtons*/
     private ImageButton addItemsBtn;
     private TextView outfitNameInput;
@@ -45,7 +48,36 @@ public class selectOutfit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_outfit);
+        binding = ActivitySelectOutfitBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        //Navigation menu code
+        binding.bottomNavBar.setOnItemSelectedListener(item -> {
+
+            switch(item.getItemId()){
+                case R.id.homeNavBtn:
+                    Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+                    startActivity(intent);
+                    break;
+                case R.id.closetNavBtn:
+                    Intent closet = new Intent(this, com.closetkeeper.dressy.my_closets.class);
+                    startActivity(closet);
+                    break;
+                case R.id.addNavBtn:
+                    Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
+                    break;
+                case R.id.searchNavBar:
+                    break;
+                case R.id.outfitsNavBtn:
+                    Intent outfit = new Intent(this, com.closetkeeper.dressy.my_outfits.class);
+                    startActivity(outfit);
+                    break;
+            }
+
+
+            return true;
+        });
 
         gridLayout = (GridLayout) findViewById(R.id.gridLayout);
 
