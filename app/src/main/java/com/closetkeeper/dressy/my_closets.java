@@ -11,7 +11,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,7 +75,7 @@ public class my_closets extends AppCompatActivity {
              map.setText(string);
              closetsGridLayout.addView(map);
          }
-    }
+        }
 
 
     /** methods for camera */

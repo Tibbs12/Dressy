@@ -27,7 +27,6 @@ public class home extends AppCompatActivity {
 
     ActivityHomeBinding binding;
 
-
     private ImageButton newclosetbtn;           /**Instantiating the two ImageButtons*/
     private ImageButton newoutfitbtn;
     private TextView calendarClick;
