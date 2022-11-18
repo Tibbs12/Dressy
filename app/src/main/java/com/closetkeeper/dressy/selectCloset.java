@@ -18,12 +18,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.databinding.ActivityMyItemsBinding;
+import com.closetkeeper.dressy.databinding.ActivitySelectClosetBinding;
 import com.closetkeeper.dressy.dto.Item;
 
 import java.util.ArrayList;
 
 public class selectCloset extends AppCompatActivity {
 
+    ActivitySelectClosetBinding binding;
     private ImageButton closetBackBtn;           /**Instantiating the ImageButtons*/
     private ImageButton closetAddOutfits;
     private TextView closetNameInput;
@@ -39,7 +42,37 @@ public class selectCloset extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_closet);
+        binding = ActivitySelectClosetBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        //Navigation menu code
+        binding.bottomNavBar.setOnItemSelectedListener(item -> {
+
+            switch(item.getItemId()){
+                case R.id.homeNavBtn:
+                    Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+                    startActivity(intent);
+                    break;
+                case R.id.closetNavBtn:
+                    Intent closet = new Intent(this, com.closetkeeper.dressy.my_closets.class);
+                    startActivity(closet);
+                    break;
+                case R.id.addNavBtn:
+                    Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
+                    break;
+                case R.id.searchNavBar:
+                    break;
+                case R.id.outfitsNavBtn:
+                    Intent outfit = new Intent(this, com.closetkeeper.dressy.my_outfits.class);
+                    startActivity(outfit);
+                    break;
+            }
+
+
+            return true;
+        });
+
 
         itemsGrid = findViewById(R.id.itemsGrid);
 
