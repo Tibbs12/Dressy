@@ -115,23 +115,20 @@ public class home extends AppCompatActivity {
 
 
         //Navigation menu code
+
         binding.bottomNavBar.setOnItemSelectedListener(item -> {
 
             switch(item.getItemId()){
                 case R.id.homeNavBtn:
-                    Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
-                    startActivity(intent);
+
                     break;
                 case R.id.closetNavBtn:
                     Intent mycloset = new Intent(this, com.closetkeeper.dressy.my_closets.class);
                     startActivity(mycloset);
                     break;
                 case R.id.addNavBtn:
-                    /**Intent add = new Intent(this, com.closetkeeper.dressy.???.class);
-                     startActivity(add); */
-                    EnableRuntimePermission();
-                    Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
+                    Intent items = new Intent(this, com.closetkeeper.dressy.my_items.class);
+                    startActivity(items);
                     break;
                 case R.id.searchNavBar:
                     /** Intent search = new Intent(this, com.closetkeeper.dressy.my_closets.class);

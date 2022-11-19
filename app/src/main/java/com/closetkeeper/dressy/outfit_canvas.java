@@ -30,10 +30,8 @@ public class outfit_canvas extends AppCompatActivity {
                     startActivity(mycloset);
                     break;
                 case R.id.addNavBtn:
-                    /**Intent add = new Intent(this, com.closetkeeper.dressy.???.class);
-                     startActivity(add); */
-                    Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
+                    Intent items = new Intent(this, com.closetkeeper.dressy.my_items.class);
+                    startActivity(items);
                     break;
                 case R.id.searchNavBar:
                     /** Intent search = new Intent(this, com.closetkeeper.dressy.my_closets.class);
