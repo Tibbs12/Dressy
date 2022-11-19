@@ -58,7 +58,7 @@ public class my_items extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMyItemsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        binding.bottomNavBar.setSelectedItemId(R.id.addNavBtn);  /** this sets the correct nav button each time we load this page */
         //Navigation menu code
         binding.bottomNavBar.setOnItemSelectedListener(item -> {
 
@@ -72,8 +72,6 @@ public class my_items extends AppCompatActivity {
                     startActivity(closet);
                     break;
                 case R.id.addNavBtn:
-                    Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
                     break;
                 case R.id.searchNavBar:
                     break;
@@ -134,7 +132,7 @@ public class my_items extends AppCompatActivity {
         deleteMyItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                builder.setMessage("Are you sure you want to delete this item?");
+                builder.setMessage("Are you sure you want to delete this item(s)?");
                 builder.setCancelable(true);
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
@@ -187,6 +185,7 @@ public class my_items extends AppCompatActivity {
                 myItem.setImage(newmap);
                 Items.add(myItem); //When items class is done we will use datatype Item instead of bitmap
                 updateView(myItemsGrid); //calls method to update the view
+                addGallery.setSelected(false);
             }
             else
             {

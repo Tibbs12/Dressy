@@ -64,8 +64,8 @@ public class selectOutfit extends AppCompatActivity {
                     startActivity(closet);
                     break;
                 case R.id.addNavBtn:
-                    Intent camera = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(camera, 7); /** this is connected to "OnActivityResult" Method */
+                    Intent items = new Intent(this, com.closetkeeper.dressy.my_items.class);
+                    startActivity(items);
                     break;
                 case R.id.searchNavBar:
                     break;
