@@ -42,8 +42,6 @@ public class my_closets extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.closetNavBtn:
-                    Intent closet = new Intent(this, com.closetkeeper.dressy.my_closets.class);
-                    startActivity(closet);
                     break;
                 case R.id.addNavBtn:
                     Intent items = new Intent(this, com.closetkeeper.dressy.my_items.class);
@@ -54,6 +52,8 @@ public class my_closets extends AppCompatActivity {
                      startActivity(search); */
                     break;
                 case R.id.outfitsNavBtn:
+                    Intent outfit = new Intent(this, com.closetkeeper.dressy.my_outfits.class);
+                    startActivity(outfit);
 
                     break;
             }

@@ -65,7 +65,6 @@ public class home extends AppCompatActivity {
         {
             ImageButton map = new ImageButton(this);/** This code adds a button each time*/
             map.setLayoutParams(MyOutfits.getLayoutParams());
-            //map.set(string); This needs to be figured out still
             MyOutfits.addView(map);
         }
 
