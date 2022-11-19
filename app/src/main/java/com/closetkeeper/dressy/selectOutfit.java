@@ -35,7 +35,7 @@ public class selectOutfit extends AppCompatActivity {
     private AppCompatButton outfitFwdBtn;
     //private ListView adapterView;
 
-    public static List<Item> selectedItems = new ArrayList<Item>();
+    public static List<ImageView> viewList = new ArrayList<ImageView>();
 
     /** Used for permissions to access camera*/
     public static final int RequestPermissionCode = 1;
@@ -103,13 +103,17 @@ public class selectOutfit extends AppCompatActivity {
         outfitFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (Item item : selectedItems)
+                Outfit MyOutfit = new Outfit(); //Create a new outfit on click
+                MyOutfit.setName(outfitName);
+
+                for (ImageView view : viewList)
                 {
-                    Outfit MyOutfit = new Outfit();
-                    MyOutfit.addItem(item);
-                    Outfits.add(MyOutfit);
+                    if (view.isSelected()){
+                        MyOutfit.addItem(Items.get(view.getId()));  //for every item selected, add item to new outfit
+                    }
                 }
-                createOutfit();
+                Outfits.add(MyOutfit); //after loop, add new outfit to list of outfits
+                createOutfit(); //open home page
             }
         });
 
@@ -120,12 +124,18 @@ public class selectOutfit extends AppCompatActivity {
 
 
         //For loop to display items
+        viewList.removeAll(viewList);
         for (Item image : Items)
         {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
-            //map.setLayoutParams(gridLayout.getLayoutParams());
             map.setImageBitmap(image.getImage());
+            map.setClickable(true);
+            map.setPadding(18, 18, 18, 18);
+            map.setId(Items.indexOf(image));
+            map.setSelected(false);
+            viewList.add(map);
             gridLayout.addView(map);
+            createOnLongClick(map);
         }
     }
 
@@ -138,8 +148,29 @@ public class selectOutfit extends AppCompatActivity {
     }
 
     public void createOutfit() {
-        Intent intent = new Intent(this, com.closetkeeper.dressy.outfit_canvas.class);
+        Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
         startActivity(intent);
+    }
+
+    /** this method creates an onlongclick listener for every button that calls this method. */
+    public void createOnLongClick(ImageView map){
+        map.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                if (map.isSelected() != true)
+                {
+                    map.setAlpha(70);
+                    map.setSelected(true);
+
+                }
+                else { //isSelected() is true
+                    map.setAlpha(1000);
+                    map.setSelected(false);
+                    //map.setBackgroundColor(getResources().getColor(R.color.purple));
+                }
+                return true;
+            }
+        });
     }
 
 }

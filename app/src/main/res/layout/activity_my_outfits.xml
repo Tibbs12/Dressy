@@ -49,19 +49,21 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="61dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="66dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/grid_border"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton11"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView4"></GridLayout>
+        app:layout_constraintTop_toBottomOf="@+id/searchView4"
+        app:layout_constraintVertical_bias="0.0"></GridLayout>
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/addOutfit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/ic_add_canvas"
         android:contentDescription="@string/add_button"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,23 +71,11 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/deleteOutfit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_edit"
-        android:contentDescription="@string/edit_btn"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="60dp"
         android:background="@drawable/ic_delete"
         android:contentDescription="@string/delete_btn"
         app:layout_constraintEnd_toEndOf="parent"

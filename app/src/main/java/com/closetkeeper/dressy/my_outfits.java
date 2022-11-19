@@ -3,15 +3,20 @@ package com.closetkeeper.dressy;
 import static com.closetkeeper.dressy.home.Items;
 import static com.closetkeeper.dressy.home.Outfits;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,11 +24,18 @@ import com.closetkeeper.dressy.databinding.ActivityMyOutfitsBinding;
 import com.closetkeeper.dressy.dto.Item;
 import com.closetkeeper.dressy.dto.Outfit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class my_outfits extends AppCompatActivity {
 
     ActivityMyOutfitsBinding binding;
-    public static final int RequestPermissionCode = 1;
     private GridLayout outfitsGridLayout;
+    private ImageButton addOutfit;
+    private ImageButton deleteOutfit;
+    AlertDialog.Builder builder;
+
+    public static List<TextView> newViewList = new ArrayList<TextView>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,53 +75,122 @@ public class my_outfits extends AppCompatActivity {
 
         outfitsGridLayout = findViewById(R.id.outfitsGridLayout);
 
+        newViewList.removeAll(newViewList);
         //For loop to display Outfits
         for (Outfit string : Outfits)
          {
              TextView map = new TextView(this);/** This code adds a button each time*/
-             //map.setLayoutParams(outfitsGridLayout.getLayoutParams());
-             map.setText(string.getItems().toString());
+             map.setText(string.getName().toString());
+             map.setClickable(true);
+             map.setPadding(18, 18, 18, 18);
+             map.setId(Outfits.indexOf(string));
+             map.setSelected(false);
+             createOnClick(map);
+             createOnLongClick(map);
              outfitsGridLayout.addView(map);
+             newViewList.add(map);
          }
+
+
+
+        addOutfit = findViewById(R.id.addOutfit);
+        addOutfit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openOutfit();
+            }
+        });
+
+        deleteOutfit = (ImageButton) findViewById(R.id.deleteOutfit);
+        builder = new AlertDialog.Builder(this);
+        deleteOutfit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Are you sure you want to delete this item(s)?");
+                builder.setCancelable(true);
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        int x = 0;
+                        for (TextView view : newViewList ) {
+                            if (view.isSelected()){
+                                Outfits.remove(view.getId() - x);
+                                x++;
+                            }
+                        }
+                        updateView(outfitsGridLayout);
+                    }
+                }).show();
+            }
+        });
     }
 
 
-    /** methods for camera */
-    private void EnableRuntimePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(my_outfits.this, Manifest.permission.CAMERA)) {
-            Toast.makeText(my_outfits.this, "CAMERA permission allows us to Access your camera", Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            ActivityCompat.requestPermissions(my_outfits.this, new String[]{Manifest.permission.CAMERA}, RequestPermissionCode);
-        }
+
+    public void openCanvas() {
+        Intent intent = new Intent(this, com.closetkeeper.dressy.outfit_canvas.class);
+        startActivity(intent);
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 7 && resultCode == RESULT_OK) {
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            Item myItem = new Item();
-            myItem.setImage(bitmap);
-            Items.add(myItem);
-            /** Instead of all below code, we will pass bitmap and tag string to method CreateItem(); */
-            //ImageView image = new ImageView(this);/** This code adds a button each time*/
-            //image.setLayoutParams(gridLayout.getLayoutParams());
-            //gridLayout.addView(image);
-            //image.setImageBitmap(bitmap);
-        }
+
+    public void openOutfit() {
+        Intent intent = new Intent(this, com.closetkeeper.dressy.createOutfit.class);
+        startActivity(intent);
     }
 
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] result) {
-        super.onRequestPermissionsResult(requestCode, permissions, result);
-        switch (requestCode) {
-            case RequestPermissionCode:
-                if (result.length > 0 && result[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(my_outfits.this, "Permission Granted, Now your application can access CAMERA.", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(my_outfits.this, "Permission Canceled, Now your application cannot access CAMERA.", Toast.LENGTH_LONG).show();
+
+    /** this method creates an onclick listener for every button that calls this method. */
+    public void createOnClick(TextView map){
+        map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openCanvas();                   /** need to pass outfit to canvas page */
+            }
+        });
+    }
+
+
+    /** this method creates an onlongclick listener for every button that calls this method. */
+    public void createOnLongClick(TextView map){
+        map.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                if (map.isSelected() != true)
+                {
+                    map.setAllCaps(true);
+                    map.setSelected(true);
+
                 }
-                break;
+                else { //isSelected() is true
+                    map.setAllCaps(false);
+                    map.setSelected(false);
+                    //map.setBackgroundColor(getResources().getColor(R.color.purple));
+                }
+                return true;
+            }
+        });
+    }
+
+    public void updateView(GridLayout myLayout){
+        myLayout.removeAllViews();
+        newViewList.removeAll(newViewList);/**removing all views from grid and then running loop again */
+        for (Outfit image : Outfits) {
+            TextView map = new TextView(this);/** This code adds a button each time*/
+            map.setText(image.getName().toString());
+            map.setClickable(true);
+            map.setPadding(18, 18, 18, 18);
+            map.setId(Outfits.indexOf(image));
+            map.setSelected(false);
+            createOnClick(map);
+            createOnLongClick(map);
+            outfitsGridLayout.addView(map);
+            newViewList.add(map);
         }
     }
 }

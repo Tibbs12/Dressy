@@ -222,9 +222,9 @@ public class Outfit {
      */
     public void addItem(Item newItem){
         //Check to see if itemName is empty
-        if(newItem != null && !newItem.getId().trim().isEmpty()){
+        //if(newItem != null && !newItem.getId().trim().isEmpty()){
             items.add(newItem);
-        }
+        //}
     }
 
 
