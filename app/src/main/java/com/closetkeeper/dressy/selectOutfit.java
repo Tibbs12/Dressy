@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
@@ -79,7 +78,7 @@ public class selectOutfit extends AppCompatActivity {
             return true;
         });
 
-        gridLayout = (GridLayout) findViewById(R.id.gridLayout);
+        gridLayout = (GridLayout) findViewById(R.id.canvasGridLayout);
 
 
 
