@@ -33,6 +33,7 @@ public class my_outfits extends AppCompatActivity {
     private GridLayout outfitsGridLayout;
     private ImageButton addOutfit;
     private ImageButton deleteOutfit;
+    private static String outfitIndex; //used to pass index of outfit selected to edit page.
     AlertDialog.Builder builder;
 
     public static List<TextView> newViewList = new ArrayList<TextView>();
@@ -133,9 +134,14 @@ public class my_outfits extends AppCompatActivity {
 
 
 
-    public void openCanvas() {
+    public void openCanvas(String outfitIndex) {
         Intent intent = new Intent(this, com.closetkeeper.dressy.outfit_canvas.class);
-        startActivity(intent);
+
+        /** This putExtra function passes the actual string to the new page */
+        intent.putExtra(outfit_canvas.INDEX, outfitIndex);
+
+
+        startActivity(intent);      //Take in user input from this XML sheet and pass it to the new page
     }
 
 
@@ -150,7 +156,9 @@ public class my_outfits extends AppCompatActivity {
         map.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                openCanvas();                   /** need to pass outfit to canvas page */
+                String outfitIndex;
+                outfitIndex = Integer.toString(v.getId());
+                openCanvas(outfitIndex);            /** need to pass outfit to canvas page */
             }
         });
     }

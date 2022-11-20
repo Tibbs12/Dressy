@@ -248,9 +248,9 @@ public class Outfit {
      */
     public void removeItem(int itemIndex){
         //Check to see if itemIndex is within the List bounds and actually has data
-        if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && !items.remove(itemIndex).getId().isEmpty()){
+        //if((itemIndex >= 0 && itemIndex < this.getItemsLength()) && !items.remove(itemIndex).getId().isEmpty()){
             items.remove(itemIndex);
-        }
+        //}
     }
 
 

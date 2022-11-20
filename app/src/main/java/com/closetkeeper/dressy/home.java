@@ -1,6 +1,7 @@
 package com.closetkeeper.dressy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -10,7 +11,9 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +36,7 @@ public class home extends AppCompatActivity {
     private LinearLayout MyClosets;
     private LinearLayout MyOutfits;
     private ImageButton toCalendar;
+    private ConstraintLayout home;
 
     /** list for each item, outfit, and closet */
     public static List<Item> Items = new ArrayList<Item>();  /** Items will have a bitmap and String "tag" */
@@ -59,13 +63,19 @@ public class home extends AppCompatActivity {
 
         MyClosets = (LinearLayout) findViewById(R.id.MyClosets);
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);
+        home = (ConstraintLayout) findViewById(R.id.home);
 
         //For loop to display Outfits
+        int x = 0;
         for (Outfit string : Outfits)
         {
-            ImageButton map = new ImageButton(this);/** This code adds a button each time*/
+            Button map = new Button(this);/** This code adds a button each time*/
             map.setLayoutParams(MyOutfits.getLayoutParams());
+            map.setId(Outfits.indexOf(string));
+            map.setText(Outfits.get(x).getName());
             MyOutfits.addView(map);
+            createOnClick(map);
+            x++;
         }
 
         //For loop to display Closets
@@ -170,43 +180,38 @@ public class home extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /** methods for camera */
-    private void EnableRuntimePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(home.this, Manifest.permission.CAMERA)) {
-            Toast.makeText(home.this, "CAMERA permission allows us to Access your camera", Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-            ActivityCompat.requestPermissions(home.this, new String[]{Manifest.permission.CAMERA}, RequestPermissionCode);
-        }
+    /** this method creates an onclick listener for every button that calls this method. */
+    public void createOnClick(Button map){
+        map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String outfitIndex;
+                outfitIndex = Integer.toString(v.getId());
+                openCanvas(outfitIndex);            /** need to pass outfit to canvas page */
+            }
+        });
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 7 && resultCode == RESULT_OK) {
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            /** Instead of all below code, we will pass bitmap and tag string to method CreateItem(); */
-            //ImageView image = new ImageView(this);/** This code adds a button each time*/
-            //image.setLayoutParams(gridLayout.getLayoutParams());
-            //gridLayout.addView(image);
-            //image.setImageBitmap(bitmap);
-            Item myItem = new Item();
-            myItem.setImage(bitmap);
-            Items.add(myItem);      //When items class is done we will use datatype Item instead of bitmap
-        }
+    public void openCanvas(String outfitIndex) {
+        Intent intent = new Intent(this, com.closetkeeper.dressy.outfit_canvas.class);
+
+        /** This putExtra function passes the actual string to the new page */
+        intent.putExtra(outfit_canvas.INDEX, outfitIndex);
+
+
+        startActivity(intent);      //Take in user input from this XML sheet and pass it to the new page
     }
 
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] result) {
-        super.onRequestPermissionsResult(requestCode, permissions, result);
-        switch (requestCode) {
-            case RequestPermissionCode:
-                if (result.length > 0 && result[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(home.this, "Permission Granted, Now your application can access CAMERA.", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(home.this, "Permission Canceled, Now your application cannot access CAMERA.", Toast.LENGTH_LONG).show();
-                }
-                break;
-        }
+    public void writeOutfit(ImageButton map, int x) {
+        TextView view = new TextView(home.this);
+        view.setText(Outfits.get(x).getName());
+        view.setLayoutParams(map.getLayoutParams());
+        view.setPaddingRelative(map.getPaddingStart(),map.getPaddingTop(),map.getPaddingEnd(),map.getPaddingBottom());
+        home.addView(view);
+
+
+
     }
+
 
 }

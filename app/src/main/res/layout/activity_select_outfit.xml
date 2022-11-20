@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/searchView2" />
 
     <GridLayout
-        android:id="@+id/gridLayout"
+        android:id="@+id/canvasGridLayout"
         android:layout_width="351dp"
         android:layout_height="400dp"
         android:layout_marginStart="30dp"
@@ -87,6 +87,6 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/canvasGridLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
