@@ -1,5 +1,6 @@
 package com.closetkeeper.dressy;
 
+import static com.closetkeeper.dressy.home.Closets;
 import static com.closetkeeper.dressy.home.Outfits;
 
 import androidx.appcompat.app.AlertDialog;
@@ -9,62 +10,64 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.closetkeeper.dressy.databinding.ActivityOutfitCanvasBinding;
+import com.closetkeeper.dressy.databinding.ActivityClosetCanvasBinding;
+import com.closetkeeper.dressy.dto.Closet;
 import com.closetkeeper.dressy.dto.Item;
 import com.closetkeeper.dressy.dto.Outfit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class outfit_canvas extends AppCompatActivity {
+public class closetCanvas extends AppCompatActivity {
 
-    ActivityOutfitCanvasBinding binding;
-    private TextView outfitNameCanvas;
-    private GridLayout canvasGridLayout;
-    private ImageButton deleteCanvas;
+    ActivityClosetCanvasBinding binding;
+    private TextView closetNameCanvas;
+    private GridLayout closetGridLayout;
+    private ImageButton deleteCloset;
     AlertDialog.Builder builder;
 
     public final static String INDEX = "0";
     private int index;
-    public static List<ImageView> canvasList = new ArrayList<ImageView>();
+    public static List<TextView> newCanvasList = new ArrayList<TextView>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityOutfitCanvasBinding.inflate(getLayoutInflater());
+        binding = ActivityClosetCanvasBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        outfitNameCanvas = findViewById(R.id.outfitNameCanvas);
-        canvasGridLayout = findViewById(R.id.canvasGridLayout);
+        closetNameCanvas = findViewById(R.id.closetNameCanvas);
+        closetGridLayout = findViewById(R.id.closetGridLayout);
 
         Intent i = getIntent();
         index = Integer.parseInt(i.getStringExtra(INDEX));
 
-        Outfit myOutfit = Outfits.get(index);
+        Closet myCloset = Closets.get(index);
 
-        outfitNameCanvas.setText("Edit outfit:" + " " + "'" + myOutfit.getName() + "'");
+        closetNameCanvas.setText("Edit Closet:" + " " + "'" + myCloset.getName() + "'");
 
 
 
         //For loop to add view for every item in outfit
-        canvasList.removeAll(canvasList);
-        if (myOutfit.getItemsLength() > 0)
+        newCanvasList.removeAll(newCanvasList);
+        if (myCloset.getOutfitsLength() > 0)
         {
-            for (Item image : myOutfit.getItems()) {
-                ImageView map = new ImageView(this);/** This code adds a button each time*/
+            for (Outfit image : myCloset.getOutfits()) {
+                TextView map = new TextView(this);/** This code adds a button each time*/
 
-                map.setImageBitmap(image.getImage());
+                map.setText(image.getName());
                 map.setClickable(true);
                 map.setPadding(18, 18, 18, 18);
-                map.setId(myOutfit.getItems().indexOf(image));
+                map.setId(myCloset.getOutfits().indexOf(image));
                 map.setSelected(false);
-                canvasGridLayout.addView(map);
+                closetGridLayout.addView(map);
                 createOnLongClick(map);
-                canvasList.add(map);
+                newCanvasList.add(map);
             }
         }
 
@@ -103,9 +106,9 @@ public class outfit_canvas extends AppCompatActivity {
 
 
 
-        deleteCanvas = (ImageButton) findViewById(R.id.deleteCanvas);
+        deleteCloset = (ImageButton) findViewById(R.id.deleteCloset);
         builder = new AlertDialog.Builder(this);
-        deleteCanvas.setOnClickListener(new View.OnClickListener() {
+        deleteCloset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 builder.setMessage("Are you sure you want to delete this item(s)?");
@@ -120,13 +123,13 @@ public class outfit_canvas extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         int x = 0;
-                        for (ImageView view : canvasList ) {
+                        for (TextView view : newCanvasList ) {
                             if (view.isSelected()){
-                                myOutfit.removeItem(view.getId() - x);
+                                myCloset.removeOutfit(view.getId() - x);   //remove outfit method
                                 x++;
                             }
                         }
-                        updateView(canvasGridLayout, myOutfit);
+                        updateView(closetGridLayout, myCloset);
                     }
                 }).show();
             }
@@ -134,18 +137,18 @@ public class outfit_canvas extends AppCompatActivity {
     }
 
     /** this method creates an onlongclick listener for every button that calls this method. */
-    public void createOnLongClick(ImageView map){
+    public void createOnLongClick(TextView map){
         map.setOnLongClickListener(new View.OnLongClickListener(){
             @Override
             public boolean onLongClick(View v) {
                 if (map.isSelected() != true)
                 {
-                    map.setAlpha(70);
+                    map.setAllCaps(true);
                     map.setSelected(true);
 
                 }
                 else { //isSelected() is true
-                    map.setAlpha(1000);
+                    map.setAllCaps(false);
                     map.setSelected(false);
                     //map.setBackgroundColor(getResources().getColor(R.color.purple));
                 }
@@ -154,23 +157,24 @@ public class outfit_canvas extends AppCompatActivity {
         });
     }
 
-    public void updateView(GridLayout myLayout, Outfit myOutfit){
+    public void updateView(GridLayout myLayout, Closet myCloset){
         myLayout.removeAllViews();
-        canvasList.removeAll(canvasList);/**removing all views from grid and then running loop again */
+        newCanvasList.removeAll(newCanvasList);/**removing all views from grid and then running loop again */
 
-        if (myOutfit.getItemsLength() > 0)
+        if (myCloset.getOutfitsLength() > 0)
         {
-            for (Item image : myOutfit.getItems()) {
-                ImageView map = new ImageView(this);/** This code adds a button each time*/
-                map.setImageBitmap(image.getImage());
+            for (Outfit image : myCloset.getOutfits()) {
+                TextView map = new TextView(this);/** This code adds a button each time*/
+                map.setText(image.getName());
                 map.setClickable(true);
-                map.setSelected(false);
-                map.setId(myOutfit.getItems().indexOf(image));
                 map.setPadding(18, 18, 18, 18);
-                canvasList.add(map);
-                canvasGridLayout.addView(map);
+                map.setId(myCloset.getOutfits().indexOf(image));
+                map.setSelected(false);
+                closetGridLayout.addView(map);
                 createOnLongClick(map);
+                newCanvasList.add(map);
             }
         }
     }
 }
+

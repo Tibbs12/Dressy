@@ -9,15 +9,16 @@
     tools:context=".outfit_canvas">
 
     <GridLayout
-        android:id="@+id/canvasGridLayout"
+        android:id="@+id/closetGridLayout"
         android:layout_width="351dp"
         android:layout_height="400dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/grid_border"
         android:numColumns="4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/canvasSearch" />
+        app:layout_constraintTop_toBottomOf="@+id/closetSearch" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
@@ -31,7 +32,7 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <TextView
-        android:id="@+id/outfitNameCanvas"
+        android:id="@+id/closetNameCanvas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/outfit_hint"
@@ -42,7 +43,7 @@
         tools:layout_editor_absoluteY="40dp" />
 
     <SearchView
-        android:id="@+id/canvasSearch"
+        android:id="@+id/closetSearch"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="54dp"
@@ -52,10 +53,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outfitNameCanvas" />
+        app:layout_constraintTop_toBottomOf="@+id/closetNameCanvas" />
 
     <ImageButton
-        android:id="@+id/canvasAddBtn"
+        android:id="@+id/closetAddBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
@@ -63,11 +64,11 @@
         android:background="@drawable/ic_add_canvas"
         android:contentDescription="@string/add_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/canvasGridLayout"
+        app:layout_constraintTop_toBottomOf="@+id/closetGridLayout"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageButton
-        android:id="@+id/deleteCanvas"
+        android:id="@+id/deleteCloset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
@@ -75,7 +76,7 @@
         android:background="@drawable/ic_delete"
         android:contentDescription="@string/delete_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/canvasGridLayout"
+        app:layout_constraintTop_toBottomOf="@+id/closetGridLayout"
         tools:ignore="TouchTargetSizeCheck" />
 
 

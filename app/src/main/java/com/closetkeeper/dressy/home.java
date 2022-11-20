@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.closetkeeper.dressy.databinding.ActivityHomeBinding;
+import com.closetkeeper.dressy.dto.Closet;
 import com.closetkeeper.dressy.dto.Item;
 import com.closetkeeper.dressy.dto.Outfit;
 
@@ -36,7 +37,6 @@ public class home extends AppCompatActivity {
     private LinearLayout MyClosets;
     private LinearLayout MyOutfits;
     private ImageButton toCalendar;
-    private ConstraintLayout home;
 
     /** list for each item, outfit, and closet */
     public static List<Item> Items = new ArrayList<Item>();  /** Items will have a bitmap and String "tag" */
@@ -45,7 +45,7 @@ public class home extends AppCompatActivity {
     public static List<Outfit> Outfits = new ArrayList<Outfit>();
     public static String startOutfit[] = {};
                                                         /** Both of these list need to be changed to Objects */
-    public static List<String> Closets = new ArrayList<String>();
+    public static List<Closet> Closets = new ArrayList<Closet>();
     public static String startClosets[] = {};
 
     public static ArrayAdapter adapter;
@@ -63,7 +63,6 @@ public class home extends AppCompatActivity {
 
         MyClosets = (LinearLayout) findViewById(R.id.MyClosets);
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);
-        home = (ConstraintLayout) findViewById(R.id.home);
 
         //For loop to display Outfits
         int x = 0;
@@ -78,13 +77,17 @@ public class home extends AppCompatActivity {
             x++;
         }
 
+        int y = 0;
         //For loop to display Closets
-        for (String closet : Closets)
+        for (Closet closet : Closets)
         {
-            ImageButton map = new ImageButton(this);/** This code adds a button each time*/
+            Button map = new Button(this);/** This code adds a button each time*/
             map.setLayoutParams(MyClosets.getLayoutParams());
-            //map.set(closet); This needs to be figured out still
+            map.setId(Closets.indexOf(closet));
+            map.setText(Closets.get(y).getName());
             MyClosets.addView(map);
+            createOnClickCloset(map);
+            y++;
         }
 
 
@@ -192,6 +195,17 @@ public class home extends AppCompatActivity {
         });
     }
 
+    public void createOnClickCloset(Button map){
+        map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String closetIndex;
+                closetIndex = Integer.toString(v.getId());
+                openClosetCanvas(closetIndex);            /** need to pass outfit to canvas page */
+            }
+        });
+    }
+
     public void openCanvas(String outfitIndex) {
         Intent intent = new Intent(this, com.closetkeeper.dressy.outfit_canvas.class);
 
@@ -202,16 +216,16 @@ public class home extends AppCompatActivity {
         startActivity(intent);      //Take in user input from this XML sheet and pass it to the new page
     }
 
-    public void writeOutfit(ImageButton map, int x) {
-        TextView view = new TextView(home.this);
-        view.setText(Outfits.get(x).getName());
-        view.setLayoutParams(map.getLayoutParams());
-        view.setPaddingRelative(map.getPaddingStart(),map.getPaddingTop(),map.getPaddingEnd(),map.getPaddingBottom());
-        home.addView(view);
+    public void openClosetCanvas(String closetIndex) {
+        Intent i = new Intent(this, com.closetkeeper.dressy.closetCanvas.class);
+
+        /** This putExtra function passes the actual string to the new page */
+        i.putExtra(closetCanvas.INDEX, closetIndex);
 
 
-
+        startActivity(i);      //Take in user input from this XML sheet and pass it to the new page
     }
+
 
 
 }

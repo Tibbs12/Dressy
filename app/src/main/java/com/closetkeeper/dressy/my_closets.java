@@ -2,11 +2,14 @@ package com.closetkeeper.dressy;
 
 import static com.closetkeeper.dressy.home.Closets;
 import static com.closetkeeper.dressy.home.Items;
+import static com.closetkeeper.dressy.home.Outfits;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -18,13 +21,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.closetkeeper.dressy.databinding.ActivityMyClosetsBinding;
+import com.closetkeeper.dressy.dto.Closet;
 import com.closetkeeper.dressy.dto.Item;
+import com.closetkeeper.dressy.dto.Outfit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class my_closets extends AppCompatActivity {
 
     ActivityMyClosetsBinding binding;
-    public static final int RequestPermissionCode = 1;
     private GridLayout closetsGridLayout;
+    private ImageButton myClosetsAdd;
+    private ImageButton myClosetsDelete;
+    private static String closetIndex; //used to pass index of outfit selected to edit page.
+    AlertDialog.Builder builder;
+
+    public static List<TextView> closetViewList = new ArrayList<TextView>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,53 +76,129 @@ public class my_closets extends AppCompatActivity {
         });
         closetsGridLayout = findViewById(R.id.closetsGridLayout);
 
-        //For loop to display Closets
-        for (String string : Closets)
-         {
-             TextView map = new TextView(this);/** This code adds a button each time*/
-             //map.setLayoutParams(closetsGridLayout.getLayoutParams());
-             map.setText(string);
-             closetsGridLayout.addView(map);
-         }
-        }
-
-
-    /** methods for camera */
-    private void EnableRuntimePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(my_closets.this, Manifest.permission.CAMERA)) {
-            Toast.makeText(my_closets.this, "CAMERA permission allows us to Access your camera", Toast.LENGTH_LONG).show();
-        }
-        else
+        closetViewList.removeAll(closetViewList);
+        //For loop to display Outfits
+        for (Closet string : Closets)
         {
-            ActivityCompat.requestPermissions(my_closets.this, new String[]{Manifest.permission.CAMERA}, RequestPermissionCode);
+            TextView map = new TextView(this);/** This code adds a button each time*/
+            map.setText(string.getName().toString());
+            map.setClickable(true);
+            map.setPadding(18, 18, 18, 18);
+            map.setId(Closets.indexOf(string));
+            map.setSelected(false);
+            createOnClick(map);
+            createOnLongClick(map);
+            closetsGridLayout.addView(map);
+            closetViewList.add(map);
         }
+
+
+
+        myClosetsAdd = findViewById(R.id.myClosetsAdd);
+        myClosetsAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCloset();
+            }
+        });
+
+        myClosetsDelete = (ImageButton) findViewById(R.id.myClosetsDelete);
+        builder = new AlertDialog.Builder(this);
+        myClosetsDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setMessage("Are you sure you want to delete this item(s)?");
+                builder.setCancelable(true);
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        int x = 0;
+                        for (TextView view : closetViewList ) {
+                            if (view.isSelected()){
+                                Closets.remove(view.getId() - x);
+                                x++;
+                            }
+                        }
+                        updateView(closetsGridLayout);
+                    }
+                }).show();
+            }
+        });
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 7 && resultCode == RESULT_OK) {
-            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-            Item myItem = new Item();
-            myItem.setImage(bitmap);
-            Items.add(myItem);
-            /** Instead of all below code, we will pass bitmap and tag string to method CreateItem(); */
-            //ImageView image = new ImageView(this);/** This code adds a button each time*/
-            //image.setLayoutParams(gridLayout.getLayoutParams());
-            //gridLayout.addView(image);
-            //image.setImageBitmap(bitmap);
-        }
+    public void openCanvas(String closetIndex) {
+        Intent intent = new Intent(this, com.closetkeeper.dressy.closetCanvas.class);
+
+        /** This putExtra function passes the actual string to the new page */
+        intent.putExtra(outfit_canvas.INDEX, closetIndex);
+
+
+        startActivity(intent);      //Take in user input from this XML sheet and pass it to the new page
     }
 
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] result) {
-        super.onRequestPermissionsResult(requestCode, permissions, result);
-        switch (requestCode) {
-            case RequestPermissionCode:
-                if (result.length > 0 && result[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(my_closets.this, "Permission Granted, Now your application can access CAMERA.", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(my_closets.this, "Permission Canceled, Now your application cannot access CAMERA.", Toast.LENGTH_LONG).show();
+
+    public void openCloset() {
+        Intent intent = new Intent(this, com.closetkeeper.dressy.createCloset.class);
+        startActivity(intent);
+    }
+
+
+    /** this method creates an onclick listener for every button that calls this method. */
+    public void createOnClick(TextView map){
+        map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String closetIndex;
+                closetIndex = Integer.toString(v.getId());
+                openCanvas(closetIndex);            /** need to pass outfit to canvas page */
+            }
+        });
+    }
+
+
+    /** this method creates an onlongclick listener for every button that calls this method. */
+    public void createOnLongClick(TextView map){
+        map.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                if (map.isSelected() != true)
+                {
+                    map.setAllCaps(true);
+                    map.setSelected(true);
+
                 }
-                break;
+                else { //isSelected() is true
+                    map.setAllCaps(false);
+                    map.setSelected(false);
+                    //map.setBackgroundColor(getResources().getColor(R.color.purple));
+                }
+                return true;
+            }
+        });
+    }
+
+    public void updateView(GridLayout myLayout){
+        myLayout.removeAllViews();
+        closetViewList.removeAll(closetViewList);/**removing all views from grid and then running loop again */
+        for (Closet image : Closets) {
+            TextView map = new TextView(this);/** This code adds a button each time*/
+            map.setText(image.getName().toString());
+            map.setClickable(true);
+            map.setPadding(18, 18, 18, 18);
+            map.setId(Closets.indexOf(image));
+            map.setSelected(false);
+            createOnClick(map);
+            createOnLongClick(map);
+            closetsGridLayout.addView(map);
+            closetViewList.add(map);
         }
     }
+
+
 }

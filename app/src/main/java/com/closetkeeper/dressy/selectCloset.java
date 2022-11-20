@@ -3,6 +3,7 @@ package com.closetkeeper.dressy;
 
 import static com.closetkeeper.dressy.home.Closets;
 import static com.closetkeeper.dressy.home.Items;
+import static com.closetkeeper.dressy.home.Outfits;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -12,17 +13,22 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 import com.closetkeeper.dressy.databinding.ActivityMyItemsBinding;
 import com.closetkeeper.dressy.databinding.ActivitySelectClosetBinding;
+import com.closetkeeper.dressy.dto.Closet;
 import com.closetkeeper.dressy.dto.Item;
+import com.closetkeeper.dressy.dto.Outfit;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class selectCloset extends AppCompatActivity {
 
@@ -33,6 +39,9 @@ public class selectCloset extends AppCompatActivity {
     private ListView adapterView;
     private GridLayout itemsGrid;
     private AppCompatButton closetFwdBtn;
+    private GridLayout outfitsGrid;
+
+    public static List<TextView> closetViewList = new ArrayList<TextView>();
 
     /** Need static variables to pass data using intent */
     public final static String CLOSETNAME = "CLOSETNAME";
@@ -75,6 +84,7 @@ public class selectCloset extends AppCompatActivity {
 
 
         itemsGrid = findViewById(R.id.itemsGrid);
+        outfitsGrid = findViewById(R.id.outfitsGrid);
 
 
        /* adapterView = (ListView) findViewById(R.id.adapterView);
@@ -96,8 +106,17 @@ public class selectCloset extends AppCompatActivity {
         closetFwdBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Closets.add(closetName);
-                createCloset();
+                Closet MyCloset = new Closet(); //Create a new outfit on click
+                MyCloset.setName(closetName);
+
+                for (TextView view :  closetViewList)
+                {
+                    if (view.isSelected()){
+                        MyCloset.addOutfit(Outfits.get(view.getId()));  //for every item selected, add outfit to new closet
+                    }
+                }
+                Closets.add(MyCloset); //after loop, add new outfit to list of outfits
+                createCloset(); //open home page
             }
         });
 
@@ -107,14 +126,21 @@ public class selectCloset extends AppCompatActivity {
 
 
         //For loop to display items
-        for (Item image : Items)
+        closetViewList.removeAll(closetViewList);
+        for (Outfit image : Outfits)
         {
-            ImageView map = new ImageView(this);/** This code adds a button each time*/
-            //map.setLayoutParams(gridLayout.getLayoutParams());
-            map.setImageBitmap(image.getImage());
-            itemsGrid.addView(map);
+            TextView map = new TextView(this);/** This code adds a button each time*/
+            map.setText(image.getName());
+            map.setClickable(true);
+            map.setPadding(18, 18, 18, 18);
+            map.setId(Outfits.indexOf(image));
+            map.setSelected(false);
+            closetViewList.add(map);
+            outfitsGrid.addView(map);
+            createOnLongClick(map);
         }
     }
+
 
     /** Method that changes page to createOutfit page */
     public void createOutfit() {
@@ -125,6 +151,28 @@ public class selectCloset extends AppCompatActivity {
     public void createCloset() {
         Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
         startActivity(intent);
+    }
+
+
+    /** this method creates an onlongclick listener for every button that calls this method. */
+    public void createOnLongClick(TextView map){
+        map.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                if (map.isSelected() != true)
+                {
+                    map.setAllCaps(true);
+                    map.setSelected(true);
+
+                }
+                else { //isSelected() is true
+                    map.setAllCaps(false);
+                    map.setSelected(false);
+                    //map.setBackgroundColor(getResources().getColor(R.color.purple));
+                }
+                return true;
+            }
+        });
     }
 
 

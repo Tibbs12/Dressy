@@ -15,17 +15,36 @@ public class Closet
     private String name;
     private String description;
     private List<Item>[] items;           //List items will contain type item
-    private List<String>[] outfits;         //List outfits will contain type outfit TODO: replace type String with type Outfit
+    private ArrayList<Outfit> outfits;//List outfits will contain type outfit TODO: replace type String with type Outfit
+
+    private final String NULL_NAME = "Not Named";
+
+    public Closet(){
+        outfits = new ArrayList<Outfit>();
+    }
 
     //returns String name
-    public String getName() {  //gets value of String name
-        return name;
+    /**
+     * Returns Outfit name. If String is null or empty, then the function will return the
+     * String "Not Named".
+     * @return String of outfit's name.
+     */
+    public String getName() {
+        //Check to see if outfit name is null or empty
+        if(name == null || name.trim().isEmpty()){
+            return NULL_NAME;
+        }
+        else {
+            return name;
+        }
     }
 
     //Sets String name
     public void setName(String name) { //sets value of String name
         this.name = name;
     }
+
+
 
     //returns String description
     public String getDescription() {  //gets value of String description
@@ -48,12 +67,31 @@ public class Closet
     }
 
     //returns List of Outfits named outfits
-    public List<String>[] getOutfits() { //gets List of Outfits
+    public ArrayList<Outfit> getOutfits() { //gets List of Outfits
         return outfits;
     }
 
     //sets List of Outfits into List<Outfit> outfits
-    public void setOutfits(List<String>[] outfits) { //sets List of Outfits
+    public void setOutfits(ArrayList<Outfit> outfits) { //sets List of Outfits
         this.outfits = outfits;
+    }
+
+    /**
+     * Adds an additional tag to the List associated with this Outfit.
+     * @param newOutfit The new Item being added to the outfit.
+     */
+    public void addOutfit(Outfit newOutfit){
+        //Check to see if itemName is empty
+        //if(newItem != null && !newItem.getId().trim().isEmpty()){
+        outfits.add(newOutfit);
+        //}
+    }
+
+    public void removeOutfit(int outfitIndex){
+        outfits.remove(outfitIndex);
+    }
+
+    public int getOutfitsLength(){
+        return outfits.size();
     }
 }
