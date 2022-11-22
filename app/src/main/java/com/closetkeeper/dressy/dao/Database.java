@@ -23,9 +23,9 @@ public class Database implements IAccountData
     private String sqlStatement = "";
     private PreparedStatement readiedStatement;
     private ResultSet currentResultSet;
-    private final String userPasswordColumnName = "userpass";
-    private final String userIDColumnName = "userID";
-    private final String userEmailColumnName = "email";
+    private static final String userPasswordColumnName = "userpass";
+    private static final String userIDColumnName = "userID";
+    private static final String userEmailColumnName = "email";
 
 
     public Database(){
@@ -47,6 +47,7 @@ public class Database implements IAccountData
             currentResultSet = readiedStatement.executeQuery();
 
             if(currentResultSet.next()){
+                System.out.println("SUCCESS: Connected to server database.");
                 return currentResultSet.getString(userPasswordColumnName);
             }
             else{
