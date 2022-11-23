@@ -6,6 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.closetkeeper.dressy.dao.IAccountData;
+
+import java.io.File;
 
 
 /**
@@ -19,11 +24,22 @@ public class access extends AppCompatActivity {
 
     private Button accessSignUpBtn;       /**Setting up the two buttons here*/
     private Button accessLoginBtn;
+    public Boolean hasAccountFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access);
+
+        //Check for account data file within the device's internal storage
+        if(checkAccountDataFiles()){
+            hasAccountFile = true;
+            Toast.makeText(this, "Device HAS account data files", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            hasAccountFile = false;
+            Toast.makeText(this, "Device DOESN'T HAVE account data files", Toast.LENGTH_SHORT).show();
+        }
 
         /**Start of the OnClick listeners for each element*/
         accessSignUpBtn = (Button) findViewById(R.id.accessSignUpBtn);
@@ -55,5 +71,14 @@ public class access extends AppCompatActivity {
     public void openSignIn() {
         Intent intent = new Intent(this, com.closetkeeper.dressy.sign_in.class);
         startActivity(intent);
+    }
+
+    /**
+     * Determines whether the user's device contains the appropriate file that holds important information like account ID, username, and password.
+     * @return Boolean value on the existence of userData file.
+     */
+    private Boolean checkAccountDataFiles(){
+        File userInfoFile = getBaseContext().getFileStreamPath(IAccountData.ACCOUNT_DATA_FILENAME);
+        return userInfoFile.exists();
     }
 }

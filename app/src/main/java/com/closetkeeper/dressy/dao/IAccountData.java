@@ -1,6 +1,7 @@
 package com.closetkeeper.dressy.dao;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,6 +17,8 @@ import java.util.concurrent.ExecutionException;
  */
 public interface IAccountData {
 
+
+    public static final String ACCOUNT_DATA_FILENAME = "userData.txt";
 
     /**
      * Default function provided by IAccountData interface that sets up the connection between the application and live server.
@@ -40,9 +43,5 @@ public interface IAccountData {
             System.out.println("ERROR: Connection to the server failed - " + e.getMessage());
             return null;
         }
-    }
-
-    default void connectToCache(){
-        //ToDo: Link to local cache
     }
 }

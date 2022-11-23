@@ -2,16 +2,27 @@ package com.closetkeeper.dressy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.closetkeeper.dressy.dao.Database;
+import com.closetkeeper.dressy.dao.IAccountData;
 import com.closetkeeper.dressy.dto.Account;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,6 +38,8 @@ public class sign_up extends AppCompatActivity {
     private EditText emailHint;
     private TextView signUpError;
     private EditText pwdHint;
+    Database serverData;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +49,7 @@ public class sign_up extends AppCompatActivity {
         emailHint = (EditText) findViewById(R.id.emailHint);
         signUpError = (TextView) findViewById(R.id.signUpError);
         pwdHint = (EditText) findViewById(R.id.pwdHint);
+
 
     /**
     * Onclick listeners for signup activity
@@ -77,6 +91,8 @@ public class sign_up extends AppCompatActivity {
 
     /**Opens Home activity page*/
     public void openHome() {
+        serverData = new Database();
+        Toast.makeText(this, "Account email to user ID 9: " + serverData.fetchEmail(9), Toast.LENGTH_SHORT).show();
 
         String email;
         String pass;
@@ -87,19 +103,41 @@ public class sign_up extends AppCompatActivity {
         Matcher m = p.matcher(email);
         Matcher m2 = p2.matcher(email);
 
+        Account MyAccount = new Account();
+        
+        MyAccount.setEmail(email);
+        MyAccount.setPassword(pass);
+
+        /**NOTE: This is where the account class needs to check to see if the account is valid*/
+        Intent intent = new Intent(this, home.class);
+        startActivity(intent);
 
         //if(m.find() && m2.find()) {
 
-            Account MyAccount = new Account();
-            MyAccount.setEmail(email);
-            MyAccount.setPassword(pass);
 
-            /**NOTE: This is where the account class needs to check to see if the account is valid*/
-            Intent intent = new Intent(this, home.class);
-            startActivity(intent);
         //}
         //else
             //signUpError.setVisibility(View.VISIBLE);
+    }
+
+
+    //Still in work
+    private void writeToInternalStorage() throws FileNotFoundException {
+        FileOutputStream fos = openFileOutput(IAccountData.ACCOUNT_DATA_FILENAME, Context.MODE_PRIVATE);
+
+    }
+
+
+    //
+    //TESTING - this functions can be deleted
+    //
+    private class DataConnection extends AsyncTask<String, String, String>{
+
+        @Override
+        protected String doInBackground(String... strings) {
+            //serverData = new Database();
+            return null;
+        }
     }
 
 }
