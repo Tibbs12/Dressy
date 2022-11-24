@@ -11,52 +11,35 @@
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+        tools:layout_editor_absoluteY="674dp" />
 
     <TextView
         android:id="@+id/myClosetsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="@string/closets"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="24dp" />
 
     <ListView
         android:id="@+id/listview"
-        android:layout_width="313dp"
-        android:layout_height="375dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="100dp"
-        android:background="#00FFFFFF"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:background="@drawable/canvas"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myClosetsSearch" />
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="187dp" />
 
     <SearchView
         android:id="@+id/myClosetsSearch"
         android:layout_width="302dp"
         android:layout_height="50dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="53dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myClosetsHeader">
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="70dp">
 
     </SearchView>
 
@@ -66,10 +49,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ic_add_canvas"
         android:contentDescription="@string/add_button"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listview"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="607dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
