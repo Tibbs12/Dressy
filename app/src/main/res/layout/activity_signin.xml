@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
-        android:layout_marginTop="298dp"
+        android:layout_marginTop="305dp"
         android:layout_marginEnd="176dp"
         android:text="@string/log_in"
         android:textColor="@color/dark_blue"
@@ -28,15 +28,15 @@
         android:id="@id/loginError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="72dp"
-        android:gravity="clip_horizontal|center|center_vertical"
+        android:layout_marginStart="133dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="99dp"
         android:text="Error: email is invalid"
         android:textColor="#FF3A3A"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/existingAcct"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -44,7 +44,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="8dp"
         android:autofillHints=""
@@ -64,7 +64,9 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="54dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="57dp"
+        android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:background="@drawable/access_buttons"
         android:drawableStart="@drawable/ic_password"
@@ -72,26 +74,28 @@
         android:inputType="textPassword"
         android:padding="10dp"
         android:password="true"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginEmailHint"
         tools:ignore="TextContrastCheck" />
 
+    <!--will require onClick function-->
+
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="215dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginEnd="221dp"
+        android:layout_marginBottom="23dp"
         android:buttonTint="@color/white"
         android:text="@string/remember"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/loginBtn"
+        app:layout_constraintBottom_toTopOf="@+id/existingAcct"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginPwdHint"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="TextContrastCheck" />
 
@@ -99,9 +103,10 @@
         android:id="@+id/loginBtn"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/access_buttons"
         android:backgroundTint="@color/lavender"
         android:text="@string/log_in"
@@ -109,6 +114,7 @@
         app:layout_constraintBottom_toTopOf="@+id/loginError"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginPwdHint"
         tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <View
@@ -116,14 +122,13 @@
         android:layout_width="300dp"
         android:layout_height="1dp"
         android:layout_marginStart="54dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="57dp"
         android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/existingAcct"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
-    <!--will require onClick function-->
     <TextView
         android:id="@+id/existingAcct"
         android:layout_width="wrap_content"
@@ -131,14 +136,13 @@
         android:layout_marginStart="93dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="94dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="48dp"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/no_account"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/loginError"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider3"
         tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
