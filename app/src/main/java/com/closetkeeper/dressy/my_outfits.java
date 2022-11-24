@@ -21,6 +21,7 @@ import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class my_outfits extends AppCompatActivity {
     private ListView outfitListView;
     AlertDialog.Builder builder;
     ArrayAdapter<String> arrayAdapter;
+    private SearchView searchView4;
 
     public static List<String> newNames = new ArrayList<String>();
 
@@ -118,6 +120,21 @@ public class my_outfits extends AppCompatActivity {
                 outfitIndex = Integer.toString(position);
                 openCanvas(outfitIndex);            /** need to pass outfit to canvas page */
 
+            }
+        });
+
+        searchView4 = (SearchView) findViewById(R.id.searchView4);          //search bar
+        searchView4.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query){
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                arrayAdapter.getFilter().filter(newText);
+                return false;
             }
         });
 

@@ -37,63 +37,48 @@
         android:layout_marginTop="42dp"
         android:layout_marginEnd="55dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintBottom_toTopOf="@+id/myItemsGrid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/myItemsHeader" />
 
-    <GridLayout
-        android:id="@+id/myItemsGrid"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/grid_border"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myItemsSearch" />
-
     <ImageButton
         android:id="@+id/addCamera"
         android:layout_width="42dp"
         android:layout_height="40dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/ic_outline_add_a_photo_24"
         android:contentDescription="@string/add_camera"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myItemsGrid"
+        app:layout_constraintTop_toBottomOf="@+id/itemsListView"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/addGallery"
         android:layout_width="45dp"
         android:layout_height="40dp"
-        android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:background="@drawable/ic_outline_add_photo_alternate_24"
         android:contentDescription="@string/add_gallery"
-        app:layout_constraintEnd_toStartOf="@+id/deleteMyItems"
-        app:layout_constraintStart_toEndOf="@+id/addCamera"
-        app:layout_constraintTop_toBottomOf="@+id/myItemsGrid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemsListView"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <ImageButton
-        android:id="@+id/deleteMyItems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"
-        android:background="@drawable/ic_delete"
-        android:contentDescription="@string/delete_btn"
+    <ListView
+        android:id="@+id/itemsListView"
+        android:layout_width="337dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="25dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myItemsGrid"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myItemsSearch"
+        app:layout_constraintVertical_bias="0.148">
+
+    </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
