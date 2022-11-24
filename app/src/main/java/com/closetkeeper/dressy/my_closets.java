@@ -15,8 +15,12 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,15 +40,17 @@ public class my_closets extends AppCompatActivity {
     private ImageButton myClosetsDelete;
     private static String closetIndex; //used to pass index of outfit selected to edit page.
     AlertDialog.Builder builder;
-
-    public static List<TextView> closetViewList = new ArrayList<TextView>();
+    private SearchView myClosetsSearch;
+    private ListView listview;
+    ArrayAdapter<String> arrayAdapter;
+    public static List<String> names = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMyClosetsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.bottomNavBar.setSelectedItemId(R.id.closetNavBtn);  /** this sets the correct nav button each time we load this page */
+        binding.bottomNavBar.setSelectedItemId(R.id.closetNavBtn);/** this sets the correct nav button each time we load this page */
 
         //Navigation menu code
         binding.bottomNavBar.setOnItemSelectedListener(item -> {
@@ -74,22 +80,86 @@ public class my_closets extends AppCompatActivity {
 
             return true;
         });
-        closetsGridLayout = findViewById(R.id.closetsGridLayout);
 
-        closetViewList.removeAll(closetViewList);
+        listview = findViewById(R.id.listview); //search bar stuff
+
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
+        listview.setAdapter(arrayAdapter);
+        listview.setVisibility(View.VISIBLE);
+
+        listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View v, int i, long l){
+
+                     new AlertDialog.Builder(my_closets.this)
+                             .setTitle("Do you want to delete" + names.get(i) + "?")
+                             .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                                 @Override
+                                 public void onClick(DialogInterface dialogInterface, int index) {
+                                     Closets.remove(i);
+                                     names.remove(i);
+                                     arrayAdapter.notifyDataSetChanged();
+                                }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialogInterface, int i) {
+                                     dialogInterface.dismiss();
+                                 }
+                             }).create().show();
+                return true;
+            }
+        });
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+
+                String closetIndex;
+                closetIndex = Integer.toString(position);
+                openCanvas(closetIndex);            /** need to pass outfit to canvas page */
+
+            }
+        });
+
+
+        myClosetsSearch = (SearchView) findViewById(R.id.myClosetsSearch);          //search bar
+        myClosetsSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query){
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                arrayAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        /*myClosetsSearch.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                listview.setVisibility(View.VISIBLE);
+            }
+        });*/
+       /* myClosetsSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myClosetsSearch.onActionViewExpanded();
+                listview.setVisibility(View.VISIBLE);
+            }
+        }); */
+
+
+        names.removeAll(names);
         //For loop to display Outfits
         for (Closet string : Closets)
         {
-            TextView map = new TextView(this);/** This code adds a button each time*/
-            map.setText(string.getName().toString());
-            map.setClickable(true);
-            map.setPadding(18, 18, 18, 18);
-            map.setId(Closets.indexOf(string));
-            map.setSelected(false);
-            createOnClick(map);
-            createOnLongClick(map);
-            closetsGridLayout.addView(map);
-            closetViewList.add(map);
+            names.add(string.getName());
         }
 
 
@@ -102,7 +172,7 @@ public class my_closets extends AppCompatActivity {
             }
         });
 
-        myClosetsDelete = (ImageButton) findViewById(R.id.myClosetsDelete);
+        /**myClosetsDelete = (ImageButton) findViewById(R.id.myClosetsDelete);
         builder = new AlertDialog.Builder(this);
         myClosetsDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,11 +195,11 @@ public class my_closets extends AppCompatActivity {
                                 x++;
                             }
                         }
-                        updateView(closetsGridLayout);
+                        //updateView(closetsGridLayout);
                     }
                 }).show();
             }
-        });
+        });*/
     }
 
     public void openCanvas(String closetIndex) {
@@ -146,58 +216,6 @@ public class my_closets extends AppCompatActivity {
     public void openCloset() {
         Intent intent = new Intent(this, com.closetkeeper.dressy.createCloset.class);
         startActivity(intent);
-    }
-
-
-    /** this method creates an onclick listener for every button that calls this method. */
-    public void createOnClick(TextView map){
-        map.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                String closetIndex;
-                closetIndex = Integer.toString(v.getId());
-                openCanvas(closetIndex);            /** need to pass outfit to canvas page */
-            }
-        });
-    }
-
-
-    /** this method creates an onlongclick listener for every button that calls this method. */
-    public void createOnLongClick(TextView map){
-        map.setOnLongClickListener(new View.OnLongClickListener(){
-            @Override
-            public boolean onLongClick(View v) {
-                if (map.isSelected() != true)
-                {
-                    map.setAllCaps(true);
-                    map.setSelected(true);
-
-                }
-                else { //isSelected() is true
-                    map.setAllCaps(false);
-                    map.setSelected(false);
-                    //map.setBackgroundColor(getResources().getColor(R.color.purple));
-                }
-                return true;
-            }
-        });
-    }
-
-    public void updateView(GridLayout myLayout){
-        myLayout.removeAllViews();
-        closetViewList.removeAll(closetViewList);/**removing all views from grid and then running loop again */
-        for (Closet image : Closets) {
-            TextView map = new TextView(this);/** This code adds a button each time*/
-            map.setText(image.getName().toString());
-            map.setClickable(true);
-            map.setPadding(18, 18, 18, 18);
-            map.setId(Closets.indexOf(image));
-            map.setSelected(false);
-            createOnClick(map);
-            createOnLongClick(map);
-            closetsGridLayout.addView(map);
-            closetViewList.add(map);
-        }
     }
 
 

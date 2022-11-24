@@ -46,6 +46,12 @@ public class sign_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        Database serverData = new Database();
+        Toast.makeText(this, "show this" + serverData, Toast.LENGTH_LONG).show();
+        String mail;
+        mail = serverData.fetchEmail(9);
+        Toast.makeText(this, "Account email to user ID 9: " + mail, Toast.LENGTH_LONG).show();
+
         emailHint = (EditText) findViewById(R.id.emailHint);
         signUpError = (TextView) findViewById(R.id.signUpError);
         pwdHint = (EditText) findViewById(R.id.pwdHint);
@@ -91,8 +97,6 @@ public class sign_up extends AppCompatActivity {
 
     /**Opens Home activity page*/
     public void openHome() {
-        serverData = new Database();
-        Toast.makeText(this, "Account email to user ID 9: " + serverData.fetchEmail(9), Toast.LENGTH_SHORT).show();
 
         String email;
         String pass;
