@@ -33,6 +33,7 @@ public class outfit_canvas extends AppCompatActivity {
     public final static String INDEX = "0";
     private int index;
     public static List<ImageView> canvasList = new ArrayList<ImageView>();
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
