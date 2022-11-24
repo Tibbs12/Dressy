@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -37,6 +38,7 @@ public class my_closets extends AppCompatActivity {
     ActivityMyClosetsBinding binding;
     private GridLayout closetsGridLayout;
     private ImageButton myClosetsAdd;
+    private Button addMyClosets;
     private ImageButton myClosetsDelete;
     private static String closetIndex; //used to pass index of outfit selected to edit page.
     AlertDialog.Builder builder;
@@ -164,12 +166,10 @@ public class my_closets extends AppCompatActivity {
 
 
 
-        myClosetsAdd = findViewById(R.id.myClosetsAdd);
-        myClosetsAdd.setOnClickListener(new View.OnClickListener() {
+        addMyClosets = findViewById(R.id.addMyClosets);
+        addMyClosets.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openCloset();
-            }
+            public void onClick(View v) { openCloset();}
         });
 
         /**myClosetsDelete = (ImageButton) findViewById(R.id.myClosetsDelete);
