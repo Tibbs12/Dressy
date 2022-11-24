@@ -37,6 +37,7 @@ public class home extends AppCompatActivity {
     private LinearLayout MyOutfits;
     private ImageButton toCalendar;
     private ConstraintLayout home;
+    public static Boolean hasAccountFile;
 
     /** list for each item, outfit, and closet */
     public static List<Item> Items = new ArrayList<Item>();  /** Items will have a bitmap and String "tag" */
@@ -60,6 +61,11 @@ public class home extends AppCompatActivity {
         setContentView(binding.getRoot());
         //updateUI();
 
+        //Retrieves the status of internal user data files (if they already exist or not) from the Access.java class
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            hasAccountFile = extras.getBoolean("userDataStatus");
+        }
 
         MyClosets = (LinearLayout) findViewById(R.id.MyClosets);
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);

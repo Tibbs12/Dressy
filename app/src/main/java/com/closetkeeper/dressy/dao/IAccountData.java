@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -18,7 +19,7 @@ import java.util.concurrent.ExecutionException;
 public interface IAccountData {
 
 
-    public static final String ACCOUNT_DATA_FILENAME = "userData.txt";
+    public final static  String ACCOUNT_DATA_FILENAME = "userData.txt";
 
     /**
      * Default function provided by IAccountData interface that sets up the connection between the application and live server.
@@ -34,7 +35,8 @@ public interface IAccountData {
 
         //Try to connect to the server. Return null if connection fails.
         try{
-            Class.forName("com.mysql.jdbc.Driver");
+            //Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             dbConnect = DriverManager.getConnection(url, userName, password);
             return dbConnect;

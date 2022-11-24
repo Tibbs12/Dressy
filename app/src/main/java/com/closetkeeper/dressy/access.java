@@ -24,7 +24,7 @@ public class access extends AppCompatActivity {
 
     private Button accessSignUpBtn;       /**Setting up the two buttons here*/
     private Button accessLoginBtn;
-    public Boolean hasAccountFile;
+    public static Boolean hasAccountFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +34,11 @@ public class access extends AppCompatActivity {
         //Check for account data file within the device's internal storage
         if(checkAccountDataFiles()){
             hasAccountFile = true;
-            Toast.makeText(this, "Device HAS account data files", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Device HAS account data files", Toast.LENGTH_SHORT).show();
         }
         else{
             hasAccountFile = false;
-            Toast.makeText(this, "Device DOESN'T HAVE account data files", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Device DOESN'T HAVE account data files", Toast.LENGTH_SHORT).show();
         }
 
         /**Start of the OnClick listeners for each element*/
@@ -64,12 +64,14 @@ public class access extends AppCompatActivity {
     /**Opens Sign up page*/
     public void openSignUp() {
         Intent intent = new Intent(this, com.closetkeeper.dressy.sign_up.class);
+        intent.putExtra("userDataStatus", hasAccountFile);
         startActivity(intent);
     }
 
     /**Opens Login page*/
     public void openSignIn() {
         Intent intent = new Intent(this, com.closetkeeper.dressy.sign_in.class);
+        intent.putExtra("userDataStatus", hasAccountFile);
         startActivity(intent);
     }
 
