@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemsGrid"
@@ -10,74 +10,51 @@
 
     <GridLayout
         android:id="@+id/closetGridLayout"
-        android:layout_width="351dp"
+        android:layout_width="350dp"
         android:layout_height="400dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/grid_border"
-        android:numColumns="4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/closetSearch" />
+        android:layout_below="@id/closetSearch"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/canvas"
+        android:numColumns="4" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_alignParentBottom="true"
+        />
 
     <TextView
         android:id="@+id/closetNameCanvas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/outfit_hint"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/closet_hint"
+        android:textSize="15sp"
         tools:ignore="TextContrastCheck"
-        tools:layout_editor_absoluteY="40dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
 
     <SearchView
         android:id="@+id/closetSearch"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="54dp"
+        android:layout_below="@+id/closetNameCanvas"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/access_buttons" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/closetCanvasDelete"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/closetGridLayout"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/closetNameCanvas" />
-
-    <ImageButton
-        android:id="@+id/closetAddBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="26dp"
-        android:background="@drawable/ic_add_canvas"
-        android:contentDescription="@string/add_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/closetGridLayout"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/deleteCloset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/ic_delete"
-        android:contentDescription="@string/delete_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/closetGridLayout"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:text="@string/delete" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

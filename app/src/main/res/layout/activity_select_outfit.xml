@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,84 +9,63 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
+        android:layout_alignParentBottom="true"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
     <TextView
         android:id="@+id/outfitNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/outfit_hint"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/searchView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true" />
 
     <android.widget.SearchView
         android:id="@+id/searchView2"
-        android:layout_width="302dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/outfitNameInput"
+        android:layout_marginTop="10dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outfitNameInput" />
+       />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="307dp"
         android:text="@string/my_items"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2" />
+        android:layout_below="@id/searchView2"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        />
 
     <GridLayout
         android:id="@+id/canvasGridLayout"
-        android:layout_width="351dp"
+        android:layout_width="350dp"
         android:layout_height="400dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="13dp"
-        android:background="@drawable/grid_border"
+        android:background="@drawable/canvas"
         android:numColumns="4"
-        app:layout_constraintBottom_toTopOf="@+id/outfitFwdBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="10dp"
+         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/outfitFwdBtn"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="90dp"
+       android:layout_below="@id/canvasGridLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:background="@drawable/access_buttons"
-        android:backgroundTint="@color/lavender"
         android:text="@string/done"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/canvasGridLayout" />
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

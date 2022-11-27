@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,116 +9,83 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+        tools:layout_editor_absoluteY="674dp"
+        android:layout_alignParentBottom="true"/>
 
     <TextView
         android:id="@+id/closetNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginBottom="5dp"
         android:hint="@string/closet_hint"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/searchView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        />
 
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="302dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="55dp"
+        android:layout_height="50dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintBottom_toTopOf="@+id/itemsHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/closetNameInput"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/itemsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="314dp"
         android:text="@string/my_items"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/itemsGrid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        android:layout_below="@id/searchView"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="40dp"/>
 
     <GridLayout
         android:id="@+id/itemsGrid"
-        android:layout_width="351dp"
+        android:layout_width="350dp"
         android:layout_height="150dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/grid_border"
-        android:numColumns="4"
-        app:layout_constraintBottom_toTopOf="@+id/outfitsHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemsHeader" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/itemsHeader"
+        android:background="@drawable/canvas"
+        android:layout_marginTop="10dp"
+        android:numColumns="4" />
 
     <GridLayout
         android:id="@+id/outfitsGrid"
         android:layout_width="351dp"
         android:layout_height="149dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/grid_border"
+        android:layout_centerInParent="true"
+        android:background="@drawable/canvas"
         android:numColumns="4"
-        app:layout_constraintBottom_toTopOf="@+id/closetFwdBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outfitsHeader" />
+        android:layout_below="@id/outfitsHeader"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/outfitsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="307dp"
         android:text="@string/outfits"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemsGrid" />
+        android:layout_below="@id/itemsGrid"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/closetFwdBtn"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="125dp"
         android:background="@drawable/access_buttons"
-        android:backgroundTint="@color/lavender"
         android:text="@string/done"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outfitsGrid" />
+        android:layout_below="@id/outfitsGrid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

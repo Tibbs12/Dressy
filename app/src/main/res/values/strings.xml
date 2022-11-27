@@ -10,6 +10,7 @@
     <string name="outfits">My Outfits</string>
     <string name="calendar">My Calendar</string>
     <string name="date_placeholder">displayDate</string>
+    <string name="delete">Delete</string>
 
     <!--access-->
     <string name="or">OR</string>

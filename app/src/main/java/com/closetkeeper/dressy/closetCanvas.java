@@ -30,6 +30,7 @@ public class closetCanvas extends AppCompatActivity {
     private TextView closetNameCanvas;
     private GridLayout closetGridLayout;
     private ImageButton deleteCloset;
+    private Button closetCanvasDelete;
     AlertDialog.Builder builder;
 
     public final static String INDEX = "0";
@@ -106,9 +107,9 @@ public class closetCanvas extends AppCompatActivity {
 
 
 
-        deleteCloset = (ImageButton) findViewById(R.id.deleteCloset);
+        closetCanvasDelete = (Button) findViewById(R.id.closetCanvasDelete);
         builder = new AlertDialog.Builder(this);
-        deleteCloset.setOnClickListener(new View.OnClickListener() {
+        closetCanvasDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 builder.setMessage("Are you sure you want to delete this item(s)?");

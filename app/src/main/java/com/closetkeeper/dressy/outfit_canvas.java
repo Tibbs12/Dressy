@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,7 +27,7 @@ public class outfit_canvas extends AppCompatActivity {
     ActivityOutfitCanvasBinding binding;
     private TextView outfitNameCanvas;
     private GridLayout canvasGridLayout;
-    private ImageButton deleteCanvas;
+    private Button deleteCanvas;
     AlertDialog.Builder builder;
 
     public final static String INDEX = "0";
@@ -103,7 +104,7 @@ public class outfit_canvas extends AppCompatActivity {
 
 
 
-        deleteCanvas = (ImageButton) findViewById(R.id.deleteCanvas);
+        deleteCanvas = (Button) findViewById(R.id.deleteCanvas);
         builder = new AlertDialog.Builder(this);
         deleteCanvas.setOnClickListener(new View.OnClickListener() {
             @Override
