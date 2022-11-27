@@ -33,9 +33,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="808285" />
-                            <entry key="outputName" value="ic_outline_add_photo_alternate_24" />
-                            <entry key="sourceFile" value="C:\Users\Not Namik\Desktop\select bg-01.svg" />
+                            <entry key="outputName" value="dressy_bg_01" />
+                            <entry key="sourceFile" value="C:\Users\Not Namik\Desktop\dressy_bg-01.svg" />
                           </map>
                         </option>
                       </PersistentState>
