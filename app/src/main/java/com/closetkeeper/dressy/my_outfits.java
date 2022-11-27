@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -37,6 +38,7 @@ public class my_outfits extends AppCompatActivity {
     private ImageButton addOutfit;
     private static String outfitIndex; //used to pass index of outfit selected to edit page.
     private ListView outfitListView;
+    private Button addMyOutfits;
     AlertDialog.Builder builder;
     ArrayAdapter<String> arrayAdapter;
 
@@ -139,11 +141,10 @@ public class my_outfits extends AppCompatActivity {
 
 
 
-        addOutfit = findViewById(R.id.addOutfit);
-        addOutfit.setOnClickListener(new View.OnClickListener() {
+        addMyOutfits = findViewById(R.id.addMyOutfits);
+        addMyOutfits.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openOutfit();
+            public void onClick(View v) { openOutfit();
             }
         });
 
