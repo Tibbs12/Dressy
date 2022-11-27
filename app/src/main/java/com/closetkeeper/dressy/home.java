@@ -12,9 +12,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,9 @@ import com.closetkeeper.dressy.dto.Closet;
 import com.closetkeeper.dressy.dto.Item;
 import com.closetkeeper.dressy.dto.Outfit;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -37,6 +41,17 @@ public class home extends AppCompatActivity {
     private LinearLayout MyClosets;
     private LinearLayout MyOutfits;
     private ImageButton toCalendar;
+    private HorizontalScrollView calendarScrollView;
+    private TextView day1;
+    private TextView day2;
+    private TextView day3;
+    private TextView day4;
+    private TextView day5;
+    private ImageButton dressyBtn1;
+    private ImageButton dressyBtn2;
+    private ImageButton dressyBtn3;
+    private ImageButton dressyBtn4;
+    private ImageButton dressyBtn5;
 
     /** list for each item, outfit, and closet */
     public static List<Item> Items = new ArrayList<Item>();  /** Items will have a bitmap and String "tag" */
@@ -53,6 +68,8 @@ public class home extends AppCompatActivity {
     /** Used for permissions to access camera*/
     public static final int RequestPermissionCode = 1;
 
+    private String currentDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +78,35 @@ public class home extends AppCompatActivity {
         //updateUI();
 
 
+
+
         MyClosets = (LinearLayout) findViewById(R.id.MyClosets);
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);
+
+        //For calendar days
+        day1 = (TextView) findViewById(R.id.day1);
+        day2 = (TextView) findViewById(R.id.day2);
+        day3 = (TextView) findViewById(R.id.day3);
+        day4 = (TextView) findViewById(R.id.day4);
+        day5 = (TextView) findViewById(R.id.day5);
+
+
+        //For calendar buttons
+        dressyBtn1 = (ImageButton) findViewById(R.id.dressyBtn1);
+        dressyBtn2 = (ImageButton) findViewById(R.id.dressyBtn2);
+        dressyBtn3 = (ImageButton) findViewById(R.id.dressyBtn3);
+        dressyBtn4 = (ImageButton) findViewById(R.id.dressyBtn4);
+        dressyBtn5 = (ImageButton) findViewById(R.id.dressyBtn5);
+
+        //For getting current day
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");       //Used to calculate current day
+        currentDate = sdf.format(cal.getTime());
+
+        //day1.setText(currentDate);
+
+        //For loop to display calendar buttons
+        //for
 
         //For loop to display Outfits
         int x = 0;
@@ -155,6 +199,11 @@ public class home extends AppCompatActivity {
 
             return true;
         });
+
+
+        //Setting up calendar stuff
+
+
 
         /** End of OnClick Listeners */
     }
