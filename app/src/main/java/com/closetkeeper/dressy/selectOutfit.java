@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.closetkeeper.dressy.databinding.ActivitySelectClosetBinding;
@@ -30,7 +31,7 @@ public class selectOutfit extends AppCompatActivity {
     private ImageButton outfitBackBtn;           /**Instantiating the ImageButtons*/
     private ImageButton addItemsBtn;
     private TextView outfitNameInput;
-    private GridLayout gridLayout;
+    private LinearLayout ItemsScroll;
     private AppCompatButton outfitFwdBtn;
     //private ListView adapterView;
 
@@ -78,7 +79,7 @@ public class selectOutfit extends AppCompatActivity {
             return true;
         });
 
-        gridLayout = (GridLayout) findViewById(R.id.canvasGridLayout);
+        ItemsScroll = (LinearLayout) findViewById(R.id.ItemsScroll);
 
 
 
@@ -128,12 +129,12 @@ public class selectOutfit extends AppCompatActivity {
         {
             ImageView map = new ImageView(this);/** This code adds a button each time*/
             map.setImageBitmap(image.getImage());
-            map.setClickable(true);
+            //map.setClickable(true);
             map.setPadding(18, 18, 18, 18);
             map.setId(Items.indexOf(image));
             map.setSelected(false);
             viewList.add(map);
-            gridLayout.addView(map);
+            ItemsScroll.addView(map);
             createOnLongClick(map);
         }
     }

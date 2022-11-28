@@ -19,11 +19,11 @@
         android:id="@+id/outfitNameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:hint="@string/outfit_hint"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:layout_centerHorizontal="true" />
+        android:textSize="15sp" />
 
     <android.widget.SearchView
         android:id="@+id/searchView2"
@@ -42,30 +42,36 @@
         android:text="@string/my_items"
         android:textSize="15sp"
         android:layout_below="@id/searchView2"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         />
 
-    <GridLayout
-        android:id="@+id/canvasGridLayout"
+    <HorizontalScrollView
+        android:id="@+id/itemsScroll"
         android:layout_width="350dp"
         android:layout_height="400dp"
-        android:background="@drawable/canvas"
-        android:numColumns="4"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-         />
+        android:background="@drawable/canvas">
+
+        <LinearLayout
+            android:id="@+id/ItemsScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+
+    </HorizontalScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/outfitFwdBtn"
         android:layout_width="250dp"
         android:layout_height="50dp"
-       android:layout_below="@id/canvasGridLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/access_buttons"
         android:text="@string/done"
+        android:layout_below="@id/itemsScroll"
         />
 
 </RelativeLayout>

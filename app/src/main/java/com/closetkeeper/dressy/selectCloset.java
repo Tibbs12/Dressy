@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextClock;
 import android.widget.TextView;
@@ -37,9 +38,8 @@ public class selectCloset extends AppCompatActivity {
     private ImageButton closetAddOutfits;
     private TextView closetNameInput;
     private ListView adapterView;
-    private GridLayout itemsGrid;
     private AppCompatButton closetFwdBtn;
-    private GridLayout outfitsGrid;
+    private LinearLayout OutfitsScroll;
 
     public static List<TextView> closetViewList = new ArrayList<TextView>();
 
@@ -83,8 +83,7 @@ public class selectCloset extends AppCompatActivity {
         });
 
 
-        itemsGrid = findViewById(R.id.itemsGrid);
-        outfitsGrid = findViewById(R.id.outfitsGrid);
+        OutfitsScroll = (LinearLayout) findViewById(R.id.OutfitsScroll);
 
 
        /* adapterView = (ListView) findViewById(R.id.adapterView);
@@ -136,7 +135,7 @@ public class selectCloset extends AppCompatActivity {
             map.setId(Outfits.indexOf(image));
             map.setSelected(false);
             closetViewList.add(map);
-            outfitsGrid.addView(map);
+            OutfitsScroll.addView(map);
             createOnLongClick(map);
         }
     }

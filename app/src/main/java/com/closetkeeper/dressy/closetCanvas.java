@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.closetkeeper.dressy.databinding.ActivityClosetCanvasBinding;
@@ -32,6 +33,7 @@ public class closetCanvas extends AppCompatActivity {
     private ImageButton deleteCloset;
     private Button closetCanvasDelete;
     AlertDialog.Builder builder;
+    private LinearLayout ScrollView;
 
     public final static String INDEX = "0";
     private int index;
@@ -44,6 +46,7 @@ public class closetCanvas extends AppCompatActivity {
         setContentView(binding.getRoot());
         closetNameCanvas = findViewById(R.id.closetNameCanvas);
         closetGridLayout = findViewById(R.id.closetGridLayout);
+        ScrollView = findViewById(R.id.ScrollView);
 
         Intent i = getIntent();
         index = Integer.parseInt(i.getStringExtra(INDEX));
@@ -66,7 +69,7 @@ public class closetCanvas extends AppCompatActivity {
                 map.setPadding(18, 18, 18, 18);
                 map.setId(myCloset.getOutfits().indexOf(image));
                 map.setSelected(false);
-                closetGridLayout.addView(map);
+                ScrollView.addView(map);
                 createOnLongClick(map);
                 newCanvasList.add(map);
             }
@@ -130,7 +133,7 @@ public class closetCanvas extends AppCompatActivity {
                                 x++;
                             }
                         }
-                        updateView(closetGridLayout, myCloset);
+                        updateView(ScrollView, myCloset);
                     }
                 }).show();
             }
@@ -158,7 +161,7 @@ public class closetCanvas extends AppCompatActivity {
         });
     }
 
-    public void updateView(GridLayout myLayout, Closet myCloset){
+    public void updateView(LinearLayout myLayout, Closet myCloset){
         myLayout.removeAllViews();
         newCanvasList.removeAll(newCanvasList);/**removing all views from grid and then running loop again */
 
@@ -171,7 +174,7 @@ public class closetCanvas extends AppCompatActivity {
                 map.setPadding(18, 18, 18, 18);
                 map.setId(myCloset.getOutfits().indexOf(image));
                 map.setSelected(false);
-                closetGridLayout.addView(map);
+                myLayout.addView(map);
                 createOnLongClick(map);
                 newCanvasList.add(map);
             }

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.closetkeeper.dressy.databinding.ActivityOutfitCanvasBinding;
@@ -28,6 +29,7 @@ public class outfit_canvas extends AppCompatActivity {
     private TextView outfitNameCanvas;
     private GridLayout canvasGridLayout;
     private Button deleteCanvas;
+    private LinearLayout canvasScrollView;
     AlertDialog.Builder builder;
 
     public final static String INDEX = "0";
@@ -40,7 +42,9 @@ public class outfit_canvas extends AppCompatActivity {
         binding = ActivityOutfitCanvasBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         outfitNameCanvas = findViewById(R.id.outfitNameCanvas);
-        canvasGridLayout = findViewById(R.id.canvasGridLayout);
+        //canvasGridLayout = findViewById(R.id.canvasGridLayout);
+
+        canvasScrollView = (LinearLayout) findViewById(R.id.canvasScrollView);
 
         Intent i = getIntent();
         index = Integer.parseInt(i.getStringExtra(INDEX));
@@ -63,7 +67,7 @@ public class outfit_canvas extends AppCompatActivity {
                 map.setPadding(18, 18, 18, 18);
                 map.setId(myOutfit.getItems().indexOf(image));
                 map.setSelected(false);
-                canvasGridLayout.addView(map);
+                canvasScrollView.addView(map);
                 createOnLongClick(map);
                 canvasList.add(map);
             }
@@ -127,7 +131,7 @@ public class outfit_canvas extends AppCompatActivity {
                                 x++;
                             }
                         }
-                        updateView(canvasGridLayout, myOutfit);
+                        updateView(canvasScrollView, myOutfit);
                     }
                 }).show();
             }
@@ -155,8 +159,8 @@ public class outfit_canvas extends AppCompatActivity {
         });
     }
 
-    public void updateView(GridLayout myLayout, Outfit myOutfit){
-        myLayout.removeAllViews();
+    public void updateView(LinearLayout ScrollView, Outfit myOutfit){
+        ScrollView.removeAllViews();
         canvasList.removeAll(canvasList);/**removing all views from grid and then running loop again */
 
         if (myOutfit.getItemsLength() > 0)
@@ -169,7 +173,7 @@ public class outfit_canvas extends AppCompatActivity {
                 map.setId(myOutfit.getItems().indexOf(image));
                 map.setPadding(18, 18, 18, 18);
                 canvasList.add(map);
-                canvasGridLayout.addView(map);
+                canvasScrollView.addView(map);
                 createOnLongClick(map);
             }
         }
