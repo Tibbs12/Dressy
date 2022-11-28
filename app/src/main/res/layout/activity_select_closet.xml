@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/select_bg_01"
+    android:orientation="vertical"
     tools:context=".selectCloset">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -13,7 +14,6 @@
         android:layout_height="wrap_content"
         android:background="@color/grey"
         app:menu="@menu/bottom_nav_menu"
-        tools:layout_editor_absoluteY="674dp"
         android:layout_alignParentBottom="true"/>
 
     <TextView
@@ -29,42 +29,13 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="302dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/access_buttons"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/closetNameInput"
         android:layout_marginTop="10dp"/>
 
-    <TextView
-        android:id="@+id/itemsHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/my_items"
-        android:textSize="15sp"
-        android:layout_below="@id/searchView"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="40dp"/>
-
-    <GridLayout
-        android:id="@+id/itemsGrid"
-        android:layout_width="350dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/itemsHeader"
-        android:background="@drawable/canvas"
-        android:layout_marginTop="10dp"
-        android:numColumns="4" />
-
-    <GridLayout
-        android:id="@+id/outfitsGrid"
-        android:layout_width="351dp"
-        android:layout_height="149dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/canvas"
-        android:numColumns="4"
-        android:layout_below="@id/outfitsHeader"
-        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/outfitsHeader"
@@ -72,9 +43,11 @@
         android:layout_height="wrap_content"
         android:text="@string/outfits"
         android:textSize="15sp"
-        android:layout_below="@id/itemsGrid"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_below="@id/searchView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/closetFwdBtn"
@@ -82,10 +55,25 @@
         android:layout_height="50dp"
         android:background="@drawable/access_buttons"
         android:text="@string/done"
-        android:layout_below="@id/outfitsGrid"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_below="@id/outfitsScroll"
+        android:layout_marginTop="10dp"
         />
 
+    <HorizontalScrollView
+        android:id="@+id/outfitsScroll"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/canvas"
+        android:layout_below="@id/outfitsHeader">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+    </HorizontalScrollView>
 
 </RelativeLayout>
