@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.closetkeeper.dressy.databinding.ActivityHomeBinding;
+import com.closetkeeper.dressy.databinding.ActivityOotdBinding;
 import com.closetkeeper.dressy.dto.Item;
 import com.closetkeeper.dressy.dto.Outfit;
 
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ootd extends AppCompatActivity {
+
+    ActivityOotdBinding binding;
 
     private HorizontalScrollView scrollView;
     private LinearLayout ootdLayout;
@@ -29,12 +33,14 @@ public class ootd extends AppCompatActivity {
     private TextView textView4;
 
 
+
     public static List<ImageView> calendarViewList = new ArrayList<ImageView>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ootd);
+        binding = ActivityOotdBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         Intent i = getIntent();
         index = Integer.parseInt(i.getStringExtra(OUTFIT));
@@ -64,6 +70,36 @@ public class ootd extends AppCompatActivity {
                 calendarViewList.add(map);
             }
         }
+
+        binding.bottomNavBar.setOnItemSelectedListener(item -> {
+
+            switch(item.getItemId()){
+                case R.id.homeNavBtn:
+                    Intent intent = new Intent(this, com.closetkeeper.dressy.home.class);
+                    startActivity(intent);
+
+                    break;
+                case R.id.closetNavBtn:
+                    Intent mycloset = new Intent(this, com.closetkeeper.dressy.my_closets.class);
+                    startActivity(mycloset);
+                    break;
+                case R.id.addNavBtn:
+                    Intent items = new Intent(this, com.closetkeeper.dressy.my_items.class);
+                    startActivity(items);
+                    break;
+                case R.id.searchNavBar:
+                    /** Intent search = new Intent(this, com.closetkeeper.dressy.my_closets.class);
+                     startActivity(search); */
+                    break;
+                case R.id.outfitsNavBtn:
+                    Intent outfit = new Intent(this, com.closetkeeper.dressy.my_outfits.class);
+                    startActivity(outfit);
+                    break;
+            }
+
+
+            return true;
+        });
 
     }
 }

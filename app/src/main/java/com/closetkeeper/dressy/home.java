@@ -42,11 +42,11 @@ public class home extends AppCompatActivity {
     private LinearLayout MyOutfits;
     private ImageButton toCalendar;
     private HorizontalScrollView calendarScrollView;
-    private TextView day1;
-    private TextView day2;
-    private TextView day3;
-    private TextView day4;
-    private TextView day5;
+    private TextView date1;
+    private TextView date2;
+    private TextView date3;
+    private TextView date4;
+    private TextView date5;
     private ImageButton dressyBtn1;
     private ImageButton dressyBtn2;
     private ImageButton dressyBtn3;
@@ -78,17 +78,15 @@ public class home extends AppCompatActivity {
         //updateUI();
 
 
-
-
         MyClosets = (LinearLayout) findViewById(R.id.MyClosets);
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);
 
         //For calendar days
-        day1 = (TextView) findViewById(R.id.day1);
-        day2 = (TextView) findViewById(R.id.day2);
-        day3 = (TextView) findViewById(R.id.day3);
-        day4 = (TextView) findViewById(R.id.day4);
-        day5 = (TextView) findViewById(R.id.day5);
+        date1 = (TextView) findViewById(R.id.date1);
+        date2 = (TextView) findViewById(R.id.date2);
+        date3 = (TextView) findViewById(R.id.date3);
+        date4 = (TextView) findViewById(R.id.date4);
+        date5 = (TextView) findViewById(R.id.date5);
 
 
         //For calendar buttons
@@ -105,8 +103,30 @@ public class home extends AppCompatActivity {
 
         //day1.setText(currentDate);
 
-        //For loop to display calendar buttons
-        //for
+        if (calendar.Dates.size() >= 5) {
+            date5.setText(calendar.Dates.get(4));
+            date4.setText(calendar.Dates.get(3));
+            date3.setText(calendar.Dates.get(2));
+            date2.setText(calendar.Dates.get(1));
+            date1.setText(calendar.Dates.get(0));
+        } else if (calendar.Dates.size() == 4) {
+            date4.setText(calendar.Dates.get(3));
+            date3.setText(calendar.Dates.get(2));
+            date2.setText(calendar.Dates.get(1));
+            date1.setText(calendar.Dates.get(0));
+        } else if (calendar.Dates.size() == 3) {
+            date3.setText(calendar.Dates.get(2));
+            date2.setText(calendar.Dates.get(1));
+            date1.setText(calendar.Dates.get(0));
+        } else if (calendar.Dates.size() == 2)
+        {
+            date2.setText(calendar.Dates.get(1));
+            date1.setText(calendar.Dates.get(0));
+        }
+        else if(calendar.Dates.size() == 1)
+        {
+            date1.setText(calendar.Dates.get(0));
+        }
 
         //For loop to display Outfits
         int x = 0;
@@ -176,7 +196,6 @@ public class home extends AppCompatActivity {
 
             switch(item.getItemId()){
                 case R.id.homeNavBtn:
-
                     break;
                 case R.id.closetNavBtn:
                     Intent mycloset = new Intent(this, com.closetkeeper.dressy.my_closets.class);
