@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,55 +11,35 @@
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addMyClosets"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu" />
 
     <TextView
         android:id="@+id/myClosetsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="166dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="30dp"
         android:text="@string/closets"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/myClosetsSearch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"/>
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="350dp"
         android:layout_height="400dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="31dp"
+        android:layout_centerInParent="true"
         android:background="@drawable/canvas"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/addMyClosets"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myClosetsSearch" />
+        android:visibility="visible" />
 
     <SearchView
         android:id="@+id/myClosetsSearch"
         android:layout_width="302dp"
         android:layout_height="50dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="30dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myClosetsHeader">
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/myClosetsHeader"
+        android:layout_marginTop="10dp">
 
     </SearchView>
 
@@ -67,15 +47,12 @@
         android:id="@+id/addMyClosets"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="81dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/access_buttons"
         android:text="@string/add"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listview" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/listview"
+        />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

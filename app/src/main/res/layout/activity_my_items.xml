@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,76 +9,65 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu" />
 
     <TextView
         android:id="@+id/myItemsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         android:text="@string/my_items"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        />
 
     <SearchView
         android:id="@+id/myItemsSearch"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/access_buttons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/myItemsHeader"
         app:layout_constraintTop_toTopOf="@+id/myItemsHeader" />
 
     <ImageButton
         android:id="@+id/addCamera"
-        android:layout_width="42dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/ic_outline_add_a_photo_24"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_outline_add_a_photo_24"
+        android:background="@drawable/access_buttons"
         android:contentDescription="@string/add_camera"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemsListView"
+        android:layout_below="@id/itemsListView"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/addGallery"
-        android:layout_width="45dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="100dp"
-        android:background="@drawable/ic_outline_add_photo_alternate_24"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="250dp"
+        android:src="@drawable/ic_outline_add_photo_alternate_24"
         android:contentDescription="@string/add_gallery"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemsListView"
+        android:layout_below="@id/itemsListView"
+        android:background="@drawable/access_buttons"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ListView
         android:id="@+id/itemsListView"
         android:layout_width="337dp"
         android:layout_height="400dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="25dp"
         android:background="@drawable/canvas"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myItemsSearch"
+        android:layout_centerInParent="true"
         app:layout_constraintVertical_bias="0.148">
 
     </ListView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -43,7 +43,7 @@
         android:textSize="15sp"
         android:layout_below="@id/searchView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         />
 
     <HorizontalScrollView
@@ -51,9 +51,11 @@
         android:layout_width="350dp"
         android:layout_height="400dp"
         android:layout_below="@id/textView"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:layout_marginTop="10dp"
-        android:background="@drawable/canvas">
+        android:background="@drawable/canvas"
+        android:contentDescription="@string/canvas_view">
 
         <LinearLayout
             android:id="@+id/ItemsScroll"
@@ -68,7 +70,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/access_buttons"
         android:text="@string/done"
         android:layout_below="@id/itemsScroll"
