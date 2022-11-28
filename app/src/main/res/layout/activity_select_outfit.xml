@@ -42,35 +42,30 @@
         android:text="@string/my_items"
         android:textSize="15sp"
         android:layout_below="@id/searchView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
         />
 
-    <HorizontalScrollView
-        android:id="@+id/itemsScroll"
+    <GridLayout
+        android:id="@+id/canvasGridLayout"
         android:layout_width="350dp"
         android:layout_height="400dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:background="@drawable/canvas"
-        android:layout_below="@id/textView">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
-
-    </HorizontalScrollView>
+        android:numColumns="4"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="10dp"
+         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/outfitFwdBtn"
         android:layout_width="250dp"
         android:layout_height="50dp"
+       android:layout_below="@id/canvasGridLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/access_buttons"
         android:text="@string/done"
-        android:layout_below="@id/itemsScroll"
         />
 
 </RelativeLayout>
