@@ -172,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day1"
+                    android:text="Mon"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -181,19 +181,20 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date1"
+                    android:text="Nov 28"
                     tools:ignore="TextContrastCheck" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/dressyBtn1"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/layout_buttons"
+                    android:background="@drawable/get_dressy_btn"
                     android:contentDescription="@string/dressy_btn"
-                    app:srcCompat="@drawable/get_dressy_btn"
+                    android:textColor="#3F51B5"
+                    android:textSize="10sp"
                     tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
             </RelativeLayout>
 
@@ -209,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day2"
+                    android:text="Tues"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -218,19 +219,20 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date2"
+                    android:text="Nov 29"
                     tools:ignore="TextContrastCheck" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/dressyBtn2"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/layout_buttons"
+                    android:background="@drawable/get_dressy_btn"
                     android:contentDescription="@string/dressy_btn"
-                    app:srcCompat="@drawable/get_dressy_btn"
+                    android:textColor="#3F51B5"
+                    android:textSize="10sp"
                     tools:ignore="ImageContrastCheck" />
             </RelativeLayout>
 
@@ -246,7 +248,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day3"
+                    android:text="Wed"
                     tools:ignore="TextContrastCheck" />
 
                 <TextView
@@ -255,19 +257,20 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date3"
+                    android:text="Nov 30"
                     tools:ignore="TextContrastCheck" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/dressyBtn3"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/layout_buttons"
+                    android:background="@drawable/get_dressy_btn"
                     android:contentDescription="@string/dressy_btn"
-                    app:srcCompat="@drawable/get_dressy_btn" />
+                    android:textColor="#3F51B5"
+                    android:textSize="10sp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -282,7 +285,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day4" />
+                    android:text="Thurs" />
 
                 <TextView
                     android:id="@+id/date4"
@@ -290,18 +293,19 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date4" />
+                    android:text="Dec 01" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/dressyBtn4"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/layout_buttons"
+                    android:background="@drawable/get_dressy_btn"
                     android:contentDescription="@string/dressy_btn"
-                    app:srcCompat="@drawable/get_dressy_btn"
+                    android:textColor="#3F51B5"
+                    android:textSize="10sp"
                     tools:ignore="ImageContrastCheck" />
 
             </RelativeLayout>
@@ -318,7 +322,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="@string/day5" />
+                    android:text="Fri" />
 
                 <TextView
                     android:id="@+id/date5"
@@ -326,18 +330,19 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:paddingTop="15dp"
-                    android:text="@string/date5" />
+                    android:text="Dec 02" />
 
-                <ImageButton
+                <Button
                     android:id="@+id/dressyBtn5"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/layout_buttons"
+                    android:background="@drawable/get_dressy_btn"
                     android:contentDescription="@string/dressy_btn"
-                    app:srcCompat="@drawable/get_dressy_btn" />
+                    android:textColor="#3F51B5"
+                    android:textSize="10sp" />
             </RelativeLayout>
 
 

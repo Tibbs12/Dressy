@@ -1,13 +1,11 @@
 package com.closetkeeper.dressy;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
+import static com.closetkeeper.dressy.calendar.Dates;
+import static com.closetkeeper.dressy.calendar.calendarOutfits;
 
-import android.Manifest;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,7 +14,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,16 +39,11 @@ public class home extends AppCompatActivity {
     private LinearLayout MyOutfits;
     private ImageButton toCalendar;
     private HorizontalScrollView calendarScrollView;
-    private TextView date1;
-    private TextView date2;
-    private TextView date3;
-    private TextView date4;
-    private TextView date5;
-    private ImageButton dressyBtn1;
-    private ImageButton dressyBtn2;
-    private ImageButton dressyBtn3;
-    private ImageButton dressyBtn4;
-    private ImageButton dressyBtn5;
+    private Button dressyBtn1;
+    private Button dressyBtn2;
+    private Button dressyBtn3;
+    private Button dressyBtn4;
+    private Button dressyBtn5;
 
     /** list for each item, outfit, and closet */
     public static List<Item> Items = new ArrayList<Item>();  /** Items will have a bitmap and String "tag" */
@@ -82,19 +74,19 @@ public class home extends AppCompatActivity {
         MyOutfits = (LinearLayout) findViewById(R.id.MyOutfits);
 
         //For calendar days
-        date1 = (TextView) findViewById(R.id.date1);
+        /*date1 = (TextView) findViewById(R.id.date1);
         date2 = (TextView) findViewById(R.id.date2);
         date3 = (TextView) findViewById(R.id.date3);
         date4 = (TextView) findViewById(R.id.date4);
-        date5 = (TextView) findViewById(R.id.date5);
+        date5 = (TextView) findViewById(R.id.date5); */
 
 
         //For calendar buttons
-        dressyBtn1 = (ImageButton) findViewById(R.id.dressyBtn1);
-        dressyBtn2 = (ImageButton) findViewById(R.id.dressyBtn2);
-        dressyBtn3 = (ImageButton) findViewById(R.id.dressyBtn3);
-        dressyBtn4 = (ImageButton) findViewById(R.id.dressyBtn4);
-        dressyBtn5 = (ImageButton) findViewById(R.id.dressyBtn5);
+        dressyBtn1 = (Button) findViewById(R.id.dressyBtn1);
+        dressyBtn2 = (Button) findViewById(R.id.dressyBtn2);
+        dressyBtn3 = (Button) findViewById(R.id.dressyBtn3);
+        dressyBtn4 = (Button) findViewById(R.id.dressyBtn4);
+        dressyBtn5 = (Button) findViewById(R.id.dressyBtn5);
 
         //For getting current day
         Calendar cal = Calendar.getInstance();
@@ -103,7 +95,7 @@ public class home extends AppCompatActivity {
 
         //day1.setText(currentDate);
 
-        if (calendar.Dates.size() >= 5) {
+       /* if (calendar.Dates.size() >= 5) {
             date5.setText(calendar.Dates.get(4));
             date4.setText(calendar.Dates.get(3));
             date3.setText(calendar.Dates.get(2));
@@ -127,6 +119,38 @@ public class home extends AppCompatActivity {
         {
             date1.setText(calendar.Dates.get(0));
         }
+
+*/
+
+        if (Dates.indexOf("11/28/2022") != -1)
+        {
+            dressyBtn1.setText(calendarOutfits.get(Dates.indexOf("11/28/2022")).getName());
+            dressyBtn1.setBackgroundResource(0);
+
+        }
+
+        if (Dates.indexOf("11/29/2022") != -1)
+        {
+            dressyBtn2.setText(calendarOutfits.get(Dates.indexOf("11/29/2022")).getName());
+            dressyBtn2.setBackgroundResource(0);
+
+        }
+        if (Dates.indexOf("11/30/2022") != -1)
+        {
+            dressyBtn3.setText(calendarOutfits.get(Dates.indexOf("11/30/2022")).getName());
+            dressyBtn3.setBackgroundResource(0);
+        }
+        if (Dates.indexOf("12/1/2022") != -1)
+        {
+            dressyBtn4.setText(calendarOutfits.get(Dates.indexOf("12/1/2022")).getName());
+            dressyBtn4.setBackgroundResource(0);
+        }
+        if (Dates.indexOf("12/2/2022") != -1)
+        {
+            dressyBtn5.setText(calendarOutfits.get(Dates.indexOf("12/2/2022")).getName());
+            dressyBtn5.setBackgroundResource(0);
+        }
+
 
         //For loop to display Outfits
         int x = 0;
