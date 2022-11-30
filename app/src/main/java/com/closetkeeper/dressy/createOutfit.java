@@ -45,6 +45,8 @@ public class createOutfit extends AppCompatActivity {
                     startActivity(items);
                     break;
                 case R.id.searchNavBar:
+                    Intent search = new Intent(this, com.closetkeeper.dressy.search.class);
+                    startActivity(search);
                     break;
                 case R.id.outfitsNavBtn:
                     Intent outfit = new Intent(this, com.closetkeeper.dressy.my_outfits.class);

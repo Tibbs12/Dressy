@@ -70,8 +70,8 @@ public class my_outfits extends AppCompatActivity {
                     startActivity(items);
                     break;
                 case R.id.searchNavBar:
-                    /** Intent search = new Intent(this, com.closetkeeper.dressy.my_closets.class);
-                     startActivity(search); */
+                    Intent search = new Intent(this, com.closetkeeper.dressy.search.class);
+                     startActivity(search);
                     break;
                 case R.id.outfitsNavBtn:
 

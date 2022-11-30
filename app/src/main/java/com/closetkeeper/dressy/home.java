@@ -222,16 +222,16 @@ public class home extends AppCompatActivity {
                 case R.id.homeNavBtn:
                     break;
                 case R.id.closetNavBtn:
-                    Intent mycloset = new Intent(this, com.closetkeeper.dressy.my_closets.class);
-                    startActivity(mycloset);
+                    Intent closet = new Intent(this, com.closetkeeper.dressy.my_closets.class);
+                    startActivity(closet);
                     break;
                 case R.id.addNavBtn:
                     Intent items = new Intent(this, com.closetkeeper.dressy.my_items.class);
                     startActivity(items);
                     break;
                 case R.id.searchNavBar:
-                    /** Intent search = new Intent(this, com.closetkeeper.dressy.my_closets.class);
-                     startActivity(search); */
+                    Intent search = new Intent(this, com.closetkeeper.dressy.search.class);
+                    startActivity(search);
                     break;
                 case R.id.outfitsNavBtn:
                     Intent outfit = new Intent(this, com.closetkeeper.dressy.my_outfits.class);
