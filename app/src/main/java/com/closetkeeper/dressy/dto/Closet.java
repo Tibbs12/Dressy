@@ -6,7 +6,7 @@ import java.util.*; //Importing all java.util to help support List programming
  * The Closet class holds the name of the closet, a brief description of the closet, a List of items included in this closet, and a List of outfits included
  * in this closet. The list set functions will replace the current list with a new list of items or outfits.
  *
- *Created by Matt on 10/11/22
+ *Created by Tim on 10/11/22
  */
 
 public class Closet

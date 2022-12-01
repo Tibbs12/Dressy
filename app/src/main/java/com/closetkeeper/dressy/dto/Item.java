@@ -9,6 +9,7 @@ import java.util.List;
 
 /******
  * used to create an entry for each saved article of clothing on the client program
+ * Created by Sam on 10/30/22
  ******/
 public class Item
 {

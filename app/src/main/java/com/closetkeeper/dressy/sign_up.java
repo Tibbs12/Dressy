@@ -26,6 +26,13 @@ import java.sql.ResultSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Java class for sign_up xml page
+ *
+ * Created by Matthew Russo on 10/29/22
+ * Backend updates and internal data storage by Tim on 11/12/22
+ */
+
 public class sign_up extends AppCompatActivity {
 
     /**
@@ -45,12 +52,6 @@ public class sign_up extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
-        Database serverData = new Database();
-        Toast.makeText(this, "show this" + serverData, Toast.LENGTH_LONG).show();
-        String mail;
-        mail = serverData.fetchEmail(9);
-        Toast.makeText(this, "Account email to user ID 9: " + mail, Toast.LENGTH_LONG).show();
 
         emailHint = (EditText) findViewById(R.id.emailHint);
         signUpError = (TextView) findViewById(R.id.signUpError);

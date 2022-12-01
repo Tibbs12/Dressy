@@ -18,6 +18,12 @@ import com.closetkeeper.dressy.dto.Item;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Java class for item listview on our xml pages
+ *
+ * Created by Matthew Russo on 10/29/22
+ */
+
 
 public class ItemAdapter extends ArrayAdapter<Item> {
 

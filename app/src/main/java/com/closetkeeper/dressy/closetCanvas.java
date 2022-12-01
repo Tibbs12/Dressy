@@ -25,6 +25,13 @@ import com.closetkeeper.dressy.dto.Outfit;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Java class for Closet Canvas XMl page
+ *
+ *Created by Matthew Russo on 10/29/22
+ */
+
+
 public class closetCanvas extends AppCompatActivity {
 
     ActivityClosetCanvasBinding binding;

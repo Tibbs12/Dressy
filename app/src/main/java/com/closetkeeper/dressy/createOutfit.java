@@ -12,6 +12,12 @@ import android.widget.ImageButton;
 import com.closetkeeper.dressy.databinding.ActivityCreateClosetBinding;
 import com.closetkeeper.dressy.databinding.ActivityCreateOutfitBinding;
 
+/**
+ * Java class for createOutfit XMl page
+ *
+ *Created by Matthew Russo on 10/29/22
+ */
+
 public class createOutfit extends AppCompatActivity {
 
     ActivityCreateOutfitBinding binding;

@@ -33,6 +33,12 @@ import com.closetkeeper.dressy.dto.Outfit;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Java class for my_outfits xml page
+ *
+ * Created by Matthew Russo on 10/29/22
+ */
+
 public class my_outfits extends AppCompatActivity {
 
     ActivityMyOutfitsBinding binding;

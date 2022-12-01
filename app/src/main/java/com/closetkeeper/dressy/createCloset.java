@@ -12,6 +12,12 @@ import android.widget.ImageButton;
 import com.closetkeeper.dressy.databinding.ActivityCalendarBinding;
 import com.closetkeeper.dressy.databinding.ActivityCreateClosetBinding;
 
+/**
+ * Java class for createCloset XML page
+ *
+ *Created by Matthew Russo on 10/29/22
+ */
+
 public class createCloset extends AppCompatActivity {
 
     ActivityCreateClosetBinding binding;

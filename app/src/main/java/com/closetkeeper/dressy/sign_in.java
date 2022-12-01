@@ -15,6 +15,13 @@ import com.closetkeeper.dressy.ui.MainActivity;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Java class for sign_in xml page
+ *
+ * Created by Matthew Russo on 10/29/22
+ * Backend updates and internal data storage by Tim on 11/12/22
+ */
+
 public class sign_in extends AppCompatActivity{
 
     /**Setting variables for each element used on XML*/

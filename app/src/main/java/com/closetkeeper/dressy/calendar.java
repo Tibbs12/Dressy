@@ -24,6 +24,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * Java class for Calendar xml page
+ *
+ * Created by Matthew Russo on 10/29/22
+ * Sam helped with logic
+ */
+
 public class calendar extends AppCompatActivity {
 
     ActivityCalendarBinding binding;

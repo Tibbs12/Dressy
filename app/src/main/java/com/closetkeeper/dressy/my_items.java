@@ -34,6 +34,12 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Java class for my_items on our xml pages
+ *
+ * Created by Matthew Russo on 10/29/22
+ */
+
 public class my_items extends AppCompatActivity {
 
     ActivityMyItemsBinding binding;

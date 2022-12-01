@@ -27,6 +27,12 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * Java class for home XMl page
+ *
+ *Created by Matthew Russo on 10/29/22
+ */
+
 
 public class home extends AppCompatActivity {
 

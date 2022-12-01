@@ -16,7 +16,7 @@ import java.io.File;
 /**
  * Java class for Access and methods used on access activity_access.xml
  *
- *Created by Matt on 10/29/22
+ * Created by Tim and Matthew Russo on 10/29/22
  */
 
 
@@ -38,7 +38,7 @@ public class access extends AppCompatActivity {
         }
         else{
             hasAccountFile = false;
-            Toast.makeText(this, "Device DOESN'T HAVE account data files", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Device HAS account data files", Toast.LENGTH_SHORT).show();
         }
 
         /**Start of the OnClick listeners for each element*/

@@ -31,6 +31,12 @@ import com.closetkeeper.dressy.dto.Outfit;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Java class for selectCloset xml page
+ *
+ * Created by Matthew Russo on 10/29/22
+ */
+
 public class selectCloset extends AppCompatActivity {
 
     ActivitySelectClosetBinding binding;
