@@ -7,6 +7,8 @@
     tools:context=".my_items"
     android:background="@drawable/select_bg_01">
 
+    <!-- Created by Shani McGhee -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
         android:layout_width="411dp"

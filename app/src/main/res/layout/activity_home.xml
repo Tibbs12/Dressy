@@ -8,6 +8,8 @@
     android:background="@drawable/dressy_bg_01"
     tools:context=".home">
 
+    <!-- Created by Shani McGhee -->
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"

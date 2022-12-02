@@ -8,6 +8,8 @@
     android:background="@drawable/select_bg_01"
     tools:context=".my_outfits">
 
+    <!-- Created by Shani McGhee -->
+
     <ListView
         android:id="@+id/outfitListView"
         android:layout_width="350dp"

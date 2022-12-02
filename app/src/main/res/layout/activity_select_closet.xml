@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".selectCloset">
 
+    <!-- Created by Shani McGhee -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
         android:layout_width="411dp"

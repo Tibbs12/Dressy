@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".createOutfit">
 
+    <!-- Created by Shani McGhee -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavBar"
         android:layout_width="0dp"

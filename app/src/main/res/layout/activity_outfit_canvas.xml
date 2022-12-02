@@ -8,6 +8,9 @@
     android:background="@drawable/select_bg_01"
     tools:context=".outfit_canvas">
 
+    <!-- Created by Shani McGhee -->
+
+
     <GridLayout
         android:id="@+id/canvasGridLayout"
         android:layout_width="350dp"

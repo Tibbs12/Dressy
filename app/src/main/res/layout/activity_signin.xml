@@ -7,6 +7,8 @@
     android:background="@drawable/splash_bg"
     tools:context=".sign_in">
 
+    <!-- Created by Shani McGhee -->
+
     <TextView
         android:id="@+id/login"
         android:layout_width="wrap_content"
